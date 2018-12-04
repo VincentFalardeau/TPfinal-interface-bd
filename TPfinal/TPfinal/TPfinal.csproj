@@ -67,6 +67,12 @@
     <Compile Include="Controls\PhotosBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\Star.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Stars.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\ValidationProvider.cs" />
     <Compile Include="Controls\WaitSplash.cs">
       <SubType>Form</SubType>
@@ -90,6 +96,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -103,6 +110,111 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowRotation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carousel._editpng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carousel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carousel_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carousel_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carousel_edit_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recherche.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_disable.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
