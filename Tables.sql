@@ -10,11 +10,12 @@ CREATE TABLE circuits (
     idcircuit          NUMBER(4) NOT NULL,
     codevilledépart    CHAR(3) NOT NULL,
     codevillearrivée   CHAR(3) NOT NULL,
-    nomcircuit         VARCHAR2(10) NOT NULL,
-    prix               NUMBER(6,2) NOT NULL,
+    nomcircuit         VARCHAR2(20) NOT NULL,
+    prix               NUMBER(8,2) NOT NULL,
     durée              NUMBER(3) NOT NULL,
-    nbclientsmax       NUMBER(4),
+    nbclientsmax       NUMBER(4)
 );
+
 
 ALTER TABLE circuits ADD CONSTRAINT circuits_pk PRIMARY KEY ( idcircuit );
 ALTER TABLE circuits ADD CONSTRAINT circuits__un UNIQUE ( nomcircuit );
@@ -44,7 +45,7 @@ CREATE TABLE monuments (
     dateconstruction   DATE,
     histoire           VARCHAR2(100),
     image              VARCHAR2(100),
-    prix               NUMBER(4,2),
+    prix               NUMBER(6,2),
     etoiles            NUMBER(1)
 );
 
