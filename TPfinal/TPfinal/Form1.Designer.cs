@@ -281,14 +281,14 @@
             this.listBox1.ItemHeight = 20;
             this.listBox1.Location = new System.Drawing.Point(974, 382);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(181, 164);
+            this.listBox1.Size = new System.Drawing.Size(228, 164);
             this.listBox1.TabIndex = 10;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(975, 36);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(227, 166);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -296,7 +296,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(975, 209);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(179, 167);
+            this.richTextBox1.Size = new System.Drawing.Size(227, 167);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
             // 
@@ -362,7 +362,7 @@
             this.àProposToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1166, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1214, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -382,7 +382,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 556);
+            this.ClientSize = new System.Drawing.Size(1214, 556);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listBox1);
