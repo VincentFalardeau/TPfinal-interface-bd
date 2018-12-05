@@ -50,6 +50,7 @@ CREATE TABLE monuments (
 );
 
 ALTER TABLE monuments ADD CONSTRAINT monuments_pk PRIMARY KEY ( idmonument );
+ALTER TABLE monuments ADD CONSTRAINT monuments__un UNIQUE ( nom );
 ALTER TABLE monuments ADD CONSTRAINT circuits_etoiles_ck CHECK ( 1 <= etoiles and etoiles <= 5);
 
 CREATE TABLE reservations (

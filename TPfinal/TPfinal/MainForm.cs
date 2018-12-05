@@ -86,18 +86,11 @@ namespace TPfinal
         //Circuits
         //
         //--------------------------------------------------------------------------
-        private void UpdateDgvCircuits(string villeDepart = "")
+        private void UpdateDgvCircuits()
         {
             try
             {
-                string sql = "select * from vue_circuit_2";
-
-                if (villeDepart != "")
-                {
-                    sql =  sql + " where depart = '" + villeDepart + "'";
-                }
-                
-
+                string sql = TrouverSqlPourUpdateDvgCircuit();
                 OracleDataAdapter oda = new OracleDataAdapter(sql, mConnexionDAL.GetConnexion());
 
 
@@ -119,6 +112,38 @@ namespace TPfinal
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+        }
+
+        private string TrouverSqlPourUpdateDvgCircuit()
+        {
+            string sql = "select * from vue_circuit_2";
+            try
+            {
+                if (cbxVille.Text != "" && cbxMonument.Text == "")
+                {
+                    sql = sql + " where depart = '" + cbxVille.Text + "'";
+                }
+                else if (cbxMonument.Text != "")
+                {
+                    //Probleme avec oracle command
+                    sql = "define @nom_monument = '" + cbxMonument.Text + "'";
+                    OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                    oracleCommand.ExecuteNonQuery();
+
+                    sql = "select * from vue_circuit_3";
+
+                    if (cbxVille.Text != "")
+                    {
+                        sql = sql + " where depart = '" + cbxVille.Text + "'";
+                    }
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            return sql;
         }
 
         private void UpdateCbxVilleDepart()
@@ -157,6 +182,8 @@ namespace TPfinal
 
                 cbxMonument.Items.Clear();
 
+                cbxMonument.Items.Add("");
+
                 while (oracleDataReader.Read())
                 {
                     cbxMonument.Items.Add(oracleDataReader.GetString(0));
@@ -172,7 +199,12 @@ namespace TPfinal
 
         private void cbxVille_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdateDgvCircuits(cbxVille.Text);
+            UpdateDgvCircuits();
+        }
+
+        private void cbxMonument_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateDgvCircuits();
         }
 
         //--------------------------------------------------------------------------
@@ -237,6 +269,6 @@ namespace TPfinal
             }
         }
 
-      
+        
     }
 }
