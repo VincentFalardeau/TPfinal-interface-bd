@@ -105,40 +105,58 @@ insert into circuits values (sqCircuits.nextval, 7, 8, 'Ste-therese Montreal', 5
 insert into circuits values (sqCircuits.nextval, 9, 10, 'Laval Sotckholm', 7500, 25, 500);
 
 --1
-insert into circuitsmonuments values(1,2,1);
+insert into circuitsmonuments values(1,12,1);
 --2
-insert into circuitsmonuments values(2,2,2);
+insert into circuitsmonuments values(2,12,2);
 --3
-insert into circuitsmonuments values(3,2,3);
+insert into circuitsmonuments values(3,12,3);
 --4
-insert into circuitsmonuments values(4,2,4);
+insert into circuitsmonuments values(4,12,4);
 --5
-insert into circuitsmonuments values(5,2,5);
+insert into circuitsmonuments values(5,12,5);
 
 --6
-insert into circuitsmonuments values(3,3,1);
+insert into circuitsmonuments values(3,13,1);
 --7
-insert into circuitsmonuments values(4,2,2);
+insert into circuitsmonuments values(4,13,2);
 --8
-insert into circuitsmonuments values(5,2,3);
+insert into circuitsmonuments values(5,13,3);
 --9
-insert into circuitsmonuments values(6,2,4);
+insert into circuitsmonuments values(6,13,4);
 --10
-insert into circuitsmonuments values(7,2,5);
+insert into circuitsmonuments values(7,13,5);
+
 --11
+insert into circuitsmonuments values(6,14,1);
 --12
+insert into circuitsmonuments values(7,14,2);
 --13
+insert into circuitsmonuments values(8,14,3);
 --14
+insert into circuitsmonuments values(9,14,4);
 --15
+insert into circuitsmonuments values(10,14,5);
+
 --16
+insert into circuitsmonuments values(10,15,1);
 --17
+insert into circuitsmonuments values(11,15,2);
 --18
+insert into circuitsmonuments values(12,15,3);
 --19
+insert into circuitsmonuments values(13,15,4);
 --20
+insert into circuitsmonuments values(14,15,5);
+
 --21
+insert into circuitsmonuments values(3,16,1);
 --22
+insert into circuitsmonuments values(4,16,2);
 --23
+insert into circuitsmonuments values(8,16,3);
 --24
+insert into circuitsmonuments values(9,16,4);
 --25
+insert into circuitsmonuments values(15,16,5);
 
 

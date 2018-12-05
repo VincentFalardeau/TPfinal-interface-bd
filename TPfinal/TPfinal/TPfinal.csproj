@@ -55,6 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circuits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Circuits.Designer.cs">
+      <DependentUpon>Circuits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionDAL.cs" />
     <Compile Include="Controls\FlashButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -85,6 +92,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Circuits.resx">
+      <DependentUpon>Circuits.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

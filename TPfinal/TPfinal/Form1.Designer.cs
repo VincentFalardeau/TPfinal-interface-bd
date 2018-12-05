@@ -29,27 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.flashButton1 = new PhotoManagerClient.FlashButton();
-            this.flashButton2 = new PhotoManagerClient.FlashButton();
             this.flashButton3 = new PhotoManagerClient.FlashButton();
+            this.flashButton2 = new PhotoManagerClient.FlashButton();
+            this.flashButton1 = new PhotoManagerClient.FlashButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupbox7 = new System.Windows.Forms.GroupBox();
-            this.groupbox10 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.groupbox10 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.stars1 = new EvaluationDemo.Stars();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.circuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,27 +58,17 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.àProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupbox7.SuspendLayout();
-            this.groupbox10.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupbox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(330, 36);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(638, 510);
-            this.dataGridView1.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -126,21 +115,21 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Actions";
             // 
-            // flashButton1
+            // flashButton3
             // 
-            this.flashButton1.BackgroundImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Neutral;
-            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flashButton1.ClickedImage = null;
-            this.flashButton1.DisabledImage = null;
-            this.flashButton1.Image = ((System.Drawing.Image)(resources.GetObject("flashButton1.Image")));
-            this.flashButton1.Location = new System.Drawing.Point(21, 25);
-            this.flashButton1.Name = "flashButton1";
-            this.flashButton1.NeutralImage = null;
-            this.flashButton1.OverImage = null;
-            this.flashButton1.Size = new System.Drawing.Size(50, 50);
-            this.flashButton1.TabIndex = 0;
-            this.flashButton1.Text = "flashButton1";
-            this.flashButton1.UseVisualStyleBackColor = true;
+            this.flashButton3.BackgroundImage = global::TPfinal.Properties.Resources.edit;
+            this.flashButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.flashButton3.ClickedImage = null;
+            this.flashButton3.DisabledImage = null;
+            this.flashButton3.Image = ((System.Drawing.Image)(resources.GetObject("flashButton3.Image")));
+            this.flashButton3.Location = new System.Drawing.Point(119, 25);
+            this.flashButton3.Name = "flashButton3";
+            this.flashButton3.NeutralImage = null;
+            this.flashButton3.OverImage = null;
+            this.flashButton3.Size = new System.Drawing.Size(50, 50);
+            this.flashButton3.TabIndex = 2;
+            this.flashButton3.Text = "flashButton3";
+            this.flashButton3.UseVisualStyleBackColor = true;
             // 
             // flashButton2
             // 
@@ -158,21 +147,21 @@
             this.flashButton2.Text = "flashButton2";
             this.flashButton2.UseVisualStyleBackColor = true;
             // 
-            // flashButton3
+            // flashButton1
             // 
-            this.flashButton3.BackgroundImage = global::TPfinal.Properties.Resources.edit;
-            this.flashButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flashButton3.ClickedImage = null;
-            this.flashButton3.DisabledImage = null;
-            this.flashButton3.Image = ((System.Drawing.Image)(resources.GetObject("flashButton3.Image")));
-            this.flashButton3.Location = new System.Drawing.Point(119, 25);
-            this.flashButton3.Name = "flashButton3";
-            this.flashButton3.NeutralImage = null;
-            this.flashButton3.OverImage = null;
-            this.flashButton3.Size = new System.Drawing.Size(50, 50);
-            this.flashButton3.TabIndex = 2;
-            this.flashButton3.Text = "flashButton3";
-            this.flashButton3.UseVisualStyleBackColor = true;
+            this.flashButton1.BackgroundImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Neutral;
+            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.flashButton1.ClickedImage = null;
+            this.flashButton1.DisabledImage = null;
+            this.flashButton1.Image = ((System.Drawing.Image)(resources.GetObject("flashButton1.Image")));
+            this.flashButton1.Location = new System.Drawing.Point(21, 25);
+            this.flashButton1.Name = "flashButton1";
+            this.flashButton1.NeutralImage = null;
+            this.flashButton1.OverImage = null;
+            this.flashButton1.Size = new System.Drawing.Size(50, 50);
+            this.flashButton1.TabIndex = 0;
+            this.flashButton1.Text = "flashButton1";
+            this.flashButton1.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -236,17 +225,6 @@
             this.groupbox7.TabStop = false;
             this.groupbox7.Text = "circuit";
             // 
-            // groupbox10
-            // 
-            this.groupbox10.Controls.Add(this.checkBox1);
-            this.groupbox10.Controls.Add(this.stars1);
-            this.groupbox10.Location = new System.Drawing.Point(12, 380);
-            this.groupbox10.Name = "groupbox10";
-            this.groupbox10.Size = new System.Drawing.Size(312, 67);
-            this.groupbox10.TabIndex = 9;
-            this.groupbox10.TabStop = false;
-            this.groupbox10.Text = "monument";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBox2);
@@ -264,6 +242,27 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(260, 28);
             this.comboBox2.TabIndex = 0;
+            // 
+            // groupbox10
+            // 
+            this.groupbox10.Controls.Add(this.checkBox1);
+            this.groupbox10.Controls.Add(this.stars1);
+            this.groupbox10.Location = new System.Drawing.Point(12, 380);
+            this.groupbox10.Name = "groupbox10";
+            this.groupbox10.Size = new System.Drawing.Size(312, 67);
+            this.groupbox10.TabIndex = 9;
+            this.groupbox10.TabStop = false;
+            this.groupbox10.Text = "monument";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(172, 29);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(134, 24);
+            this.checkBox1.TabIndex = 1;
+            this.checkBox1.Text = "Meilleur circuit";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // stars1
             // 
@@ -299,16 +298,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(227, 167);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(172, 29);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(134, 24);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Meilleur circuit";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // circuitToolStripMenuItem
             // 
@@ -365,6 +354,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1214, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // aideToolStripMenuItem
             // 
@@ -390,12 +380,11 @@
             this.Controls.Add(this.groupbox7);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -403,9 +392,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupbox7.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.groupbox10.ResumeLayout(false);
             this.groupbox10.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -415,7 +404,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
