@@ -37,13 +37,10 @@
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="PhotoManagerWebServices">
-      <HintPath>..\..\..\..\devel-interface\PhotoManagerClient\PhotoManagerClient\PhotoManager LIB\PhotoManagerWebServices.dll</HintPath>
+      <HintPath>PM DLL\PhotoManagerWebServices.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http.Formatting">
-      <HintPath>..\..\..\..\devel-interface\PhotoManagerClient\PhotoManagerClient\PhotoManager LIB\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
