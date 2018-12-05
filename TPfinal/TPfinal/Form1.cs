@@ -63,5 +63,17 @@ namespace TPfinal
         {
 
         }
+
+        private void TABPages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(TABS_Controls.SelectedIndex == 0)
+            {
+                Console.Write("Page 1");
+
+            } else if(TABS_Controls.SelectedIndex == 1)
+            {
+                Console.Write("Page 2");
+            }
+        }
     }
 }
