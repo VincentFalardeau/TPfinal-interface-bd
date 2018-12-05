@@ -33,7 +33,6 @@ namespace TPfinal
             }
 
             return smInstance;
-
         }
 
         public string GetState()
@@ -67,7 +66,6 @@ namespace TPfinal
             {
                 throw ex;
             }
-           
         }
 
         public void  Deconnecter()
