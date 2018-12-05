@@ -1,7 +1,7 @@
 ﻿//DAL pour la connection à la BD
 //
 //Par Vincent Falardeau
-//22 novembre 2018
+//17 decembre 2018
 //--------------------------------------------------------------
 
 using System;
