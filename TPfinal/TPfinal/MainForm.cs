@@ -15,7 +15,7 @@ namespace TPfinal
 {
     public partial class MainForm : Form
     {
-        private ConnectionDAL mConnectionDAL;
+        private ConnectionDAL mConnexionDAL;
         private DataSet mDataSetCircuits;
         private DataSet mDataSetMonuments;
 
@@ -28,11 +28,17 @@ namespace TPfinal
             mDataSetCircuits = new DataSet();
             mDataSetMonuments = new DataSet();
 
-            UpdateDgvCircuits();
-            UpdateDgvMonuments();
+            UpdateData();
+           
         }
 
-        
+        private void UpdateData()
+        {
+            UpdateDgvCircuits();
+            UpdateDgvMonuments();
+            UpdateCbxVilleDepart();
+            UpdateCbxMonument();
+        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -54,8 +60,8 @@ namespace TPfinal
         {
             try
             {
-                mConnectionDAL = ConnectionDAL.GetInstance();
-                mConnectionDAL.Connecter();
+                mConnexionDAL = ConnectionDAL.GetInstance();
+                mConnexionDAL.Connecter();
             }
             catch (Exception ex)
             {
@@ -67,7 +73,7 @@ namespace TPfinal
         {
             try
             {
-                mConnectionDAL.Deconnecter();
+                mConnexionDAL.Deconnecter();
             }
             catch (Exception ex)
             {
@@ -80,12 +86,19 @@ namespace TPfinal
         //Circuits
         //
         //--------------------------------------------------------------------------
-        private void UpdateDgvCircuits()
+        private void UpdateDgvCircuits(string villeDepart = "")
         {
             try
             {
-                string sql = "select * from circuits";
-                OracleDataAdapter oda = new OracleDataAdapter(sql, mConnectionDAL.GetConnexion());
+                string sql = "select * from vue_circuit_2";
+
+                if (villeDepart != "")
+                {
+                    sql =  sql + " where depart = '" + villeDepart + "'";
+                }
+                
+
+                OracleDataAdapter oda = new OracleDataAdapter(sql, mConnexionDAL.GetConnexion());
 
 
                 //Eviter qu'il se remplisse a l'infini
@@ -97,9 +110,6 @@ namespace TPfinal
                 //Remplir le DataSet
                 oda.Fill(mDataSetCircuits, "listeCircuits");
 
-                //Vider le dgv
-                dgvCircuits.Rows.Clear();
-
                 //Lier dgvCircuits
                 dgvCircuits.DataSource = new BindingSource(mDataSetCircuits, "listeCircuits");
 
@@ -110,6 +120,61 @@ namespace TPfinal
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void UpdateCbxVilleDepart()
+        {
+                
+            try
+            {
+                string sql = "select nomville from villes";
+                OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                OracleDataReader oracleDataReader = oracleCommand.ExecuteReader();
+
+                cbxVille.Items.Clear();
+
+                cbxVille.Items.Add("");
+
+                while (oracleDataReader.Read())
+                {
+                    cbxVille.Items.Add(oracleDataReader.GetString(0));
+                }
+
+                oracleDataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void UpdateCbxMonument()
+        {
+            try
+            {
+                string sql = "select nom from monuments";
+                OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                OracleDataReader oracleDataReader = oracleCommand.ExecuteReader();
+
+                cbxMonument.Items.Clear();
+
+                while (oracleDataReader.Read())
+                {
+                    cbxMonument.Items.Add(oracleDataReader.GetString(0));
+                }
+
+                oracleDataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void cbxVille_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateDgvCircuits(cbxVille.Text);
+        }
+
         //--------------------------------------------------------------------------
         //
         //Monuments
@@ -119,8 +184,8 @@ namespace TPfinal
         {
             try
             {
-                string sql = "select * from monuments";
-                OracleDataAdapter oda = new OracleDataAdapter(sql, mConnectionDAL.GetConnexion());
+                string sql = "select * from vue_monument_1";
+                OracleDataAdapter oda = new OracleDataAdapter(sql, mConnexionDAL.GetConnexion());
 
 
                 //Eviter qu'il se remplisse a l'infini
@@ -172,6 +237,6 @@ namespace TPfinal
             }
         }
 
-       
+      
     }
 }

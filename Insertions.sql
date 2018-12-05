@@ -92,7 +92,6 @@ insert into villes values(sqVilles.nextval, 'Laval', 500000, 'aucune');
 --9
 insert into villes values(sqVilles.nextval, 'Sotckholm', 300000, 'aucune');
 
-
 --1
 insert into circuits values (sqCircuits.nextval, 2, 3, 'New-York Moscou', 1000, 20, 500);
 --2
