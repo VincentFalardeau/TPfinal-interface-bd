@@ -19,6 +19,7 @@ namespace TPfinal
         private DataSet mDataSetCircuits;
         private DataSet mDataSetMonuments;
 
+
         public MainForm()
         {
             InitializeComponent();
@@ -235,6 +236,35 @@ namespace TPfinal
                 UpdateDgvCircuits();
             }
             
+        }
+
+        private void dgvCircuits_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+        }
+
+
+        private void dgvCircuits_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            try
+            {
+                if(!dgvCircuits.CurrentRow.IsNewRow)
+                {
+                    string sql = "UPDATE circuits SET prix = " + dgvCircuits.CurrentRow.Cells[3].Value + " where nomcircuit = '" + dgvCircuits.CurrentRow.Cells[0].Value.ToString() + "'";
+                    OracleCommand oracleCmd = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                    oracleCmd.ExecuteNonQuery();
+                  
+                    //Probleme la view update pas
+        
+                }
+                
+                MessageBox.Show("Donnée Éditée avec succès");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         //--------------------------------------------------------------------------
