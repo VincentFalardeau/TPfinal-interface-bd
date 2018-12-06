@@ -125,16 +125,12 @@ namespace TPfinal
                 }
                 else if (cbxMonument.Text != "")
                 {
-                    //Probleme avec oracle command
-                    sql = "define @nom_monument = '" + cbxMonument.Text + "'";
-                    OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
-                    oracleCommand.ExecuteNonQuery();
-
-                    sql = "select * from vue_circuit_3";
+                   
+                    sql = "select nom, depart, arrivee, prix from vue_circuit_3 where nom_monument = '" + cbxMonument.Text + "'";
 
                     if (cbxVille.Text != "")
                     {
-                        sql = sql + " where depart = '" + cbxVille.Text + "'";
+                        sql = sql + " and depart = '" + cbxVille.Text + "'";
                     }
                 }
                 
