@@ -18,7 +18,7 @@ namespace TPfinal
         private ConnectionDAL mConnexionDAL;
         private DataSet mDataSetCircuits;
         private DataSet mDataSetMonuments;
-
+        private OracleDataAdapter mOda;
 
         public MainForm()
         {
@@ -28,9 +28,10 @@ namespace TPfinal
 
             mDataSetCircuits = new DataSet();
             mDataSetMonuments = new DataSet();
+            mOda = new OracleDataAdapter();
 
             UpdateData();
-           
+
         }
 
         private void UpdateData()
@@ -43,7 +44,7 @@ namespace TPfinal
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -92,7 +93,7 @@ namespace TPfinal
             try
             {
                 string sql = TrouverSqlPourUpdateDvgCircuit();
-                OracleDataAdapter oda = new OracleDataAdapter(sql, mConnexionDAL.GetConnexion());
+                mOda.SelectCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
 
 
                 //Eviter qu'il se remplisse a l'infini
@@ -102,12 +103,12 @@ namespace TPfinal
                 }
 
                 //Remplir le DataSet
-                oda.Fill(mDataSetCircuits, "listeCircuits");
+                mOda.Fill(mDataSetCircuits, "listeCircuits");
 
                 //Lier dgvCircuits
                 dgvCircuits.DataSource = new BindingSource(mDataSetCircuits, "listeCircuits");
 
-                oda.Dispose();
+                mOda.Dispose();
             }
             catch (Exception ex)
             {
@@ -117,7 +118,7 @@ namespace TPfinal
 
         private string TrouverSqlPourUpdateDvgCircuit()
         {
-            string sql = "select * from vue_circuit_2";
+            string sql = "select * from vue_circuit_5";
             try
             {
                 if (cbxVille.Text != "" && cbxMonument.Text == "")
@@ -131,8 +132,8 @@ namespace TPfinal
                 }
                 else if (cbxMonument.Text != "")
                 {
-                   
-                    sql = "select nom, depart, arrivee, prix from vue_circuit_3 where nom_monument = '" + cbxMonument.Text + "'";
+
+                    sql = "select nom, depart, arrivee, prix from vue_circuit_6 where nom_monument = '" + cbxMonument.Text + "'";
 
                     if (cbxVille.Text != "")
                     {
@@ -151,7 +152,7 @@ namespace TPfinal
                         sql = sql + " where prix <= " + nudPrix.Value;
                     }
                 }
-                
+
 
 
 
@@ -165,7 +166,7 @@ namespace TPfinal
 
         private void UpdateCbxVilleDepart()
         {
-                
+
             try
             {
                 string sql = "select nomville from villes";
@@ -231,11 +232,11 @@ namespace TPfinal
 
         private void nudPrix_ValueChanged(object sender, EventArgs e)
         {
-            if(cbxPrix.Checked)
+            if (cbxPrix.Checked)
             {
                 UpdateDgvCircuits();
             }
-            
+
         }
 
         private void dgvCircuits_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -245,20 +246,20 @@ namespace TPfinal
 
         private void dgvCircuits_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-           
+           
             try
             {
-                if(!dgvCircuits.CurrentRow.IsNewRow)
+                if (!dgvCircuits.CurrentRow.IsNewRow && dgvCircuits.CurrentCellAddress.X == 3)
                 {
                     string sql = "UPDATE circuits SET prix = " + dgvCircuits.CurrentRow.Cells[3].Value + " where nomcircuit = '" + dgvCircuits.CurrentRow.Cells[0].Value.ToString() + "'";
-                    OracleCommand oracleCmd = new OracleCommand(sql, mConnexionDAL.GetConnexion());
-                    oracleCmd.ExecuteNonQuery();
-                  
-                    //Probleme la view update pas
-        
-                }
-                
-                MessageBox.Show("Donnée Éditée avec succès");
+                    OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                    oracleCommand.ExecuteNonQuery();
+                    oracleCommand.Dispose();
+
+                    UpdateDgvCircuits();
+
+                    MessageBox.Show("Donnée Éditée avec succès");
+                }                
             }
             catch (Exception ex)
             {
@@ -319,16 +320,17 @@ namespace TPfinal
 
         private void TABPages_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(tabsControl.SelectedIndex == 0)
+            if (tabsControl.SelectedIndex == 0)
             {
                 Console.Write("Page 1");
 
-            } else if(tabsControl.SelectedIndex == 1)
+            }
+            else if (tabsControl.SelectedIndex == 1)
             {
                 Console.Write("Page 2");
             }
         }
 
-        
+
     }
 }
