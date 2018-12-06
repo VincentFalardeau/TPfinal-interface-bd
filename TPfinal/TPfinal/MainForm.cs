@@ -122,6 +122,11 @@ namespace TPfinal
                 if (cbxVille.Text != "" && cbxMonument.Text == "")
                 {
                     sql = sql + " where depart = '" + cbxVille.Text + "'";
+
+                    if (cbxPrix.Checked)
+                    {
+                        sql = sql + " and prix <= " + nudPrix.Value;
+                    }
                 }
                 else if (cbxMonument.Text != "")
                 {
@@ -132,8 +137,23 @@ namespace TPfinal
                     {
                         sql = sql + " and depart = '" + cbxVille.Text + "'";
                     }
+                    if (cbxPrix.Checked)
+                    {
+                        sql = sql + " and prix <= " + nudPrix.Value;
+                    }
+
+                }
+                else
+                {
+                    if (cbxPrix.Checked)
+                    {
+                        sql = sql + " where prix <= " + nudPrix.Value;
+                    }
                 }
                 
+
+
+
             }
             catch (Exception ex)
             {
@@ -201,6 +221,20 @@ namespace TPfinal
         private void cbxMonument_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateDgvCircuits();
+        }
+
+        private void cbxPrix_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateDgvCircuits();
+        }
+
+        private void nudPrix_ValueChanged(object sender, EventArgs e)
+        {
+            if(cbxPrix.Checked)
+            {
+                UpdateDgvCircuits();
+            }
+            
         }
 
         //--------------------------------------------------------------------------
