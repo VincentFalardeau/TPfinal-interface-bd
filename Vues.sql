@@ -4,7 +4,8 @@
 --Emile Menard
 --
 --Vues
-
+select prix from circuits where nomcircuit = '';
+describe circuits;
 --1
 create view vue_prix_circuit as
 select idcircuit, sum(m.prix) as prix from circuitsmonuments cm 

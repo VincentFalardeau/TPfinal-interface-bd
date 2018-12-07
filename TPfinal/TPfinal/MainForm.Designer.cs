@@ -76,7 +76,7 @@
             // ajouterToolStripMenuItem1
             // 
             this.ajouterToolStripMenuItem1.Name = "ajouterToolStripMenuItem1";
-            this.ajouterToolStripMenuItem1.Size = new System.Drawing.Size(154, 30);
+            this.ajouterToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
             this.ajouterToolStripMenuItem1.Text = "Ajouter";
             // 
             // menuStrip1
@@ -89,7 +89,7 @@
             this.àProposToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(899, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(878, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -107,19 +107,20 @@
             // ajouterToolStripMenuItem
             // 
             this.ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
-            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
+            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.ajouterToolStripMenuItem.Text = "Ajouter";
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.modifierToolStripMenuItem.Text = "Modifier";
+            this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
             // supprimerToolStripMenuItem
             // 
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             // 
             // aideToolStripMenuItem
@@ -265,13 +266,9 @@
             this.dgvCircuits.Location = new System.Drawing.Point(12, 92);
             this.dgvCircuits.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCircuits.Name = "dgvCircuits";
+            this.dgvCircuits.ReadOnly = true;
             this.dgvCircuits.Size = new System.Drawing.Size(813, 452);
             this.dgvCircuits.TabIndex = 9;
-            this.dgvCircuits.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvCircuits_CellBeginEdit);
-            this.dgvCircuits.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCircuits_CellClick);
-            this.dgvCircuits.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCircuits_CellEndEdit);
-            this.dgvCircuits.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvCircuits_CellValidating);
-            this.dgvCircuits.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvCircuits_KeyPress);
             // 
             // groupBox6
             // 
@@ -296,7 +293,7 @@
             // 
             this.tabsControl.Controls.Add(this.TAB_Circuits);
             this.tabsControl.Controls.Add(this.TAB_Monuments);
-            this.tabsControl.Location = new System.Drawing.Point(23, 57);
+            this.tabsControl.Location = new System.Drawing.Point(13, 38);
             this.tabsControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabsControl.Name = "tabsControl";
             this.tabsControl.SelectedIndex = 0;
@@ -319,7 +316,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 674);
+            this.ClientSize = new System.Drawing.Size(878, 656);
             this.Controls.Add(this.tabsControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

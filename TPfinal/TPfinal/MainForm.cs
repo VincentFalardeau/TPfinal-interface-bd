@@ -239,75 +239,33 @@ namespace TPfinal
 
         }
 
-        private void dgvCircuits_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        }
-
-        private void dgvCircuits_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-        {
-            //Premet de valider le prix
-            dgvCircuits.CurrentRow.ErrorText = "";
-            double prix;
-
-            if (!dgvCircuits.CurrentRow.IsNewRow && dgvCircuits.CurrentCellAddress.X == 3)
+            ModifierCircuitForm mcf = new ModifierCircuitForm();
+            if(mcf.ShowDialog() == DialogResult.OK)
             {
-                if (!double.TryParse(e.FormattedValue.ToString(), out prix) || prix <= 50 || prix.ToString().Length > 6)
-                {
-                    e.Cancel = true;
-                    dgvCircuits.CurrentRow.ErrorText = "Erreur, doit être un nombre supérieur ou égal à 50";
-
-                }
+                MessageBox.Show("Prix modifié avec succès!");
+                UpdateCircuit(mcf.mNomCircuit, mcf.mPrix);            
             }
+            
         }
 
-        private void dgvCircuits_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void UpdateCircuit(object nomCircuit, double prix)
         {
             try
             {
-                string nomCircuit = dgvCircuits.CurrentRow.Cells[0].Value.ToString();
+                string sql = "update circuits set prix = " + prix + " where nomcircuit = '" + nomCircuit + "'";
+                OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                oracleCommand.ExecuteNonQuery();
+                oracleCommand.Dispose();
 
-                if (!dgvCircuits.CurrentRow.IsNewRow && dgvCircuits.CurrentCellAddress.X == 3)
-                {
-                    double prix = double.Parse(dgvCircuits.CurrentRow.Cells[3].Value.ToString());
-                    string sql = "UPDATE circuits SET prix = " + prix + " where nomcircuit = '" + nomCircuit + "'";
-                    OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
-                    oracleCommand.ExecuteNonQuery();
-                    oracleCommand.Dispose();
-
-                    MessageBox.Show("Prix édité avec succès");
-
-                    UpdateDgvCircuits();
-                }                
+                UpdateDgvCircuits();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-
         }
-
-        
-
-        private void dgvCircuits_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
-        }
-
-        private void dgvCircuits_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Permet d'éditer seulement le prix
-            if (dgvCircuits.CurrentRow != null)
-            {
-                dgvCircuits.CurrentRow.ReadOnly = true;
-                if (!dgvCircuits.CurrentRow.IsNewRow && dgvCircuits.CurrentCellAddress.X == 3)
-                {
-                    dgvCircuits.CurrentRow.Cells[3].ReadOnly = false;
-                }
-            }
-
-        }
-
-
 
         //--------------------------------------------------------------------------
         //
@@ -372,6 +330,6 @@ namespace TPfinal
             }
         }
 
-        
+       
     }
 }
