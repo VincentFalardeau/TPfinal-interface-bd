@@ -109,7 +109,11 @@ namespace TPfinal
 
                 //Ordonner par etoiles, puis cacher la colonne           
                 dgvCircuits.Sort(dgvCircuits.Columns[4], ListSortDirection.Descending);
-                dgvCircuits.Columns[4].Visible = false;
+                if(cbxMonument.Text != "" || cbxVille.Text != "" || cbxPrix.Checked)
+                {
+                    dgvCircuits.Columns[4].Visible = false;
+                }
+               
 
 
 
