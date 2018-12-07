@@ -239,6 +239,17 @@ namespace TPfinal
 
         }
 
+        private void ajouterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AjouterCircuitForm acf = new AjouterCircuitForm();
+            if (acf.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Circuit ajouté avec succès!");
+                
+            }
+
+        }
+
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ModifierCircuitForm mcf = new ModifierCircuitForm();
@@ -266,6 +277,28 @@ namespace TPfinal
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        //private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+           
+        //}
+
+        //private void DeleteCircuit(object nomCircuit)
+        //{
+        //    try
+        //    {
+        //        string sql = "delete circuits where nomcircuit = '" + nomCircuit + "'";
+        //        OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+        //        oracleCommand.ExecuteNonQuery();
+        //        oracleCommand.Dispose();
+
+        //        UpdateDgvCircuits();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message.ToString());
+        //    }
+        //}
 
         //--------------------------------------------------------------------------
         //
@@ -330,6 +363,6 @@ namespace TPfinal
             }
         }
 
-       
+      
     }
 }

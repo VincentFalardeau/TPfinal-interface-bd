@@ -16,6 +16,7 @@ namespace TPfinal
     {
         public string mNomCircuit;
         public double mPrix;
+
         private ConnectionDAL mConnexionDAL;
         private ValidationProvider mValidationProvider;
         public ModifierCircuitForm()

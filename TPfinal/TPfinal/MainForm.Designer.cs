@@ -41,6 +41,7 @@
             this.dgvMonuments = new System.Windows.Forms.DataGridView();
             this.groupbox10 = new System.Windows.Forms.GroupBox();
             this.cbxStarsMonument = new System.Windows.Forms.CheckBox();
+            this.starsMonument = new EvaluationDemo.Stars();
             this.TAB_Circuits = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbxPrix = new System.Windows.Forms.CheckBox();
@@ -51,7 +52,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cbxVille = new System.Windows.Forms.ComboBox();
             this.tabsControl = new System.Windows.Forms.TabControl();
-            this.starsMonument = new EvaluationDemo.Stars();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonuments)).BeginInit();
@@ -76,7 +76,7 @@
             // ajouterToolStripMenuItem1
             // 
             this.ajouterToolStripMenuItem1.Name = "ajouterToolStripMenuItem1";
-            this.ajouterToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
+            this.ajouterToolStripMenuItem1.Size = new System.Drawing.Size(154, 30);
             this.ajouterToolStripMenuItem1.Text = "Ajouter";
             // 
             // menuStrip1
@@ -107,20 +107,21 @@
             // ajouterToolStripMenuItem
             // 
             this.ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
-            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
             this.ajouterToolStripMenuItem.Text = "Ajouter";
+            this.ajouterToolStripMenuItem.Click += new System.EventHandler(this.ajouterToolStripMenuItem_Click);
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
             this.modifierToolStripMenuItem.Text = "Modifier";
             this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
             // supprimerToolStripMenuItem
             // 
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             // 
             // aideToolStripMenuItem
@@ -179,6 +180,17 @@
             this.cbxStarsMonument.Text = "Activer";
             this.cbxStarsMonument.UseVisualStyleBackColor = true;
             // 
+            // starsMonument
+            // 
+            this.starsMonument.Location = new System.Drawing.Point(21, 22);
+            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
+            this.starsMonument.Name = "starsMonument";
+            this.starsMonument.Size = new System.Drawing.Size(155, 31);
+            this.starsMonument.StarsCount = 5;
+            this.starsMonument.TabIndex = 2;
+            this.starsMonument.Value = 0;
+            // 
             // TAB_Circuits
             // 
             this.TAB_Circuits.Controls.Add(this.groupBox4);
@@ -219,6 +231,11 @@
             // 
             // nudPrix
             // 
+            this.nudPrix.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.nudPrix.Location = new System.Drawing.Point(21, 26);
             this.nudPrix.Maximum = new decimal(new int[] {
             10000,
@@ -300,17 +317,6 @@
             this.tabsControl.Size = new System.Drawing.Size(854, 603);
             this.tabsControl.TabIndex = 10;
             this.tabsControl.SelectedIndexChanged += new System.EventHandler(this.TABPages_SelectedIndexChanged);
-            // 
-            // starsMonument
-            // 
-            this.starsMonument.Location = new System.Drawing.Point(21, 22);
-            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
-            this.starsMonument.Name = "starsMonument";
-            this.starsMonument.Size = new System.Drawing.Size(155, 31);
-            this.starsMonument.StarsCount = 5;
-            this.starsMonument.TabIndex = 2;
-            this.starsMonument.Value = 0;
             // 
             // MainForm
             // 
