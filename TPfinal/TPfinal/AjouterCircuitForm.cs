@@ -30,8 +30,6 @@ namespace TPfinal
         {
             InitializeComponent();
 
-            mListeMonuments = new List<string>();
-
             mValidationProvider = new ValidationProvider(this);
             InitValidationProvider();
 
@@ -259,7 +257,9 @@ namespace TPfinal
 
         private void FormToDialog()
         {
-            if(tbxPrix.Text != "")
+            mListeMonuments = new List<string>();
+
+            if (tbxPrix.Text != "")
             {
                 mNom = tbxNom.Text;
                 mVilleDepart = cbxDepart.Text;

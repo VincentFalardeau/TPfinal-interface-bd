@@ -244,8 +244,9 @@ namespace TPfinal
             AjouterCircuitForm acf = new AjouterCircuitForm();
             if (acf.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Circuit ajouté avec succès!");
+               
                 AjouterCircuit(acf.mNom, acf.mVilleDepart, acf.mVilleArrivee, acf.mPrix, acf.mListeMonuments);
+                MessageBox.Show("Circuit ajouté avec succès!");
             }
 
         }
@@ -358,27 +359,14 @@ namespace TPfinal
             }
         }
 
-        //private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-           
-        //}
+        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SupprimerCircuitForm scf = new SupprimerCircuitForm();
+            scf.ShowDialog();
+            UpdateDgvCircuits();
+        }
 
-        //private void DeleteCircuit(object nomCircuit)
-        //{
-        //    try
-        //    {
-        //        string sql = "delete circuits where nomcircuit = '" + nomCircuit + "'";
-        //        OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
-        //        oracleCommand.ExecuteNonQuery();
-        //        oracleCommand.Dispose();
-
-        //        UpdateDgvCircuits();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message.ToString());
-        //    }
-        //}
+       
 
         //--------------------------------------------------------------------------
         //

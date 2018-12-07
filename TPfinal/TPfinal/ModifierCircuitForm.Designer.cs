@@ -41,7 +41,7 @@
             // tbxNvPrix
             // 
             this.tbxNvPrix.Location = new System.Drawing.Point(118, 98);
-            this.tbxNvPrix.MaxLength = 8;
+            this.tbxNvPrix.MaxLength = 6;
             this.tbxNvPrix.Name = "tbxNvPrix";
             this.tbxNvPrix.Size = new System.Drawing.Size(135, 26);
             this.tbxNvPrix.TabIndex = 0;

@@ -16,7 +16,6 @@ CREATE TABLE circuits (
     nbclientsmax       NUMBER(4)
 );
 
-
 ALTER TABLE circuits ADD CONSTRAINT circuits_pk PRIMARY KEY ( idcircuit );
 ALTER TABLE circuits ADD CONSTRAINT circuits__un UNIQUE ( nomcircuit );
 ALTER TABLE circuits ADD CONSTRAINT circuits_prix_ck CHECK ( prix >= 50);
@@ -75,11 +74,11 @@ ALTER TABLE villes ADD CONSTRAINT villes_pk PRIMARY KEY ( codeville );
 
 ALTER TABLE circuitsmonuments
     ADD CONSTRAINT circuitmonument_circuits_fk FOREIGN KEY ( idcircuit )
-        REFERENCES circuits ( idcircuit );
+        REFERENCES circuits ( idcircuit ) ON DELETE CASCADE;
 
 ALTER TABLE circuitsmonuments
     ADD CONSTRAINT circuitmonument_monuments_fk FOREIGN KEY ( idmonument )
-        REFERENCES monuments ( idmonument );
+        REFERENCES monuments ( idmonument ) ON DELETE CASCADE;
 
 ALTER TABLE circuits
     ADD CONSTRAINT circuits_villes_fk FOREIGN KEY ( codevilledépart )

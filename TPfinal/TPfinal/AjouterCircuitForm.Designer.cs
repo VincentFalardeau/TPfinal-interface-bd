@@ -41,9 +41,9 @@
             this.lblPrix = new System.Windows.Forms.Label();
             this.lbxMonuments = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.cbxMonuments = new System.Windows.Forms.ComboBox();
             this.fbtnEffacerMonument = new PhotoManagerClient.FlashButton();
             this.fbtnAjouterMonument = new PhotoManagerClient.FlashButton();
-            this.cbxMonuments = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // tbxNom
@@ -122,7 +122,7 @@
             // tbxPrix
             // 
             this.tbxPrix.Location = new System.Drawing.Point(147, 112);
-            this.tbxPrix.MaxLength = 8;
+            this.tbxPrix.MaxLength = 6;
             this.tbxPrix.Name = "tbxPrix";
             this.tbxPrix.Size = new System.Drawing.Size(237, 26);
             this.tbxPrix.TabIndex = 16;
@@ -154,6 +154,15 @@
             this.label5.Size = new System.Drawing.Size(93, 20);
             this.label5.TabIndex = 20;
             this.label5.Text = "Monuments";
+            // 
+            // cbxMonuments
+            // 
+            this.cbxMonuments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMonuments.FormattingEnabled = true;
+            this.cbxMonuments.Location = new System.Drawing.Point(147, 144);
+            this.cbxMonuments.Name = "cbxMonuments";
+            this.cbxMonuments.Size = new System.Drawing.Size(237, 28);
+            this.cbxMonuments.TabIndex = 21;
             // 
             // fbtnEffacerMonument
             // 
@@ -188,15 +197,6 @@
             this.fbtnAjouterMonument.Text = "flashButton1";
             this.fbtnAjouterMonument.UseVisualStyleBackColor = true;
             this.fbtnAjouterMonument.Click += new System.EventHandler(this.fbtnAjouterMonument_Click);
-            // 
-            // cbxMonuments
-            // 
-            this.cbxMonuments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMonuments.FormattingEnabled = true;
-            this.cbxMonuments.Location = new System.Drawing.Point(147, 144);
-            this.cbxMonuments.Name = "cbxMonuments";
-            this.cbxMonuments.Size = new System.Drawing.Size(237, 28);
-            this.cbxMonuments.TabIndex = 21;
             // 
             // AjouterCircuitForm
             // 
