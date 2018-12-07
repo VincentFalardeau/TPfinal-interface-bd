@@ -79,5 +79,32 @@ namespace TPfinal
         {
             this.Close();
         }
+
+        private void lbxMonuments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateRtbInfos();
+        }
+
+        private void UpdateRtbInfos()
+        {
+            try
+            {
+                string sql = "select nom, prix, dateconstruction, histoire, etoiles from monuments where nom = '" + lbxMonuments.Text + "'";
+                OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                OracleDataReader oracleDataReader = oracleCommand.ExecuteReader();
+
+                oracleDataReader.Read();
+                rtbInfos.Text = lbxMonuments.SelectedIndex + 1 + " " + oracleDataReader.GetString(0) + " - " + oracleDataReader.GetDouble(1) + "$" + "\n";
+                rtbInfos.Text += "Construit le " + oracleDataReader.GetDateTime(2).ToShortDateString() + "\n";
+                rtbInfos.Text += oracleDataReader.GetString(3);
+                starsMonument.Value = Int32.Parse(oracleDataReader.GetDecimal(4).ToString());
+
+               oracleDataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
     }
 }
