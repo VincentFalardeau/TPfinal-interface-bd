@@ -97,7 +97,6 @@ namespace TPfinal
 
 
                 //Eviter qu'il se remplisse a l'infini
-                if (mDataSetCircuits.Tables.Contains("listeCircuits"))
                 {
                     mDataSetCircuits.Tables["listeCircuits"].Clear();
                 }
@@ -107,6 +106,12 @@ namespace TPfinal
 
                 //Lier dgvCircuits
                 dgvCircuits.DataSource = new BindingSource(mDataSetCircuits, "listeCircuits");
+
+                //Ordonner par etoiles, puis cacher la colonne           
+                dgvCircuits.Sort(dgvCircuits.Columns[4], ListSortDirection.Descending);
+                dgvCircuits.Columns[4].Visible = false;
+
+
 
                 mOda.Dispose();
             }
@@ -118,7 +123,7 @@ namespace TPfinal
 
         private string TrouverSqlPourUpdateDvgCircuit()
         {
-            string sql = "select * from vue_circuit_5";
+            string sql = "select * from officiel_vue_circuit_2";
             try
             {
                 if (cbxVille.Text != "" && cbxMonument.Text == "")
@@ -401,6 +406,11 @@ namespace TPfinal
             VoirInfos();
         }
 
+        private void voirInformationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VoirInfos();
+        }
+
         private void VoirInfos()
         {
             InformationsCircuitForm icf = new InformationsCircuitForm();
@@ -471,6 +481,6 @@ namespace TPfinal
             }
         }
 
-        
+       
     }
 }

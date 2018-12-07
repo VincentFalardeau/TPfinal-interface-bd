@@ -39,8 +39,6 @@ inner join villes v2 on c.codevillearrivée = v2.codeville
 inner join circuitsmonuments cm2 on cm.idcircuit = cm2.idcircuit
 inner join monuments m2 on m2.idmonument = cm2.idmonument;
 
-
-
 create view vue_circuit_5 as
 select c.nomcircuit as nom, 
 v.nomville as depart, 
@@ -69,5 +67,42 @@ select m.nom as nom, c.nomcircuit as nomcircuit from monuments m
 inner join circuitsmonuments cm on m.idmonument = cm.idmonument
 inner join circuits c on c.idcircuit = cm.idcircuit;
 
+
+
+
+create view vue_etoiles_circuit as
+select idcircuit, avg(m.etoiles) as etoiles from circuitsmonuments cm 
+inner join monuments m on m.idmonument = cm.idmonument
+group by cm.idcircuit;
+
+create view officiel_vue_circuit as
+select m2.nom as nom_monument,
+c.nomcircuit as nom, 
+v.nomville as depart, 
+v2.nomville as arrivee, 
+cm.prix as prix,
+ec.etoiles as etoiles from vue_prix_circuit_2 cm
+inner join  vue_etoiles_circuit ec on ec.idcircuit = cm.idcircuit
+inner join circuits c on c.idcircuit = cm.idcircuit
+inner join villes v on c.codevilledépart = v.codeville
+inner join villes v2 on c.codevillearrivée = v2.codeville
+inner join circuitsmonuments cm2 on cm.idcircuit = cm2.idcircuit
+inner join monuments m2 on m2.idmonument = cm2.idmonument;
+
+
+create view vue_etoiles_prix_circuit as
+select idcircuit, avg(m.etoiles) as etoiles, sum(m.prix) as prix  from circuitsmonuments cm 
+inner join monuments m on m.idmonument = cm.idmonument
+group by cm.idcircuit;
+
+create view officiel_vue_circuit_2 as
+select c.nomcircuit as nom, 
+v.nomville as depart, 
+v2.nomville as arrivee, 
+cm.prix as prix,
+cm.etoiles as etoiles from vue_etoiles_prix_circuit cm 
+inner join circuits c on c.idcircuit = cm.idcircuit
+inner join villes v on c.codevilledépart = v.codeville
+inner join villes v2 on c.codevillearrivée = v2.codeville;
 
 

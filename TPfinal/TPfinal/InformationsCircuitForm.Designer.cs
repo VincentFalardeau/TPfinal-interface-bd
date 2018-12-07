@@ -87,9 +87,9 @@
             // 
             // pbxMonument
             // 
-            this.pbxMonument.Location = new System.Drawing.Point(259, 32);
+            this.pbxMonument.Location = new System.Drawing.Point(259, 26);
             this.pbxMonument.Name = "pbxMonument";
-            this.pbxMonument.Size = new System.Drawing.Size(214, 198);
+            this.pbxMonument.Size = new System.Drawing.Size(214, 204);
             this.pbxMonument.TabIndex = 11;
             this.pbxMonument.TabStop = false;
             // 

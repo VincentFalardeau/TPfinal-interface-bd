@@ -36,6 +36,7 @@
             this.ajouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voirInformationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.àProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TAB_Monuments = new System.Windows.Forms.TabPage();
@@ -104,7 +105,8 @@
             this.circuitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ajouterToolStripMenuItem,
             this.modifierToolStripMenuItem,
-            this.supprimerToolStripMenuItem});
+            this.supprimerToolStripMenuItem,
+            this.voirInformationsToolStripMenuItem});
             this.circuitToolStripMenuItem.Name = "circuitToolStripMenuItem";
             this.circuitToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
             this.circuitToolStripMenuItem.Text = "Circuit";
@@ -112,23 +114,30 @@
             // ajouterToolStripMenuItem
             // 
             this.ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
-            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
+            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(233, 30);
             this.ajouterToolStripMenuItem.Text = "Ajouter";
             this.ajouterToolStripMenuItem.Click += new System.EventHandler(this.ajouterToolStripMenuItem_Click);
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(233, 30);
             this.modifierToolStripMenuItem.Text = "Modifier";
             this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
             // supprimerToolStripMenuItem
             // 
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(233, 30);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
+            // 
+            // voirInformationsToolStripMenuItem
+            // 
+            this.voirInformationsToolStripMenuItem.Name = "voirInformationsToolStripMenuItem";
+            this.voirInformationsToolStripMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.voirInformationsToolStripMenuItem.Text = "Voir informations";
+            this.voirInformationsToolStripMenuItem.Click += new System.EventHandler(this.voirInformationsToolStripMenuItem_Click);
             // 
             // aideToolStripMenuItem
             // 
@@ -286,8 +295,11 @@
             // 
             this.dgvCircuits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCircuits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCircuits.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvCircuits.Enabled = false;
             this.dgvCircuits.Location = new System.Drawing.Point(12, 92);
             this.dgvCircuits.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvCircuits.MultiSelect = false;
             this.dgvCircuits.Name = "dgvCircuits";
             this.dgvCircuits.ReadOnly = true;
             this.dgvCircuits.Size = new System.Drawing.Size(813, 452);
@@ -460,6 +472,7 @@
         private PhotoManagerClient.FlashButton fbtnModifier;
         private PhotoManagerClient.FlashButton fbtnEffacer;
         private PhotoManagerClient.FlashButton fbtnInformations;
+        private System.Windows.Forms.ToolStripMenuItem voirInformationsToolStripMenuItem;
     }
 }
 
