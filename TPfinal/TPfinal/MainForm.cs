@@ -243,30 +243,71 @@ namespace TPfinal
         {
         }
 
+        private void dgvCircuits_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            //Premet de valider le prix
+            dgvCircuits.CurrentRow.ErrorText = "";
+            double prix;
+
+            if (!dgvCircuits.CurrentRow.IsNewRow && dgvCircuits.CurrentCellAddress.X == 3)
+            {
+                if (!double.TryParse(e.FormattedValue.ToString(), out prix) || prix <= 50 || prix.ToString().Length > 6)
+                {
+                    e.Cancel = true;
+                    dgvCircuits.CurrentRow.ErrorText = "Erreur, doit être un nombre supérieur ou égal à 50";
+
+                }
+            }
+        }
 
         private void dgvCircuits_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-           
             try
             {
+                string nomCircuit = dgvCircuits.CurrentRow.Cells[0].Value.ToString();
+
                 if (!dgvCircuits.CurrentRow.IsNewRow && dgvCircuits.CurrentCellAddress.X == 3)
                 {
-                    string sql = "UPDATE circuits SET prix = " + dgvCircuits.CurrentRow.Cells[3].Value + " where nomcircuit = '" + dgvCircuits.CurrentRow.Cells[0].Value.ToString() + "'";
+                    double prix = double.Parse(dgvCircuits.CurrentRow.Cells[3].Value.ToString());
+                    string sql = "UPDATE circuits SET prix = " + prix + " where nomcircuit = '" + nomCircuit + "'";
                     OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
                     oracleCommand.ExecuteNonQuery();
                     oracleCommand.Dispose();
 
-                    UpdateDgvCircuits();
+                    MessageBox.Show("Prix édité avec succès");
 
-                    MessageBox.Show("Donnée Éditée avec succès");
+                    UpdateDgvCircuits();
                 }                
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message.ToString());
             }
 
         }
+
+        
+
+        private void dgvCircuits_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void dgvCircuits_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Permet d'éditer seulement le prix
+            if (dgvCircuits.CurrentRow != null)
+            {
+                dgvCircuits.CurrentRow.ReadOnly = true;
+                if (!dgvCircuits.CurrentRow.IsNewRow && dgvCircuits.CurrentCellAddress.X == 3)
+                {
+                    dgvCircuits.CurrentRow.Cells[3].ReadOnly = false;
+                }
+            }
+
+        }
+
+
 
         //--------------------------------------------------------------------------
         //
@@ -331,6 +372,6 @@ namespace TPfinal
             }
         }
 
-
+        
     }
 }
