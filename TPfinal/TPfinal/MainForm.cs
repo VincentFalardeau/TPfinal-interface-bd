@@ -97,6 +97,7 @@ namespace TPfinal
 
 
                 //Eviter qu'il se remplisse a l'infini
+                if (mDataSetCircuits.Tables.Contains("listeCircuits"))
                 {
                     mDataSetCircuits.Tables["listeCircuits"].Clear();
                 }
@@ -113,9 +114,6 @@ namespace TPfinal
                 {
                     dgvCircuits.Columns[4].Visible = false;
                 }
-               
-
-
 
                 mOda.Dispose();
             }
