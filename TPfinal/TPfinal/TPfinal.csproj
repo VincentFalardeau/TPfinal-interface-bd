@@ -87,6 +87,12 @@
     <Compile Include="Controls\WaitSplash.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="InformationsCircuitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformationsCircuitForm.Designer.cs">
+      <DependentUpon>InformationsCircuitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Circuits.resx">
       <DependentUpon>Circuits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformationsCircuitForm.resx">
+      <DependentUpon>InformationsCircuitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

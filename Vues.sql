@@ -63,7 +63,11 @@ inner join monuments m2 on m2.idmonument = cm.idmonument;
 create view vue_monument_1 as
 select m.nom as nom
 from monuments m;
-
+driop view vue_circuit_monument_1;
+create view vue_circuit_monument_1 as
+select m.nom as nom, c.nomcircuit as nomcircuit from monuments m
+inner join circuitsmonuments cm on m.idmonument = cm.idmonument
+inner join circuits c on c.idcircuit = cm.idcircuit;
 
 
 

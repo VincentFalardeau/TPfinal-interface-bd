@@ -239,16 +239,25 @@ namespace TPfinal
 
         }
 
+        private void fbtnAjouter_Click(object sender, EventArgs e)
+        {
+            Ajouter();
+        }
+
         private void ajouterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ajouter();
+        }
+
+        private void Ajouter()
         {
             AjouterCircuitForm acf = new AjouterCircuitForm();
             if (acf.ShowDialog() == DialogResult.OK)
             {
-               
+
                 AjouterCircuit(acf.mNom, acf.mVilleDepart, acf.mVilleArrivee, acf.mPrix, acf.mListeMonuments);
                 MessageBox.Show("Circuit ajouté avec succès!");
             }
-
         }
 
         private void AjouterCircuit(string nom, string villeDepart, string villeArrivee, double prix, List<string> listeMonuments)
@@ -329,18 +338,29 @@ namespace TPfinal
             return id;
         }
 
-        
+        private void fbtnModifier_Click(object sender, EventArgs e)
+        {
+            Modifier();
+        }
 
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Modifier();
+
+
+        }
+
+        private void Modifier()
+        {
             ModifierCircuitForm mcf = new ModifierCircuitForm();
-            if(mcf.ShowDialog() == DialogResult.OK)
+            if (mcf.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Prix modifié avec succès!");
-                UpdateCircuit(mcf.mNomCircuit, mcf.mPrix);            
+                UpdateCircuit(mcf.mNomCircuit, mcf.mPrix);
             }
-            
         }
+
+        
 
         private void UpdateCircuit(object nomCircuit, double prix)
         {
@@ -361,12 +381,32 @@ namespace TPfinal
 
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Supprimer();
+        }
+
+        private void fbtnEffacer_Click(object sender, EventArgs e)
+        {
+            Supprimer();
+        }
+
+        private void Supprimer()
+        {
             SupprimerCircuitForm scf = new SupprimerCircuitForm();
             scf.ShowDialog();
             UpdateDgvCircuits();
         }
 
-       
+        private void fbtnInformations_Click(object sender, EventArgs e)
+        {
+            VoirInfos();
+        }
+
+        private void VoirInfos()
+        {
+            InformationsCircuitForm icf = new InformationsCircuitForm();
+            icf.ShowDialog();
+        }
+
 
         //--------------------------------------------------------------------------
         //
@@ -431,6 +471,6 @@ namespace TPfinal
             }
         }
 
-      
+        
     }
 }

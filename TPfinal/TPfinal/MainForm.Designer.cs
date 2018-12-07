@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.monumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -52,6 +53,10 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cbxVille = new System.Windows.Forms.ComboBox();
             this.tabsControl = new System.Windows.Forms.TabControl();
+            this.fbtnInformations = new PhotoManagerClient.FlashButton();
+            this.fbtnEffacer = new PhotoManagerClient.FlashButton();
+            this.fbtnModifier = new PhotoManagerClient.FlashButton();
+            this.fbtnAjouter = new PhotoManagerClient.FlashButton();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonuments)).BeginInit();
@@ -89,7 +94,7 @@
             this.àProposToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(878, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(965, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -107,21 +112,21 @@
             // ajouterToolStripMenuItem
             // 
             this.ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
-            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
             this.ajouterToolStripMenuItem.Text = "Ajouter";
             this.ajouterToolStripMenuItem.Click += new System.EventHandler(this.ajouterToolStripMenuItem_Click);
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
             this.modifierToolStripMenuItem.Text = "Modifier";
             this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
             // supprimerToolStripMenuItem
             // 
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
@@ -311,7 +316,7 @@
             // 
             this.tabsControl.Controls.Add(this.TAB_Circuits);
             this.tabsControl.Controls.Add(this.TAB_Monuments);
-            this.tabsControl.Location = new System.Drawing.Point(13, 38);
+            this.tabsControl.Location = new System.Drawing.Point(85, 50);
             this.tabsControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabsControl.Name = "tabsControl";
             this.tabsControl.SelectedIndex = 0;
@@ -319,11 +324,83 @@
             this.tabsControl.TabIndex = 10;
             this.tabsControl.SelectedIndexChanged += new System.EventHandler(this.TABPages_SelectedIndexChanged);
             // 
+            // fbtnInformations
+            // 
+            this.fbtnInformations.BackgroundImage = global::TPfinal.Properties.Resources.Eye;
+            this.fbtnInformations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.fbtnInformations.ClickedImage = null;
+            this.fbtnInformations.DisabledImage = null;
+            this.fbtnInformations.Image = ((System.Drawing.Image)(resources.GetObject("fbtnInformations.Image")));
+            this.fbtnInformations.Location = new System.Drawing.Point(12, 265);
+            this.fbtnInformations.Name = "fbtnInformations";
+            this.fbtnInformations.NeutralImage = null;
+            this.fbtnInformations.OverImage = null;
+            this.fbtnInformations.Size = new System.Drawing.Size(66, 66);
+            this.fbtnInformations.TabIndex = 14;
+            this.fbtnInformations.Text = "Voir les informations";
+            this.fbtnInformations.UseVisualStyleBackColor = true;
+            this.fbtnInformations.Click += new System.EventHandler(this.fbtnInformations_Click);
+            // 
+            // fbtnEffacer
+            // 
+            this.fbtnEffacer.BackgroundImage = global::TPfinal.Properties.Resources.trash;
+            this.fbtnEffacer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.fbtnEffacer.ClickedImage = null;
+            this.fbtnEffacer.DisabledImage = null;
+            this.fbtnEffacer.Image = ((System.Drawing.Image)(resources.GetObject("fbtnEffacer.Image")));
+            this.fbtnEffacer.Location = new System.Drawing.Point(12, 193);
+            this.fbtnEffacer.Name = "fbtnEffacer";
+            this.fbtnEffacer.NeutralImage = null;
+            this.fbtnEffacer.OverImage = null;
+            this.fbtnEffacer.Size = new System.Drawing.Size(66, 66);
+            this.fbtnEffacer.TabIndex = 13;
+            this.fbtnEffacer.Text = "Effacer un circuit";
+            this.fbtnEffacer.UseVisualStyleBackColor = true;
+            this.fbtnEffacer.Click += new System.EventHandler(this.fbtnEffacer_Click);
+            // 
+            // fbtnModifier
+            // 
+            this.fbtnModifier.BackgroundImage = global::TPfinal.Properties.Resources.edit;
+            this.fbtnModifier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.fbtnModifier.ClickedImage = null;
+            this.fbtnModifier.DisabledImage = null;
+            this.fbtnModifier.Image = ((System.Drawing.Image)(resources.GetObject("fbtnModifier.Image")));
+            this.fbtnModifier.Location = new System.Drawing.Point(12, 121);
+            this.fbtnModifier.Name = "fbtnModifier";
+            this.fbtnModifier.NeutralImage = null;
+            this.fbtnModifier.OverImage = null;
+            this.fbtnModifier.Size = new System.Drawing.Size(66, 66);
+            this.fbtnModifier.TabIndex = 12;
+            this.fbtnModifier.Text = "Modifier un circuit";
+            this.fbtnModifier.UseVisualStyleBackColor = true;
+            this.fbtnModifier.Click += new System.EventHandler(this.fbtnModifier_Click);
+            // 
+            // fbtnAjouter
+            // 
+            this.fbtnAjouter.BackgroundImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Neutral;
+            this.fbtnAjouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.fbtnAjouter.ClickedImage = null;
+            this.fbtnAjouter.DisabledImage = null;
+            this.fbtnAjouter.Image = ((System.Drawing.Image)(resources.GetObject("fbtnAjouter.Image")));
+            this.fbtnAjouter.Location = new System.Drawing.Point(12, 50);
+            this.fbtnAjouter.Name = "fbtnAjouter";
+            this.fbtnAjouter.NeutralImage = null;
+            this.fbtnAjouter.OverImage = null;
+            this.fbtnAjouter.Size = new System.Drawing.Size(66, 66);
+            this.fbtnAjouter.TabIndex = 11;
+            this.fbtnAjouter.Text = "Ajouter un circuit";
+            this.fbtnAjouter.UseVisualStyleBackColor = true;
+            this.fbtnAjouter.Click += new System.EventHandler(this.fbtnAjouter_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 656);
+            this.ClientSize = new System.Drawing.Size(965, 664);
+            this.Controls.Add(this.fbtnInformations);
+            this.Controls.Add(this.fbtnEffacer);
+            this.Controls.Add(this.fbtnModifier);
+            this.Controls.Add(this.fbtnAjouter);
             this.Controls.Add(this.tabsControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -379,6 +456,10 @@
         private System.Windows.Forms.ToolStripMenuItem ajouterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
+        private PhotoManagerClient.FlashButton fbtnAjouter;
+        private PhotoManagerClient.FlashButton fbtnModifier;
+        private PhotoManagerClient.FlashButton fbtnEffacer;
+        private PhotoManagerClient.FlashButton fbtnInformations;
     }
 }
 
