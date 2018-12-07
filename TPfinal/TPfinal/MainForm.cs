@@ -245,10 +245,90 @@ namespace TPfinal
             if (acf.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Circuit ajouté avec succès!");
-                
+                AjouterCircuit(acf.mNom, acf.mVilleDepart, acf.mVilleArrivee, acf.mPrix, acf.mListeMonuments);
             }
 
         }
+
+        private void AjouterCircuit(string nom, string villeDepart, string villeArrivee, double prix, List<string> listeMonuments)
+        {
+            try
+            {
+                //Creation du circuits
+                int idVilleDepart = ObtenirIdVille(villeDepart);
+                int idVilleArrivee = ObtenirIdVille(villeArrivee);
+
+                string sql = "insert into circuits values (sqCircuits.nextval, "+ idVilleDepart + ", " + idVilleArrivee + ", " + nom +", " + prix + ", " + 1 + ", " + 1 + ")";
+                OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                oracleCommand.ExecuteNonQuery();
+
+                int i = 1;
+                int idmonument;
+                //Creation des enregistrements dans circuits_monuments
+                foreach (string nommonument in listeMonuments)
+                {
+                    idmonument = ObtenirIdMonument(nommonument);
+                    sql = "insert into circuitsmonuments values (" + idmonument + ", sqCircuits.currval, " + i + ")";
+                    oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                    oracleCommand.ExecuteNonQuery();
+                    i++;
+                }
+
+                UpdateDgvCircuits();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        
+
+        private int ObtenirIdVille(string nomVille)
+        {
+            int id = 0;
+            try
+            {
+                string sql = "select codeville from villes where nomville = '"+ nomVille  + "'";
+                OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                OracleDataReader oracleDataReader = oracleCommand.ExecuteReader();
+
+                oracleDataReader.Read();
+                id = Int32.Parse(oracleDataReader.GetString(0));
+
+                oracleDataReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            return id;
+        }
+
+        private int ObtenirIdMonument(string nommonument)
+        {
+            int id = 0;
+            try
+            {
+                string sql = "select idmonument from monuments where nom = '" + nommonument + "'";
+                OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                OracleDataReader oracleDataReader = oracleCommand.ExecuteReader();
+
+                oracleDataReader.Read();
+                id = Int32.Parse(oracleDataReader.GetDecimal(0).ToString());
+
+                oracleDataReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            return id;
+        }
+
+        
 
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {

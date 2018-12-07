@@ -63,7 +63,7 @@ CREATE TABLE reservations (
 
 ALTER TABLE reservations ADD CONSTRAINT reservations_pk PRIMARY KEY ( idreservation );
 ALTER TABLE reservations ADD CONSTRAINT idreservation_un UNIQUE ( idreservation );
-
+describe monuments;
 CREATE TABLE villes (
     codeville     CHAR(3) NOT NULL,
     nomville      VARCHAR2(30),

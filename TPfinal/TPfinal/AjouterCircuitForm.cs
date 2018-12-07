@@ -30,12 +30,16 @@ namespace TPfinal
         {
             InitializeComponent();
 
+            mListeMonuments = new List<string>();
+
             mValidationProvider = new ValidationProvider(this);
             InitValidationProvider();
 
             mConnexionDAL = ConnectionDAL.GetInstance();
 
             LoadListeNoms();
+            InitCbxDepartArrivee();
+            InitListToutMonuments();
         }
 
        
@@ -44,7 +48,11 @@ namespace TPfinal
         {
             mValidationProvider.AddControlToValidate(tbxPrix, tbxPrix_Valider);
             mValidationProvider.AddControlToValidate(tbxNom, tbxNom_Valider);
+            mValidationProvider.AddControlToValidate(lbxMonuments, lbxMonuments_Valider);
+
         }
+
+       
 
         //--------------------------------------------------------------------------
         //
@@ -56,7 +64,7 @@ namespace TPfinal
         {
             message = "Ce nom existe déjà";
 
-            if (tbxPrix.Text == "")
+            if (tbxNom.Text == "")
             {
                 message = "Il doit y avoir un nom";
             }
@@ -91,6 +99,41 @@ namespace TPfinal
                 {
                     mListeNoms.Add(oracleDataReader.GetString(0));
                 }
+
+                oracleDataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        //--------------------------------------------------------------------------
+        //
+        //Depart / Arrivee
+        //
+        //--------------------------------------------------------------------------
+
+        private void InitCbxDepartArrivee()
+        {
+
+            try
+            {
+                string sql = "select nomville from villes";
+                OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                OracleDataReader oracleDataReader = oracleCommand.ExecuteReader();
+
+                string ville = "";
+
+                while (oracleDataReader.Read())
+                {
+                    ville = oracleDataReader.GetString(0);
+                    cbxDepart.Items.Add(ville);
+                    cbxArrivee.Items.Add(ville);
+                }
+
+                cbxDepart.SelectedIndex = 0;
+                cbxArrivee.SelectedIndex = 0;
 
                 oracleDataReader.Close();
             }
@@ -146,6 +189,88 @@ namespace TPfinal
                     e.Handled = e.KeyChar != '.' || indexPoint != -1 || tbxPrix.Text.Length == 0 || tbxPrix.SelectionStart + 2 < tbxPrix.Text.Length;
                 }
             }
+        }
+
+        //--------------------------------------------------------------------------
+        //
+        //Monuments
+        //
+        //--------------------------------------------------------------------------
+        private void InitListToutMonuments()
+        {
+            try
+            {
+               
+                string sql = "select nom from monuments";
+                OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                OracleDataReader oracleDataReader = oracleCommand.ExecuteReader();
+
+                while (oracleDataReader.Read())
+                {
+                    cbxMonuments.Items.Add(oracleDataReader.GetString(0));
+                }
+
+                oracleDataReader.Close();
+
+                if (cbxMonuments.Items.Count > 0)
+                {
+                    cbxMonuments.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private bool lbxMonuments_Valider(ref string message)
+        {
+            message = "Un circuit doit comporter minimalement un monument";
+            return lbxMonuments.Items.Count > 0;
+        }
+
+        private void fbtnAjouterMonument_Click(object sender, EventArgs e)
+        {
+            AjouterMonument();
+        }
+
+        private void AjouterMonument()
+        {
+            lbxMonuments.Items.Add(cbxMonuments.Text);
+            cbxMonuments.Items.Remove(cbxMonuments.SelectedItem);
+            if(cbxMonuments.Items.Count > 0)
+            {
+                cbxMonuments.SelectedIndex = 0;
+            }
+           
+        }
+
+        private void fbtnEffacerMonument_Click(object sender, EventArgs e)
+        {
+            cbxMonuments.Items.Add(lbxMonuments.Text);
+            lbxMonuments.Items.Remove(lbxMonuments.SelectedItem);
+            
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            FormToDialog();
+        }
+
+        private void FormToDialog()
+        {
+            if(tbxPrix.Text != "")
+            {
+                mNom = tbxNom.Text;
+                mVilleDepart = cbxDepart.Text;
+                mVilleArrivee = cbxArrivee.Text;
+                mPrix = Double.Parse(tbxPrix.Text);
+                foreach (string monument in lbxMonuments.Items)
+                {
+                    mListeMonuments.Add(monument);
+                }
+            }
+           
         }
     }
 }

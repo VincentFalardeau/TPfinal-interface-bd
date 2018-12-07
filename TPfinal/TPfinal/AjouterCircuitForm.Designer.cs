@@ -35,8 +35,6 @@
             this.cbxArrivee = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbxVosMonuments = new System.Windows.Forms.ListBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.tbxPrix = new System.Windows.Forms.TextBox();
@@ -45,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.fbtnEffacerMonument = new PhotoManagerClient.FlashButton();
             this.fbtnAjouterMonument = new PhotoManagerClient.FlashButton();
+            this.cbxMonuments = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // tbxNom
@@ -99,28 +98,10 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Ville d\'arrivée";
             // 
-            // lbxVosMonuments
-            // 
-            this.lbxVosMonuments.FormattingEnabled = true;
-            this.lbxVosMonuments.ItemHeight = 20;
-            this.lbxVosMonuments.Location = new System.Drawing.Point(147, 300);
-            this.lbxVosMonuments.Name = "lbxVosMonuments";
-            this.lbxVosMonuments.Size = new System.Drawing.Size(237, 104);
-            this.lbxVosMonuments.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 300);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Vos monuments";
-            // 
             // btnAnnuler
             // 
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnuler.Location = new System.Drawing.Point(273, 410);
+            this.btnAnnuler.Location = new System.Drawing.Point(273, 288);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(111, 34);
             this.btnAnnuler.TabIndex = 15;
@@ -130,12 +111,13 @@
             // btnAjouter
             // 
             this.btnAjouter.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAjouter.Location = new System.Drawing.Point(147, 410);
+            this.btnAjouter.Location = new System.Drawing.Point(147, 288);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(111, 34);
             this.btnAjouter.TabIndex = 14;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // tbxPrix
             // 
@@ -159,7 +141,7 @@
             // 
             this.lbxMonuments.FormattingEnabled = true;
             this.lbxMonuments.ItemHeight = 20;
-            this.lbxMonuments.Location = new System.Drawing.Point(147, 144);
+            this.lbxMonuments.Location = new System.Drawing.Point(147, 178);
             this.lbxMonuments.Name = "lbxMonuments";
             this.lbxMonuments.Size = new System.Drawing.Size(237, 104);
             this.lbxMonuments.TabIndex = 19;
@@ -167,11 +149,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 144);
+            this.label5.Location = new System.Drawing.Point(18, 147);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 20);
+            this.label5.Size = new System.Drawing.Size(93, 20);
             this.label5.TabIndex = 20;
-            this.label5.Text = "Les monuments";
+            this.label5.Text = "Monuments";
             // 
             // fbtnEffacerMonument
             // 
@@ -180,7 +162,7 @@
             this.fbtnEffacerMonument.ClickedImage = null;
             this.fbtnEffacerMonument.DisabledImage = null;
             this.fbtnEffacerMonument.Image = ((System.Drawing.Image)(resources.GetObject("fbtnEffacerMonument.Image")));
-            this.fbtnEffacerMonument.Location = new System.Drawing.Point(273, 254);
+            this.fbtnEffacerMonument.Location = new System.Drawing.Point(105, 220);
             this.fbtnEffacerMonument.Name = "fbtnEffacerMonument";
             this.fbtnEffacerMonument.NeutralImage = null;
             this.fbtnEffacerMonument.OverImage = null;
@@ -188,6 +170,7 @@
             this.fbtnEffacerMonument.TabIndex = 13;
             this.fbtnEffacerMonument.Text = "flashButton2";
             this.fbtnEffacerMonument.UseVisualStyleBackColor = true;
+            this.fbtnEffacerMonument.Click += new System.EventHandler(this.fbtnEffacerMonument_Click);
             // 
             // fbtnAjouterMonument
             // 
@@ -196,7 +179,7 @@
             this.fbtnAjouterMonument.ClickedImage = null;
             this.fbtnAjouterMonument.DisabledImage = null;
             this.fbtnAjouterMonument.Image = ((System.Drawing.Image)(resources.GetObject("fbtnAjouterMonument.Image")));
-            this.fbtnAjouterMonument.Location = new System.Drawing.Point(222, 254);
+            this.fbtnAjouterMonument.Location = new System.Drawing.Point(105, 178);
             this.fbtnAjouterMonument.Name = "fbtnAjouterMonument";
             this.fbtnAjouterMonument.NeutralImage = null;
             this.fbtnAjouterMonument.OverImage = null;
@@ -204,6 +187,16 @@
             this.fbtnAjouterMonument.TabIndex = 12;
             this.fbtnAjouterMonument.Text = "flashButton1";
             this.fbtnAjouterMonument.UseVisualStyleBackColor = true;
+            this.fbtnAjouterMonument.Click += new System.EventHandler(this.fbtnAjouterMonument_Click);
+            // 
+            // cbxMonuments
+            // 
+            this.cbxMonuments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMonuments.FormattingEnabled = true;
+            this.cbxMonuments.Location = new System.Drawing.Point(147, 144);
+            this.cbxMonuments.Name = "cbxMonuments";
+            this.cbxMonuments.Size = new System.Drawing.Size(237, 28);
+            this.cbxMonuments.TabIndex = 21;
             // 
             // AjouterCircuitForm
             // 
@@ -211,7 +204,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
-            this.ClientSize = new System.Drawing.Size(409, 458);
+            this.ClientSize = new System.Drawing.Size(409, 332);
+            this.Controls.Add(this.cbxMonuments);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbxMonuments);
             this.Controls.Add(this.lblPrix);
@@ -220,8 +214,6 @@
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.fbtnEffacerMonument);
             this.Controls.Add(this.fbtnAjouterMonument);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lbxVosMonuments);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbxArrivee);
@@ -244,8 +236,6 @@
         private System.Windows.Forms.ComboBox cbxArrivee;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox lbxVosMonuments;
-        private System.Windows.Forms.Label label4;
         private PhotoManagerClient.FlashButton fbtnAjouterMonument;
         private PhotoManagerClient.FlashButton fbtnEffacerMonument;
         private System.Windows.Forms.Button btnAnnuler;
@@ -254,5 +244,6 @@
         private System.Windows.Forms.Label lblPrix;
         private System.Windows.Forms.ListBox lbxMonuments;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbxMonuments;
     }
 }
