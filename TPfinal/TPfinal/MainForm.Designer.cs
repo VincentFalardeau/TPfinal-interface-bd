@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.monumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajouterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.STRIP_AjouterMonument = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.circuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +58,7 @@
             this.fbtnEffacer = new PhotoManagerClient.FlashButton();
             this.fbtnModifier = new PhotoManagerClient.FlashButton();
             this.fbtnAjouter = new PhotoManagerClient.FlashButton();
+            this.FBTN_AddMonument = new PhotoManagerClient.FlashButton();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonuments)).BeginInit();
@@ -74,16 +75,17 @@
             // monumentToolStripMenuItem
             // 
             this.monumentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ajouterToolStripMenuItem1});
+            this.STRIP_AjouterMonument});
             this.monumentToolStripMenuItem.Name = "monumentToolStripMenuItem";
             this.monumentToolStripMenuItem.Size = new System.Drawing.Size(112, 29);
             this.monumentToolStripMenuItem.Text = "Monument";
             // 
-            // ajouterToolStripMenuItem1
+            // STRIP_AjouterMonument
             // 
-            this.ajouterToolStripMenuItem1.Name = "ajouterToolStripMenuItem1";
-            this.ajouterToolStripMenuItem1.Size = new System.Drawing.Size(154, 30);
-            this.ajouterToolStripMenuItem1.Text = "Ajouter";
+            this.STRIP_AjouterMonument.Name = "STRIP_AjouterMonument";
+            this.STRIP_AjouterMonument.Size = new System.Drawing.Size(154, 30);
+            this.STRIP_AjouterMonument.Text = "Ajouter";
+            this.STRIP_AjouterMonument.Click += new System.EventHandler(this.STRIP_AjouterMonument_Click);
             // 
             // menuStrip1
             // 
@@ -341,13 +343,14 @@
             this.fbtnInformations.BackgroundImage = global::TPfinal.Properties.Resources.Eye;
             this.fbtnInformations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.fbtnInformations.ClickedImage = null;
+            this.fbtnInformations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fbtnInformations.DisabledImage = null;
             this.fbtnInformations.Image = ((System.Drawing.Image)(resources.GetObject("fbtnInformations.Image")));
-            this.fbtnInformations.Location = new System.Drawing.Point(12, 265);
+            this.fbtnInformations.Location = new System.Drawing.Point(21, 275);
             this.fbtnInformations.Name = "fbtnInformations";
             this.fbtnInformations.NeutralImage = null;
             this.fbtnInformations.OverImage = null;
-            this.fbtnInformations.Size = new System.Drawing.Size(66, 66);
+            this.fbtnInformations.Size = new System.Drawing.Size(52, 52);
             this.fbtnInformations.TabIndex = 14;
             this.fbtnInformations.Text = "Voir les informations";
             this.fbtnInformations.UseVisualStyleBackColor = true;
@@ -358,13 +361,14 @@
             this.fbtnEffacer.BackgroundImage = global::TPfinal.Properties.Resources.trash;
             this.fbtnEffacer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.fbtnEffacer.ClickedImage = null;
+            this.fbtnEffacer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fbtnEffacer.DisabledImage = null;
             this.fbtnEffacer.Image = ((System.Drawing.Image)(resources.GetObject("fbtnEffacer.Image")));
-            this.fbtnEffacer.Location = new System.Drawing.Point(12, 193);
+            this.fbtnEffacer.Location = new System.Drawing.Point(21, 200);
             this.fbtnEffacer.Name = "fbtnEffacer";
             this.fbtnEffacer.NeutralImage = null;
             this.fbtnEffacer.OverImage = null;
-            this.fbtnEffacer.Size = new System.Drawing.Size(66, 66);
+            this.fbtnEffacer.Size = new System.Drawing.Size(52, 52);
             this.fbtnEffacer.TabIndex = 13;
             this.fbtnEffacer.Text = "Effacer un circuit";
             this.fbtnEffacer.UseVisualStyleBackColor = true;
@@ -375,13 +379,14 @@
             this.fbtnModifier.BackgroundImage = global::TPfinal.Properties.Resources.edit;
             this.fbtnModifier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.fbtnModifier.ClickedImage = null;
+            this.fbtnModifier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fbtnModifier.DisabledImage = null;
             this.fbtnModifier.Image = ((System.Drawing.Image)(resources.GetObject("fbtnModifier.Image")));
-            this.fbtnModifier.Location = new System.Drawing.Point(12, 121);
+            this.fbtnModifier.Location = new System.Drawing.Point(21, 125);
             this.fbtnModifier.Name = "fbtnModifier";
             this.fbtnModifier.NeutralImage = null;
             this.fbtnModifier.OverImage = null;
-            this.fbtnModifier.Size = new System.Drawing.Size(66, 66);
+            this.fbtnModifier.Size = new System.Drawing.Size(52, 52);
             this.fbtnModifier.TabIndex = 12;
             this.fbtnModifier.Text = "Modifier un circuit";
             this.fbtnModifier.UseVisualStyleBackColor = true;
@@ -392,23 +397,45 @@
             this.fbtnAjouter.BackgroundImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Neutral;
             this.fbtnAjouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.fbtnAjouter.ClickedImage = null;
+            this.fbtnAjouter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fbtnAjouter.DisabledImage = null;
             this.fbtnAjouter.Image = ((System.Drawing.Image)(resources.GetObject("fbtnAjouter.Image")));
-            this.fbtnAjouter.Location = new System.Drawing.Point(12, 50);
+            this.fbtnAjouter.Location = new System.Drawing.Point(21, 50);
             this.fbtnAjouter.Name = "fbtnAjouter";
             this.fbtnAjouter.NeutralImage = null;
             this.fbtnAjouter.OverImage = null;
-            this.fbtnAjouter.Size = new System.Drawing.Size(66, 66);
+            this.fbtnAjouter.Size = new System.Drawing.Size(52, 52);
             this.fbtnAjouter.TabIndex = 11;
             this.fbtnAjouter.Text = "Ajouter un circuit";
             this.fbtnAjouter.UseVisualStyleBackColor = true;
             this.fbtnAjouter.Click += new System.EventHandler(this.fbtnAjouter_Click);
+            // 
+            // FBTN_AddMonument
+            // 
+            this.FBTN_AddMonument.BackgroundImage = global::TPfinal.Properties.Resources.Tower_Add_Neutral;
+            this.FBTN_AddMonument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_AddMonument.ClickedImage = global::TPfinal.Properties.Resources.Tower_Add_Accept;
+            this.FBTN_AddMonument.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FBTN_AddMonument.DisabledImage = global::TPfinal.Properties.Resources.Tower_Add_Disable;
+            this.FBTN_AddMonument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FBTN_AddMonument.ForeColor = System.Drawing.Color.Transparent;
+            this.FBTN_AddMonument.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_AddMonument.Image")));
+            this.FBTN_AddMonument.Location = new System.Drawing.Point(16, 354);
+            this.FBTN_AddMonument.Name = "FBTN_AddMonument";
+            this.FBTN_AddMonument.NeutralImage = global::TPfinal.Properties.Resources.Tower_Add_Neutral;
+            this.FBTN_AddMonument.OverImage = global::TPfinal.Properties.Resources.Tower_Add_Accept;
+            this.FBTN_AddMonument.Size = new System.Drawing.Size(62, 62);
+            this.FBTN_AddMonument.TabIndex = 12;
+            this.FBTN_AddMonument.Text = "Ajouter un monument";
+            this.FBTN_AddMonument.UseVisualStyleBackColor = true;
+            this.FBTN_AddMonument.Click += new System.EventHandler(this.FBTN_AddMonument_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 664);
+            this.Controls.Add(this.FBTN_AddMonument);
             this.Controls.Add(this.fbtnInformations);
             this.Controls.Add(this.fbtnEffacer);
             this.Controls.Add(this.fbtnModifier);
@@ -445,7 +472,7 @@
         private PhotoManagerClient.FlashButton flashButton2;
         private EvaluationDemo.Stars stars1;
         private System.Windows.Forms.ToolStripMenuItem monumentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ajouterToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem STRIP_AjouterMonument;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aideToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem àProposToolStripMenuItem;
@@ -473,6 +500,7 @@
         private PhotoManagerClient.FlashButton fbtnEffacer;
         private PhotoManagerClient.FlashButton fbtnInformations;
         private System.Windows.Forms.ToolStripMenuItem voirInformationsToolStripMenuItem;
+        private PhotoManagerClient.FlashButton FBTN_AddMonument;
     }
 }
 
