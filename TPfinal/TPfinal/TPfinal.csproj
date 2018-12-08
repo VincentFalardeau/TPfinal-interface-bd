@@ -58,18 +58,6 @@
     <Compile Include="AjouterCircuitForm.Designer.cs">
       <DependentUpon>AjouterCircuitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MonumentImageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MonumentImageForm.Designer.cs">
-      <DependentUpon>MonumentImageForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NouveauMonumentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NouveauMonumentForm.Designer.cs">
-      <DependentUpon>NouveauMonumentForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Circuits.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,12 +127,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierCircuitForm.resx">
       <DependentUpon>ModifierCircuitForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonumentImageForm.resx">
-      <DependentUpon>MonumentImageForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NouveauMonumentForm.resx">
-      <DependentUpon>NouveauMonumentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -276,24 +258,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trash_disable.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Tower.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Tower_Accept.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Tower_Disable.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Tower_Add_Neutral.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Tower_Add_Accept.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Tower_Add_Disable.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
