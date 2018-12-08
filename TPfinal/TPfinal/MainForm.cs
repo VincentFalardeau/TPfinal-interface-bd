@@ -483,6 +483,23 @@ namespace TPfinal
             }
         }
 
-       
+        private void STRIP_AjouterMonument_Click(object sender, EventArgs e)
+        {
+            NouveauMonumentForm ajoutMonument = new NouveauMonumentForm();
+            if(ajoutMonument.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+
+        }
+
+        private void FBTN_AddMonument_Click(object sender, EventArgs e)
+        {
+            NouveauMonumentForm ajoutMonument = new NouveauMonumentForm();
+            if (ajoutMonument.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }
