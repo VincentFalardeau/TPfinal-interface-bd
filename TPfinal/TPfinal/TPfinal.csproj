@@ -58,6 +58,7 @@
     <Compile Include="AjouterCircuitForm.Designer.cs">
       <DependentUpon>AjouterCircuitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Monument.cs" />
     <Compile Include="MonumentImageForm.cs">
       <SubType>Form</SubType>
     </Compile>
