@@ -39,6 +39,7 @@
             // TBX_NewImage
             // 
             this.TBX_NewImage.Location = new System.Drawing.Point(31, 48);
+            this.TBX_NewImage.MaxLength = 300;
             this.TBX_NewImage.Name = "TBX_NewImage";
             this.TBX_NewImage.Size = new System.Drawing.Size(363, 26);
             this.TBX_NewImage.TabIndex = 0;

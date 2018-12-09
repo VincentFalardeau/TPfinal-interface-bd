@@ -52,6 +52,7 @@
             // TBX_Nom
             // 
             this.TBX_Nom.Location = new System.Drawing.Point(30, 52);
+            this.TBX_Nom.MaxLength = 30;
             this.TBX_Nom.Name = "TBX_Nom";
             this.TBX_Nom.Size = new System.Drawing.Size(236, 26);
             this.TBX_Nom.TabIndex = 0;
@@ -78,6 +79,7 @@
             // 
             this.RTBX_Histoire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RTBX_Histoire.Location = new System.Drawing.Point(369, 257);
+            this.RTBX_Histoire.MaxLength = 100;
             this.RTBX_Histoire.Name = "RTBX_Histoire";
             this.RTBX_Histoire.Size = new System.Drawing.Size(287, 94);
             this.RTBX_Histoire.TabIndex = 6;

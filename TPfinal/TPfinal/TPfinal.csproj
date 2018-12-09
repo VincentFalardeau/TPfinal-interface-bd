@@ -296,5 +296,8 @@
   <ItemGroup>
     <None Include="Resources\Tower_Add_Disable.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

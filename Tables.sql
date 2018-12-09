@@ -43,7 +43,7 @@ CREATE TABLE monuments (
     nom                VARCHAR2(30),
     dateconstruction   DATE,
     histoire           VARCHAR2(100),
-    image              VARCHAR2(100),
+    image              VARCHAR2(300),
     prix               NUMBER(6,2),
     etoiles            NUMBER(1)
 );
