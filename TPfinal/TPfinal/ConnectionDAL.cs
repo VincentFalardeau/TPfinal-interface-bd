@@ -9,7 +9,7 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace TPfinal
 {
-    class ConnectionDAL
+    public class ConnectionDAL
     {
        
         private OracleConnection mConnexion;

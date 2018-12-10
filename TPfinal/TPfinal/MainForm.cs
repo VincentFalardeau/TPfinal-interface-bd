@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Types;
-
+using System.Net;
 
 namespace TPfinal
 {
@@ -425,30 +425,37 @@ namespace TPfinal
         //Monuments
         //
         //--------------------------------------------------------------------------
-        private void UpdateDgvMonuments()
+
+        Image getImageFromUrl(string url )
         {
+
+
+            var request = WebRequest.Create(url);
+
+            using (var response = request.GetResponse())
+            using (var stream = response.GetResponseStream())
+            {
+               return System.Drawing.Image.FromStream(stream);
+            }
+        }
+
+        private void UpdateDgvMonuments()
+
+
+        {
+
+            dgvMonuments.Rows.Clear();
             try
             {
-                string sql = "select * from vue_monument_1";
+                string sql = "SELECT NOM, DATECONSTRUCTION, HISTOIRE, PRIX, ETOILES, IMAGE, IDMONUMENT FROM MONUMENTS";
                 OracleDataAdapter oda = new OracleDataAdapter(sql, mConnexionDAL.GetConnexion());
-
-
-                //Eviter qu'il se remplisse a l'infini
-                if (mDataSetMonuments.Tables.Contains("listeMonuments"))
+                OracleCommand cmd = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                OracleDataReader oracleReader = cmd.ExecuteReader();
+                while (oracleReader.Read())
                 {
-                    mDataSetMonuments.Tables["listeMonuments"].Clear();
+
+                        dgvMonuments.Rows.Add(false, oracleReader.GetString(0), oracleReader.GetDateTime(1).ToString("dd-MM-yyyy"), oracleReader.GetString(2), oracleReader.GetDecimal(3).ToString(), oracleReader.GetInt32(4).ToString(), null /*getImageFromUrl(oracleReader.GetString(5))*/, oracleReader.GetInt32(6).ToString());
                 }
-
-                //Remplir le DataSet
-                oda.Fill(mDataSetMonuments, "listeMonuments");
-
-                //Vider le dgv
-                dgvMonuments.Rows.Clear();
-
-                //Lier dgvCircuits
-                dgvMonuments.DataSource = new BindingSource(mDataSetMonuments, "listeMonuments");
-
-                oda.Dispose();
             }
             catch (Exception ex)
             {
@@ -500,8 +507,56 @@ namespace TPfinal
             if (ajoutMonument.ShowDialog() == DialogResult.OK)
             {
                 Monument UnNouveauMonument = ajoutMonument.NouveauMonument;
-                var a = 0;
+                UpdateDgvMonuments();
             }
+        }
+
+        private void dgvMonuments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvMonuments.CurrentCell.ColumnIndex == 0)
+            {
+                foreach (DataGridViewRow row in dgvMonuments.Rows)
+                {
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                    if (chk.Value == chk.TrueValue)
+                    {
+                        chk.Value = chk.FalseValue;
+                    }
+                }
+
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)dgvMonuments.CurrentCell;
+
+                bool isChecked = (bool)checkbox.EditedFormattedValue;
+
+
+               var Id = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[7].Value;
+
+                dgvMonumentsCircuits.Rows.Clear();
+
+                try
+                {
+                    string sql = "SELECT NOMCIRCUIT, ORDRESURCIRCUIT FROM ODREDANSCIRCUIT  WHERE IDMONUMENT = " + Id.ToString();
+                    OracleCommand cmd = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                    OracleDataReader oracleReader = cmd.ExecuteReader();
+                    while (oracleReader.Read())
+                    {
+
+                        dgvMonumentsCircuits.Rows.Add(oracleReader.GetString(0), oracleReader.GetInt32(1).ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+
+            }else if(dgvMonuments.CurrentCell.ColumnIndex == 6)
+            {
+                var Id = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[7].Value.ToString();
+                ImageMonument form = new ImageMonument(Id, mConnexionDAL.GetConnexion());
+                form.ShowDialog();
+
+            }
+
         }
     }
 }

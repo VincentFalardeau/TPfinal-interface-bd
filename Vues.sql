@@ -106,3 +106,7 @@ inner join villes v on c.codevilledépart = v.codeville
 inner join villes v2 on c.codevillearrivée = v2.codeville;
 
 
+CREATE VIEW ODREDANSCIRCUIT AS
+SELECT CM.IDMONUMENT, NOMCIRCUIT, CM.ORDRESURCIRCUIT FROM Circuits C INNER JOIN CircuitsMonuments CM ON C.IDCIRCUIT = CM.IDCIRCUIT;
+
+

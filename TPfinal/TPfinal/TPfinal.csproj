@@ -58,6 +58,12 @@
     <Compile Include="AjouterCircuitForm.Designer.cs">
       <DependentUpon>AjouterCircuitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageMonument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageMonument.Designer.cs">
+      <DependentUpon>ImageMonument.cs</DependentUpon>
+    </Compile>
     <Compile Include="Monument.cs" />
     <Compile Include="MonumentImageForm.cs">
       <SubType>Form</SubType>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Circuits.resx">
       <DependentUpon>Circuits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageMonument.resx">
+      <DependentUpon>ImageMonument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformationsCircuitForm.resx">
       <DependentUpon>InformationsCircuitForm.cs</DependentUpon>

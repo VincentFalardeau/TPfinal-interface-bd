@@ -40,10 +40,22 @@
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.àProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TAB_Monuments = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvMonumentsCircuits = new System.Windows.Forms.DataGridView();
+            this.NomCircuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrdreDansCircuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvMonuments = new System.Windows.Forms.DataGridView();
+            this.SelectMonument = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Histoire = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Etoiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImageButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MonumentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupbox10 = new System.Windows.Forms.GroupBox();
             this.cbxStarsMonument = new System.Windows.Forms.CheckBox();
-            this.starsMonument = new EvaluationDemo.Stars();
             this.TAB_Circuits = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbxPrix = new System.Windows.Forms.CheckBox();
@@ -54,13 +66,17 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cbxVille = new System.Windows.Forms.ComboBox();
             this.tabsControl = new System.Windows.Forms.TabControl();
+            this.FBTN_AddMonument = new PhotoManagerClient.FlashButton();
             this.fbtnInformations = new PhotoManagerClient.FlashButton();
             this.fbtnEffacer = new PhotoManagerClient.FlashButton();
             this.fbtnModifier = new PhotoManagerClient.FlashButton();
             this.fbtnAjouter = new PhotoManagerClient.FlashButton();
-            this.FBTN_AddMonument = new PhotoManagerClient.FlashButton();
+            this.starsMonument = new EvaluationDemo.Stars();
+            this.CircuitAjouter = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.CircuitModifier = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonumentsCircuits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonuments)).BeginInit();
             this.groupbox10.SuspendLayout();
             this.TAB_Circuits.SuspendLayout();
@@ -155,6 +171,9 @@
             // 
             // TAB_Monuments
             // 
+            this.TAB_Monuments.Controls.Add(this.label2);
+            this.TAB_Monuments.Controls.Add(this.label1);
+            this.TAB_Monuments.Controls.Add(this.dgvMonumentsCircuits);
             this.TAB_Monuments.Controls.Add(this.dgvMonuments);
             this.TAB_Monuments.Controls.Add(this.groupbox10);
             this.TAB_Monuments.Location = new System.Drawing.Point(4, 29);
@@ -166,14 +185,123 @@
             this.TAB_Monuments.Text = "Monuments";
             this.TAB_Monuments.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 346);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 20);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Circuits";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Monuments";
+            // 
+            // dgvMonumentsCircuits
+            // 
+            this.dgvMonumentsCircuits.AllowUserToAddRows = false;
+            this.dgvMonumentsCircuits.AllowUserToDeleteRows = false;
+            this.dgvMonumentsCircuits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMonumentsCircuits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomCircuit,
+            this.OrdreDansCircuit});
+            this.dgvMonumentsCircuits.Location = new System.Drawing.Point(12, 369);
+            this.dgvMonumentsCircuits.Name = "dgvMonumentsCircuits";
+            this.dgvMonumentsCircuits.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMonumentsCircuits.RowHeadersVisible = false;
+            this.dgvMonumentsCircuits.RowTemplate.Height = 28;
+            this.dgvMonumentsCircuits.Size = new System.Drawing.Size(814, 179);
+            this.dgvMonumentsCircuits.TabIndex = 12;
+            // 
+            // NomCircuit
+            // 
+            this.NomCircuit.HeaderText = "Nom du circuit";
+            this.NomCircuit.Name = "NomCircuit";
+            // 
+            // OrdreDansCircuit
+            // 
+            this.OrdreDansCircuit.HeaderText = "Ordre dans ce circuit";
+            this.OrdreDansCircuit.Name = "OrdreDansCircuit";
+            // 
             // dgvMonuments
             // 
+            this.dgvMonuments.AllowUserToAddRows = false;
+            this.dgvMonuments.AllowUserToDeleteRows = false;
             this.dgvMonuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMonuments.Location = new System.Drawing.Point(12, 92);
+            this.dgvMonuments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SelectMonument,
+            this.Nom,
+            this.Date,
+            this.Histoire,
+            this.Prix,
+            this.Etoiles,
+            this.ImageButton,
+            this.MonumentId});
+            this.dgvMonuments.Location = new System.Drawing.Point(12, 121);
             this.dgvMonuments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvMonuments.Name = "dgvMonuments";
-            this.dgvMonuments.Size = new System.Drawing.Size(814, 452);
+            this.dgvMonuments.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMonuments.RowHeadersVisible = false;
+            this.dgvMonuments.RowTemplate.Height = 32;
+            this.dgvMonuments.Size = new System.Drawing.Size(814, 220);
             this.dgvMonuments.TabIndex = 11;
+            this.dgvMonuments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonuments_CellContentClick);
+            // 
+            // SelectMonument
+            // 
+            this.SelectMonument.FalseValue = "false";
+            this.SelectMonument.HeaderText = "Sélectionner";
+            this.SelectMonument.Name = "SelectMonument";
+            this.SelectMonument.TrueValue = "true";
+            // 
+            // Nom
+            // 
+            this.Nom.HeaderText = "Nom";
+            this.Nom.Name = "Nom";
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.Width = 75;
+            // 
+            // Histoire
+            // 
+            this.Histoire.HeaderText = "Histoire";
+            this.Histoire.Name = "Histoire";
+            // 
+            // Prix
+            // 
+            this.Prix.HeaderText = "Prix";
+            this.Prix.Name = "Prix";
+            this.Prix.Width = 50;
+            // 
+            // Etoiles
+            // 
+            this.Etoiles.HeaderText = "Score";
+            this.Etoiles.Name = "Etoiles";
+            this.Etoiles.Width = 40;
+            // 
+            // ImageButton
+            // 
+            this.ImageButton.HeaderText = "Image";
+            this.ImageButton.Name = "ImageButton";
+            this.ImageButton.Text = "Afficher";
+            this.ImageButton.ToolTipText = "Afficher";
+            this.ImageButton.UseColumnTextForButtonValue = true;
+            this.ImageButton.Width = 75;
+            // 
+            // MonumentId
+            // 
+            this.MonumentId.HeaderText = "MonumentId";
+            this.MonumentId.Name = "MonumentId";
+            this.MonumentId.Visible = false;
             // 
             // groupbox10
             // 
@@ -196,17 +324,6 @@
             this.cbxStarsMonument.TabIndex = 11;
             this.cbxStarsMonument.Text = "Activer";
             this.cbxStarsMonument.UseVisualStyleBackColor = true;
-            // 
-            // starsMonument
-            // 
-            this.starsMonument.Location = new System.Drawing.Point(21, 22);
-            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
-            this.starsMonument.Name = "starsMonument";
-            this.starsMonument.Size = new System.Drawing.Size(155, 31);
-            this.starsMonument.StarsCount = 5;
-            this.starsMonument.TabIndex = 2;
-            this.starsMonument.Value = 0;
             // 
             // TAB_Circuits
             // 
@@ -295,15 +412,19 @@
             // 
             // dgvCircuits
             // 
+            this.dgvCircuits.AllowUserToAddRows = false;
+            this.dgvCircuits.AllowUserToDeleteRows = false;
             this.dgvCircuits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCircuits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCircuits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CircuitAjouter,
+            this.CircuitModifier});
             this.dgvCircuits.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCircuits.Enabled = false;
             this.dgvCircuits.Location = new System.Drawing.Point(12, 92);
             this.dgvCircuits.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCircuits.MultiSelect = false;
             this.dgvCircuits.Name = "dgvCircuits";
-            this.dgvCircuits.ReadOnly = true;
             this.dgvCircuits.Size = new System.Drawing.Size(813, 452);
             this.dgvCircuits.TabIndex = 9;
             // 
@@ -337,6 +458,26 @@
             this.tabsControl.Size = new System.Drawing.Size(854, 603);
             this.tabsControl.TabIndex = 10;
             this.tabsControl.SelectedIndexChanged += new System.EventHandler(this.TABPages_SelectedIndexChanged);
+            // 
+            // FBTN_AddMonument
+            // 
+            this.FBTN_AddMonument.BackgroundImage = global::TPfinal.Properties.Resources.Tower_Add_Neutral;
+            this.FBTN_AddMonument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_AddMonument.ClickedImage = global::TPfinal.Properties.Resources.Tower_Add_Accept;
+            this.FBTN_AddMonument.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FBTN_AddMonument.DisabledImage = global::TPfinal.Properties.Resources.Tower_Add_Disable;
+            this.FBTN_AddMonument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FBTN_AddMonument.ForeColor = System.Drawing.Color.Transparent;
+            this.FBTN_AddMonument.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_AddMonument.Image")));
+            this.FBTN_AddMonument.Location = new System.Drawing.Point(16, 354);
+            this.FBTN_AddMonument.Name = "FBTN_AddMonument";
+            this.FBTN_AddMonument.NeutralImage = global::TPfinal.Properties.Resources.Tower_Add_Neutral;
+            this.FBTN_AddMonument.OverImage = global::TPfinal.Properties.Resources.Tower_Add_Accept;
+            this.FBTN_AddMonument.Size = new System.Drawing.Size(62, 62);
+            this.FBTN_AddMonument.TabIndex = 12;
+            this.FBTN_AddMonument.Text = "Ajouter un monument";
+            this.FBTN_AddMonument.UseVisualStyleBackColor = true;
+            this.FBTN_AddMonument.Click += new System.EventHandler(this.FBTN_AddMonument_Click);
             // 
             // fbtnInformations
             // 
@@ -410,25 +551,30 @@
             this.fbtnAjouter.UseVisualStyleBackColor = true;
             this.fbtnAjouter.Click += new System.EventHandler(this.fbtnAjouter_Click);
             // 
-            // FBTN_AddMonument
+            // starsMonument
             // 
-            this.FBTN_AddMonument.BackgroundImage = global::TPfinal.Properties.Resources.Tower_Add_Neutral;
-            this.FBTN_AddMonument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_AddMonument.ClickedImage = global::TPfinal.Properties.Resources.Tower_Add_Accept;
-            this.FBTN_AddMonument.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FBTN_AddMonument.DisabledImage = global::TPfinal.Properties.Resources.Tower_Add_Disable;
-            this.FBTN_AddMonument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FBTN_AddMonument.ForeColor = System.Drawing.Color.Transparent;
-            this.FBTN_AddMonument.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_AddMonument.Image")));
-            this.FBTN_AddMonument.Location = new System.Drawing.Point(16, 354);
-            this.FBTN_AddMonument.Name = "FBTN_AddMonument";
-            this.FBTN_AddMonument.NeutralImage = global::TPfinal.Properties.Resources.Tower_Add_Neutral;
-            this.FBTN_AddMonument.OverImage = global::TPfinal.Properties.Resources.Tower_Add_Accept;
-            this.FBTN_AddMonument.Size = new System.Drawing.Size(62, 62);
-            this.FBTN_AddMonument.TabIndex = 12;
-            this.FBTN_AddMonument.Text = "Ajouter un monument";
-            this.FBTN_AddMonument.UseVisualStyleBackColor = true;
-            this.FBTN_AddMonument.Click += new System.EventHandler(this.FBTN_AddMonument_Click);
+            this.starsMonument.Location = new System.Drawing.Point(21, 22);
+            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
+            this.starsMonument.Name = "starsMonument";
+            this.starsMonument.Size = new System.Drawing.Size(155, 31);
+            this.starsMonument.StarsCount = 5;
+            this.starsMonument.TabIndex = 2;
+            this.starsMonument.Value = 0;
+            // 
+            // CircuitAjouter
+            // 
+            this.CircuitAjouter.HeaderText = "Ajouter un circuit";
+            this.CircuitAjouter.Name = "CircuitAjouter";
+            this.CircuitAjouter.Text = "Ajouter";
+            this.CircuitAjouter.UseColumnTextForButtonValue = true;
+            // 
+            // CircuitModifier
+            // 
+            this.CircuitModifier.HeaderText = "Modifier un circuit";
+            this.CircuitModifier.Name = "CircuitModifier";
+            this.CircuitModifier.Text = "Modifier";
+            this.CircuitModifier.UseColumnTextForButtonValue = true;
             // 
             // MainForm
             // 
@@ -450,6 +596,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.TAB_Monuments.ResumeLayout(false);
+            this.TAB_Monuments.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonumentsCircuits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonuments)).EndInit();
             this.groupbox10.ResumeLayout(false);
             this.groupbox10.PerformLayout();
@@ -501,6 +649,21 @@
         private PhotoManagerClient.FlashButton fbtnInformations;
         private System.Windows.Forms.ToolStripMenuItem voirInformationsToolStripMenuItem;
         private PhotoManagerClient.FlashButton FBTN_AddMonument;
+        private System.Windows.Forms.DataGridView dgvMonumentsCircuits;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomCircuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrdreDansCircuit;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectMonument;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Histoire;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prix;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Etoiles;
+        private System.Windows.Forms.DataGridViewButtonColumn ImageButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MonumentId;
+        private System.Windows.Forms.DataGridViewButtonColumn CircuitAjouter;
+        private System.Windows.Forms.DataGridViewButtonColumn CircuitModifier;
     }
 }
 
