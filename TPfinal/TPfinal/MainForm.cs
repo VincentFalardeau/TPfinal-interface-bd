@@ -274,6 +274,14 @@ namespace TPfinal
         {
             try
             {
+                string sqlins = "insert into circuits values(sqCircuits.nextval, :codevilledépart,:codevillearrivée, :nomcircuit, :prix, 1, 10)";
+
+                mOda.InsertCommand = new OracleCommand(sqlins, mConnexionDAL.GetConnexion());
+
+                mOda.InsertCommand.Parameters.Add(":numad", OracleDbType.Int32, 4, "numad");
+                mOda.InsertCommand.Parameters.Add(":nom", OracleDbType.Varchar2, 40, "nom");
+                mOda.InsertCommand.Parameters.Add(":prenom", OracleDbType.Varchar2, 40, "prenom");
+
                 //Creation du circuits
                 int idVilleDepart = ObtenirIdVille(villeDepart);
                 int idVilleArrivee = ObtenirIdVille(villeArrivee);
