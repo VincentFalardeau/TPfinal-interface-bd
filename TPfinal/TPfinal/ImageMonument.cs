@@ -13,6 +13,8 @@ namespace TPfinal
 {
     public partial class ImageMonument : Form
     {
+
+        bool FullScreen = false;
         public ImageMonument(string id, OracleConnection connection)
         {
             InitializeComponent();
@@ -32,6 +34,31 @@ namespace TPfinal
                 MessageBox.Show(ex.Message.ToString());
             }
            
+        }
+
+        private void ImageMonument_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            { 
+                case Keys.F11: Toggle_FullScreen(); break;
+                case Keys.Escape: this.Close(); break;
+            }
+        }
+
+        private void Toggle_FullScreen()
+        {
+            FullScreen = !FullScreen;
+
+            if (FullScreen)
+            {
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.WindowState = FormWindowState.Normal;
+            }
         }
     }
 }

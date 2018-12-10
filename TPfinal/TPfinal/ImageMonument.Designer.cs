@@ -51,6 +51,7 @@
             this.ClientSize = new System.Drawing.Size(478, 444);
             this.Controls.Add(this.PBX_Image);
             this.Name = "ImageMonument";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ImageMonument_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Image)).EndInit();
             this.ResumeLayout(false);
 
