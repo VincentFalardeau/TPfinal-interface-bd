@@ -448,9 +448,24 @@ namespace TPfinal
         {
 
             dgvMonuments.Rows.Clear();
+            dgvMonumentsCircuits.Rows.Clear();
+
+
             try
             {
-                string sql = "SELECT NOM, DATECONSTRUCTION, HISTOIRE, PRIX, ETOILES, IMAGE, IDMONUMENT FROM MONUMENTS";
+
+                string sql;
+
+                if (cbxStarsMonument.Checked)
+                {
+                  sql = "SELECT NOM, DATECONSTRUCTION, HISTOIRE, PRIX, ETOILES, IMAGE, IDMONUMENT FROM MONUMENTS WHERE ETOILES =" + starsMonument.Value.ToString();
+                }
+                else
+                {
+                  sql = "SELECT NOM, DATECONSTRUCTION, HISTOIRE, PRIX, ETOILES, IMAGE, IDMONUMENT FROM MONUMENTS";
+                }
+
+            
                 OracleDataAdapter oda = new OracleDataAdapter(sql, mConnexionDAL.GetConnexion());
                 OracleCommand cmd = new OracleCommand(sql, mConnexionDAL.GetConnexion());
                 OracleDataReader oracleReader = cmd.ExecuteReader();
@@ -565,6 +580,15 @@ namespace TPfinal
             }
         }
 
-       
+        private void starsMonument_ValueChanged(object sender, EventArgs e)
+        {
+            if(cbxStarsMonument.Checked)
+             UpdateDgvMonuments();
+        }
+
+        private void cbxStarsMonument_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateDgvMonuments();
+        }
     }
 }

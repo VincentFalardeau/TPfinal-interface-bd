@@ -56,6 +56,7 @@
             this.MonumentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupbox10 = new System.Windows.Forms.GroupBox();
             this.cbxStarsMonument = new System.Windows.Forms.CheckBox();
+            this.starsMonument = new EvaluationDemo.Stars();
             this.TAB_Circuits = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbxPrix = new System.Windows.Forms.CheckBox();
@@ -71,7 +72,6 @@
             this.fbtnEffacer = new PhotoManagerClient.FlashButton();
             this.fbtnModifier = new PhotoManagerClient.FlashButton();
             this.fbtnAjouter = new PhotoManagerClient.FlashButton();
-            this.starsMonument = new EvaluationDemo.Stars();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonumentsCircuits)).BeginInit();
@@ -320,6 +320,19 @@
             this.cbxStarsMonument.TabIndex = 11;
             this.cbxStarsMonument.Text = "Activer";
             this.cbxStarsMonument.UseVisualStyleBackColor = true;
+            this.cbxStarsMonument.CheckedChanged += new System.EventHandler(this.cbxStarsMonument_CheckedChanged);
+            // 
+            // starsMonument
+            // 
+            this.starsMonument.Location = new System.Drawing.Point(21, 22);
+            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
+            this.starsMonument.Name = "starsMonument";
+            this.starsMonument.Size = new System.Drawing.Size(155, 31);
+            this.starsMonument.StarsCount = 5;
+            this.starsMonument.TabIndex = 2;
+            this.starsMonument.Value = 0;
+            this.starsMonument.ValueChanged += new EvaluationDemo.Stars.ValueChangedEventHandler(this.starsMonument_ValueChanged);
             // 
             // TAB_Circuits
             // 
@@ -542,17 +555,6 @@
             this.fbtnAjouter.Text = "Ajouter un circuit";
             this.fbtnAjouter.UseVisualStyleBackColor = true;
             this.fbtnAjouter.Click += new System.EventHandler(this.fbtnAjouter_Click);
-            // 
-            // starsMonument
-            // 
-            this.starsMonument.Location = new System.Drawing.Point(21, 22);
-            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
-            this.starsMonument.Name = "starsMonument";
-            this.starsMonument.Size = new System.Drawing.Size(155, 31);
-            this.starsMonument.StarsCount = 5;
-            this.starsMonument.TabIndex = 2;
-            this.starsMonument.Value = 0;
             // 
             // MainForm
             // 
