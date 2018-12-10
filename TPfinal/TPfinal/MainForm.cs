@@ -529,7 +529,9 @@ namespace TPfinal
             else if (dgvMonuments.CurrentCell.ColumnIndex == 6)
             {
                 var Id = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[7].Value.ToString();
+                var Nom = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[1].Value.ToString();
                 ImageMonument form = new ImageMonument(Id, mConnexionDAL.GetConnexion());
+                form.Text = Nom;
                 form.ShowDialog();
 
             }
