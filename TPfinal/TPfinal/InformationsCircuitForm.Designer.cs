@@ -87,9 +87,11 @@
             // 
             // pbxMonument
             // 
+            this.pbxMonument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxMonument.Location = new System.Drawing.Point(259, 26);
             this.pbxMonument.Name = "pbxMonument";
-            this.pbxMonument.Size = new System.Drawing.Size(214, 204);
+            this.pbxMonument.Size = new System.Drawing.Size(214, 207);
+            this.pbxMonument.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxMonument.TabIndex = 11;
             this.pbxMonument.TabStop = false;
             // 
@@ -117,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 436);
+            this.ClientSize = new System.Drawing.Size(494, 436);
             this.Controls.Add(this.starsMonument);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.pbxMonument);

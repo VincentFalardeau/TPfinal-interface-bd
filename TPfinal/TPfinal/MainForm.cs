@@ -114,6 +114,10 @@ namespace TPfinal
                 {
                     dgvCircuits.Columns[4].Visible = false;
                 }
+                else
+                {
+                    dgvCircuits.Columns[4].Visible = true;
+                }
 
                 mOda.Dispose();
             }
@@ -261,7 +265,6 @@ namespace TPfinal
             AjouterCircuitForm acf = new AjouterCircuitForm();
             if (acf.ShowDialog() == DialogResult.OK)
             {
-
                 AjouterCircuit(acf.mNom, acf.mVilleDepart, acf.mVilleArrivee, acf.mPrix, acf.mListeMonuments);
                 MessageBox.Show("Circuit ajouté avec succès!");
             }
@@ -463,6 +466,76 @@ namespace TPfinal
             }
         }
 
+        private void STRIP_AjouterMonument_Click(object sender, EventArgs e)
+        {
+            AjouterUnMonument();
+        }
+
+        private void FBTN_AddMonument_Click(object sender, EventArgs e)
+        {
+            AjouterUnMonument();
+        }
+
+
+        private void AjouterUnMonument()
+        {
+            NouveauMonumentForm ajoutMonument = new NouveauMonumentForm();
+            if (ajoutMonument.ShowDialog() == DialogResult.OK)
+            {
+                Monument UnNouveauMonument = ajoutMonument.NouveauMonument;
+                UpdateDgvMonuments();
+            }
+        }
+
+        private void dgvMonuments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMonuments.CurrentCell.ColumnIndex == 0)
+            {
+                foreach (DataGridViewRow row in dgvMonuments.Rows)
+                {
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                    if (chk.Value == chk.TrueValue)
+                    {
+                        chk.Value = chk.FalseValue;
+                    }
+                }
+
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)dgvMonuments.CurrentCell;
+
+                bool isChecked = (bool)checkbox.EditedFormattedValue;
+
+
+                var Id = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[7].Value;
+
+                dgvMonumentsCircuits.Rows.Clear();
+
+                try
+                {
+                    string sql = "SELECT NOMCIRCUIT, ORDRESURCIRCUIT FROM ODREDANSCIRCUIT  WHERE IDMONUMENT = " + Id.ToString();
+                    OracleCommand cmd = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                    OracleDataReader oracleReader = cmd.ExecuteReader();
+                    while (oracleReader.Read())
+                    {
+
+                        dgvMonumentsCircuits.Rows.Add(oracleReader.GetString(0), oracleReader.GetInt32(1).ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+
+            }
+            else if (dgvMonuments.CurrentCell.ColumnIndex == 6)
+            {
+                var Id = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[7].Value.ToString();
+                ImageMonument form = new ImageMonument(Id, mConnexionDAL.GetConnexion());
+                form.ShowDialog();
+
+            }
+
+        }
+
         //--------------------------------------------------------------------------
         //
         //Tests
@@ -490,73 +563,6 @@ namespace TPfinal
             }
         }
 
-        private void STRIP_AjouterMonument_Click(object sender, EventArgs e)
-        {
-            AjouterUnMonument();
-        }
-
-        private void FBTN_AddMonument_Click(object sender, EventArgs e)
-        {
-            AjouterUnMonument();
-        }
-
-
-        private void AjouterUnMonument()
-        {
-            NouveauMonumentForm ajoutMonument = new NouveauMonumentForm();
-            if (ajoutMonument.ShowDialog() == DialogResult.OK)
-            {
-                Monument UnNouveauMonument = ajoutMonument.NouveauMonument;
-                UpdateDgvMonuments();
-            }
-        }
-
-        private void dgvMonuments_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(dgvMonuments.CurrentCell.ColumnIndex == 0)
-            {
-                foreach (DataGridViewRow row in dgvMonuments.Rows)
-                {
-                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                    if (chk.Value == chk.TrueValue)
-                    {
-                        chk.Value = chk.FalseValue;
-                    }
-                }
-
-                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)dgvMonuments.CurrentCell;
-
-                bool isChecked = (bool)checkbox.EditedFormattedValue;
-
-
-               var Id = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[7].Value;
-
-                dgvMonumentsCircuits.Rows.Clear();
-
-                try
-                {
-                    string sql = "SELECT NOMCIRCUIT, ORDRESURCIRCUIT FROM ODREDANSCIRCUIT  WHERE IDMONUMENT = " + Id.ToString();
-                    OracleCommand cmd = new OracleCommand(sql, mConnexionDAL.GetConnexion());
-                    OracleDataReader oracleReader = cmd.ExecuteReader();
-                    while (oracleReader.Read())
-                    {
-
-                        dgvMonumentsCircuits.Rows.Add(oracleReader.GetString(0), oracleReader.GetInt32(1).ToString());
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                }
-
-            }else if(dgvMonuments.CurrentCell.ColumnIndex == 6)
-            {
-                var Id = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[7].Value.ToString();
-                ImageMonument form = new ImageMonument(Id, mConnexionDAL.GetConnexion());
-                form.ShowDialog();
-
-            }
-
-        }
+       
     }
 }

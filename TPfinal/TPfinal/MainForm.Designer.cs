@@ -72,8 +72,6 @@
             this.fbtnModifier = new PhotoManagerClient.FlashButton();
             this.fbtnAjouter = new PhotoManagerClient.FlashButton();
             this.starsMonument = new EvaluationDemo.Stars();
-            this.CircuitAjouter = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.CircuitModifier = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonumentsCircuits)).BeginInit();
@@ -416,11 +414,7 @@
             this.dgvCircuits.AllowUserToDeleteRows = false;
             this.dgvCircuits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCircuits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCircuits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CircuitAjouter,
-            this.CircuitModifier});
             this.dgvCircuits.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvCircuits.Enabled = false;
             this.dgvCircuits.Location = new System.Drawing.Point(12, 92);
             this.dgvCircuits.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCircuits.MultiSelect = false;
@@ -562,20 +556,6 @@
             this.starsMonument.TabIndex = 2;
             this.starsMonument.Value = 0;
             // 
-            // CircuitAjouter
-            // 
-            this.CircuitAjouter.HeaderText = "Ajouter un circuit";
-            this.CircuitAjouter.Name = "CircuitAjouter";
-            this.CircuitAjouter.Text = "Ajouter";
-            this.CircuitAjouter.UseColumnTextForButtonValue = true;
-            // 
-            // CircuitModifier
-            // 
-            this.CircuitModifier.HeaderText = "Modifier un circuit";
-            this.CircuitModifier.Name = "CircuitModifier";
-            this.CircuitModifier.Text = "Modifier";
-            this.CircuitModifier.UseColumnTextForButtonValue = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -662,8 +642,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Etoiles;
         private System.Windows.Forms.DataGridViewButtonColumn ImageButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn MonumentId;
-        private System.Windows.Forms.DataGridViewButtonColumn CircuitAjouter;
-        private System.Windows.Forms.DataGridViewButtonColumn CircuitModifier;
     }
 }
 

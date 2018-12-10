@@ -83,6 +83,27 @@ namespace TPfinal
         private void lbxMonuments_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateRtbInfos();
+            UpdatePxbImage();
+        }
+
+        private void UpdatePxbImage()
+        {
+            try
+            {
+                string sql = "SELECT IMAGE FROM MONUMENTS WHERE nom = '" + lbxMonuments.Text + "'";
+                OracleCommand cmd = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                OracleDataReader oracleReader = cmd.ExecuteReader();
+                while (oracleReader.Read())
+                {
+
+                    pbxMonument.Load(oracleReader.GetString(0));
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void UpdateRtbInfos()
