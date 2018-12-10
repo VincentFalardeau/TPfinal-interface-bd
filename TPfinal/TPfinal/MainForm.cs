@@ -274,21 +274,29 @@ namespace TPfinal
         {
             try
             {
-                string sqlins = "insert into circuits values(sqCircuits.nextval, :codevilledépart,:codevillearrivée, :nomcircuit, :prix, 1, 10)";
+                string sql = "insert into circuits values(sqCircuits.nextval, :codevilledépart,:codevillearrivée, :nomcircuit, :prix, 1, 10)";
 
-                mOda.InsertCommand = new OracleCommand(sqlins, mConnexionDAL.GetConnexion());
+                OracleParameter paramVilleDepart = new OracleParameter(":codevilledépart", OracleDbType.Char, 3);
+                OracleParameter paramVilleArrivee = new OracleParameter(":codevillearrivée", OracleDbType.Char, 3);
+                OracleParameter paramNom = new OracleParameter(":nomcircuit", OracleDbType.Varchar2, 20);
+                OracleParameter paramPrix = new OracleParameter(":prix", OracleDbType.Double, 8);
 
-                mOda.InsertCommand.Parameters.Add(":numad", OracleDbType.Int32, 4, "numad");
-                mOda.InsertCommand.Parameters.Add(":nom", OracleDbType.Varchar2, 40, "nom");
-                mOda.InsertCommand.Parameters.Add(":prenom", OracleDbType.Varchar2, 40, "prenom");
+                paramVilleDepart.Value = ObtenirIdVille(villeDepart);
+                paramVilleArrivee.Value = ObtenirIdVille(villeArrivee);
+                paramNom.Value = nom;
+                paramPrix.Value = prix;
 
-                //Creation du circuits
-                int idVilleDepart = ObtenirIdVille(villeDepart);
-                int idVilleArrivee = ObtenirIdVille(villeArrivee);
+                OracleCommand commande = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                commande.CommandType = CommandType.Text;
 
-                string sql = "insert into circuits values (sqCircuits.nextval, "+ idVilleDepart + ", " + idVilleArrivee + ", " + nom +", " + prix + ", " + 1 + ", " + 1 + ")";
-                OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
-                oracleCommand.ExecuteNonQuery();
+                commande.Parameters.Add(paramVilleDepart);
+                commande.Parameters.Add(paramVilleArrivee);
+                commande.Parameters.Add(paramNom);
+                commande.Parameters.Add(paramPrix);
+
+                commande.ExecuteNonQuery();
+
+                commande = new OracleCommand(sql, mConnexionDAL.GetConnexion());
 
                 int i = 1;
                 int idmonument;
@@ -297,8 +305,8 @@ namespace TPfinal
                 {
                     idmonument = ObtenirIdMonument(nommonument);
                     sql = "insert into circuitsmonuments values (" + idmonument + ", sqCircuits.currval, " + i + ")";
-                    oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
-                    oracleCommand.ExecuteNonQuery();
+                    commande = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                    commande.ExecuteNonQuery();
                     i++;
                 }
 
