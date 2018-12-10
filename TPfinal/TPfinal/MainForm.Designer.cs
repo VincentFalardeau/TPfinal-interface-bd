@@ -205,6 +205,7 @@
             // 
             this.dgvMonumentsCircuits.AllowUserToAddRows = false;
             this.dgvMonumentsCircuits.AllowUserToDeleteRows = false;
+            this.dgvMonumentsCircuits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonumentsCircuits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonumentsCircuits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NomCircuit,
@@ -231,6 +232,7 @@
             // 
             this.dgvMonuments.AllowUserToAddRows = false;
             this.dgvMonuments.AllowUserToDeleteRows = false;
+            this.dgvMonuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonuments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SelectMonument,
@@ -267,7 +269,6 @@
             // 
             this.Date.HeaderText = "Date";
             this.Date.Name = "Date";
-            this.Date.Width = 75;
             // 
             // Histoire
             // 
@@ -278,13 +279,11 @@
             // 
             this.Prix.HeaderText = "Prix";
             this.Prix.Name = "Prix";
-            this.Prix.Width = 50;
             // 
             // Etoiles
             // 
             this.Etoiles.HeaderText = "Score";
             this.Etoiles.Name = "Etoiles";
-            this.Etoiles.Width = 40;
             // 
             // ImageButton
             // 
@@ -293,7 +292,6 @@
             this.ImageButton.Text = "Afficher";
             this.ImageButton.ToolTipText = "Afficher";
             this.ImageButton.UseColumnTextForButtonValue = true;
-            this.ImageButton.Width = 75;
             // 
             // MonumentId
             // 
