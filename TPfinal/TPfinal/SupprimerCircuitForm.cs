@@ -14,14 +14,19 @@ namespace TPfinal
     public partial class SupprimerCircuitForm : Form
     {
         private ConnectionDAL mConnexionDAL;
-        public SupprimerCircuitForm()
+        public SupprimerCircuitForm(string nomCircuit = "")
         {
             InitializeComponent();
             mConnexionDAL = ConnectionDAL.GetInstance();
-            UpdateClbxCircuits();
+            UpdateClbxCircuits(nomCircuit);
+
+            if(clbxCircuits.CheckedItems.Count <= 0)
+            {
+                fbtnEffacer.Enabled = false;
+            }
         }
 
-        private void UpdateClbxCircuits()
+        private void UpdateClbxCircuits(string nomCircuit = "")
         {
             try
             {
@@ -37,6 +42,11 @@ namespace TPfinal
                 }
 
                 oracleDataReader.Close();
+
+                if(nomCircuit != "")
+                {
+                    clbxCircuits.SetItemChecked(clbxCircuits.Items.IndexOf(nomCircuit), true);
+                }
             }
             catch (Exception ex)
             {
@@ -74,6 +84,18 @@ namespace TPfinal
         private void btnOk_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void clbxCircuits_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(clbxCircuits.CheckedItems.Count > 0)
+            {
+                fbtnEffacer.Enabled = true;
+            }
+            else
+            {
+                fbtnEffacer.Enabled = false;
+            }
         }
     }
 

@@ -37,7 +37,6 @@ namespace TPfinal
 
             fbtnImage.Visible = false;
             fbtnImage.Location = fbtnModifier.Location;
-
         }
 
         private void UpdateData()
@@ -417,7 +416,7 @@ namespace TPfinal
 
         private void Supprimer()
         {
-            SupprimerCircuitForm scf = new SupprimerCircuitForm();
+            SupprimerCircuitForm scf = new SupprimerCircuitForm(dgvCircuits.CurrentRow.Cells[0].Value.ToString());
             scf.ShowDialog();
             UpdateDgvCircuits();
         }

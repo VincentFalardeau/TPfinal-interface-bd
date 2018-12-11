@@ -97,14 +97,13 @@ group by cm.idcircuit;
 
 
 
-
 create view vue_circuit_monument as
 select ovc.nom as nom, 
 ovc.depart as depart, 
 ovc.arrivee as arrivee, 
 ovc.prix as prix,
 ovc.etoiles as etoiles,
-m.nom as nom_circuit
+m.nom as nom_monument
 from officiel_vue_circuit_7 ovc
 inner join circuitsmonuments cm on ovc.idcircuit = cm.idcircuit
 inner join monuments m on m.idmonument = cm.idmonument;

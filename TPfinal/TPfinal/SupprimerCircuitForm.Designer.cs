@@ -38,18 +38,19 @@
             // 
             this.clbxCircuits.CheckOnClick = true;
             this.clbxCircuits.FormattingEnabled = true;
-            this.clbxCircuits.Location = new System.Drawing.Point(13, 13);
+            this.clbxCircuits.Location = new System.Drawing.Point(43, 12);
             this.clbxCircuits.Name = "clbxCircuits";
-            this.clbxCircuits.Size = new System.Drawing.Size(258, 277);
+            this.clbxCircuits.Size = new System.Drawing.Size(373, 214);
             this.clbxCircuits.TabIndex = 0;
+            this.clbxCircuits.SelectedIndexChanged += new System.EventHandler(this.clbxCircuits_SelectedIndexChanged);
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(13, 297);
+            this.btnOk.Location = new System.Drawing.Point(233, 232);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(204, 45);
+            this.btnOk.Size = new System.Drawing.Size(183, 54);
             this.btnOk.TabIndex = 1;
-            this.btnOk.Text = "OK";
+            this.btnOk.Text = "Quitter";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
@@ -57,16 +58,17 @@
             // 
             this.fbtnEffacer.BackgroundImage = global::TPfinal.Properties.Resources.trash;
             this.fbtnEffacer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.fbtnEffacer.ClickedImage = null;
-            this.fbtnEffacer.DisabledImage = null;
+            this.fbtnEffacer.ClickedImage = global::TPfinal.Properties.Resources.trash_accept;
+            this.fbtnEffacer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fbtnEffacer.DisabledImage = global::TPfinal.Properties.Resources.trash_disable;
             this.fbtnEffacer.Image = ((System.Drawing.Image)(resources.GetObject("fbtnEffacer.Image")));
-            this.fbtnEffacer.Location = new System.Drawing.Point(223, 297);
+            this.fbtnEffacer.Location = new System.Drawing.Point(111, 237);
             this.fbtnEffacer.Name = "fbtnEffacer";
-            this.fbtnEffacer.NeutralImage = null;
-            this.fbtnEffacer.OverImage = null;
-            this.fbtnEffacer.Size = new System.Drawing.Size(44, 45);
+            this.fbtnEffacer.NeutralImage = global::TPfinal.Properties.Resources.trash;
+            this.fbtnEffacer.OverImage = global::TPfinal.Properties.Resources.trash_accept;
+            this.fbtnEffacer.Size = new System.Drawing.Size(45, 45);
             this.fbtnEffacer.TabIndex = 14;
-            this.fbtnEffacer.Text = "flashButton2";
+            this.fbtnEffacer.Text = "Supprimer les circuits selectionnés";
             this.fbtnEffacer.UseVisualStyleBackColor = true;
             this.fbtnEffacer.Click += new System.EventHandler(this.fbtnEffacer_Click);
             // 
@@ -74,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 358);
+            this.ClientSize = new System.Drawing.Size(462, 293);
             this.Controls.Add(this.fbtnEffacer);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.clbxCircuits);
