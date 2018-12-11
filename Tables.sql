@@ -4,7 +4,7 @@
 --Emile Menard
 --
 --Tables
-
+describe circuits;
 
 CREATE TABLE circuits (
     idcircuit          NUMBER(4) NOT NULL,

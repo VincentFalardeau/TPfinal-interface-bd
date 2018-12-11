@@ -185,6 +185,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 346);
             this.label2.Name = "label2";
@@ -194,6 +197,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 96);
             this.label1.Name = "label1";
@@ -205,6 +211,9 @@
             // 
             this.dgvMonumentsCircuits.AllowUserToAddRows = false;
             this.dgvMonumentsCircuits.AllowUserToDeleteRows = false;
+            this.dgvMonumentsCircuits.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMonumentsCircuits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonumentsCircuits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonumentsCircuits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -217,6 +226,7 @@
             this.dgvMonumentsCircuits.RowTemplate.Height = 28;
             this.dgvMonumentsCircuits.Size = new System.Drawing.Size(814, 179);
             this.dgvMonumentsCircuits.TabIndex = 12;
+            this.dgvMonumentsCircuits.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonumentsCircuits_CellClick);
             // 
             // NomCircuit
             // 
@@ -232,6 +242,9 @@
             // 
             this.dgvMonuments.AllowUserToAddRows = false;
             this.dgvMonuments.AllowUserToDeleteRows = false;
+            this.dgvMonuments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMonuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonuments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -251,6 +264,7 @@
             this.dgvMonuments.RowTemplate.Height = 32;
             this.dgvMonuments.Size = new System.Drawing.Size(814, 220);
             this.dgvMonuments.TabIndex = 11;
+            this.dgvMonuments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonuments_CellClick);
             this.dgvMonuments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonuments_CellContentClick);
             // 
             // SelectMonument
@@ -423,6 +437,9 @@
             // 
             this.dgvCircuits.AllowUserToAddRows = false;
             this.dgvCircuits.AllowUserToDeleteRows = false;
+            this.dgvCircuits.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCircuits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCircuits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCircuits.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -432,6 +449,7 @@
             this.dgvCircuits.Name = "dgvCircuits";
             this.dgvCircuits.Size = new System.Drawing.Size(813, 452);
             this.dgvCircuits.TabIndex = 9;
+            this.dgvCircuits.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCircuits_CellClick);
             // 
             // groupBox6
             // 
@@ -454,10 +472,14 @@
             // 
             // tabsControl
             // 
+            this.tabsControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabsControl.Controls.Add(this.TAB_Circuits);
             this.tabsControl.Controls.Add(this.TAB_Monuments);
             this.tabsControl.Location = new System.Drawing.Point(85, 50);
             this.tabsControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabsControl.MinimumSize = new System.Drawing.Size(854, 603);
             this.tabsControl.Name = "tabsControl";
             this.tabsControl.SelectedIndex = 0;
             this.tabsControl.Size = new System.Drawing.Size(854, 603);
@@ -488,14 +510,14 @@
             // 
             this.fbtnInformations.BackgroundImage = global::TPfinal.Properties.Resources.Eye;
             this.fbtnInformations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.fbtnInformations.ClickedImage = null;
+            this.fbtnInformations.ClickedImage = global::TPfinal.Properties.Resources.Eye_accept;
             this.fbtnInformations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fbtnInformations.DisabledImage = null;
             this.fbtnInformations.Image = ((System.Drawing.Image)(resources.GetObject("fbtnInformations.Image")));
             this.fbtnInformations.Location = new System.Drawing.Point(21, 275);
             this.fbtnInformations.Name = "fbtnInformations";
-            this.fbtnInformations.NeutralImage = null;
-            this.fbtnInformations.OverImage = null;
+            this.fbtnInformations.NeutralImage = global::TPfinal.Properties.Resources.Eye;
+            this.fbtnInformations.OverImage = global::TPfinal.Properties.Resources.Eye_accept;
             this.fbtnInformations.Size = new System.Drawing.Size(52, 52);
             this.fbtnInformations.TabIndex = 14;
             this.fbtnInformations.Text = "Voir les informations";
@@ -506,14 +528,14 @@
             // 
             this.fbtnEffacer.BackgroundImage = global::TPfinal.Properties.Resources.trash;
             this.fbtnEffacer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.fbtnEffacer.ClickedImage = null;
+            this.fbtnEffacer.ClickedImage = global::TPfinal.Properties.Resources.trash_accept;
             this.fbtnEffacer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fbtnEffacer.DisabledImage = null;
+            this.fbtnEffacer.DisabledImage = global::TPfinal.Properties.Resources.trash_disable;
             this.fbtnEffacer.Image = ((System.Drawing.Image)(resources.GetObject("fbtnEffacer.Image")));
             this.fbtnEffacer.Location = new System.Drawing.Point(21, 200);
             this.fbtnEffacer.Name = "fbtnEffacer";
-            this.fbtnEffacer.NeutralImage = null;
-            this.fbtnEffacer.OverImage = null;
+            this.fbtnEffacer.NeutralImage = global::TPfinal.Properties.Resources.trash;
+            this.fbtnEffacer.OverImage = global::TPfinal.Properties.Resources.trash_accept;
             this.fbtnEffacer.Size = new System.Drawing.Size(52, 52);
             this.fbtnEffacer.TabIndex = 13;
             this.fbtnEffacer.Text = "Effacer un circuit";
@@ -524,14 +546,14 @@
             // 
             this.fbtnModifier.BackgroundImage = global::TPfinal.Properties.Resources.edit;
             this.fbtnModifier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.fbtnModifier.ClickedImage = null;
+            this.fbtnModifier.ClickedImage = global::TPfinal.Properties.Resources.edit_accept;
             this.fbtnModifier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fbtnModifier.DisabledImage = null;
+            this.fbtnModifier.DisabledImage = global::TPfinal.Properties.Resources.edit_disable;
             this.fbtnModifier.Image = ((System.Drawing.Image)(resources.GetObject("fbtnModifier.Image")));
             this.fbtnModifier.Location = new System.Drawing.Point(21, 125);
             this.fbtnModifier.Name = "fbtnModifier";
-            this.fbtnModifier.NeutralImage = null;
-            this.fbtnModifier.OverImage = null;
+            this.fbtnModifier.NeutralImage = global::TPfinal.Properties.Resources.edit;
+            this.fbtnModifier.OverImage = global::TPfinal.Properties.Resources.edit_accept;
             this.fbtnModifier.Size = new System.Drawing.Size(52, 52);
             this.fbtnModifier.TabIndex = 12;
             this.fbtnModifier.Text = "Modifier un circuit";
@@ -542,14 +564,14 @@
             // 
             this.fbtnAjouter.BackgroundImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Neutral;
             this.fbtnAjouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.fbtnAjouter.ClickedImage = null;
+            this.fbtnAjouter.ClickedImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Click;
             this.fbtnAjouter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fbtnAjouter.DisabledImage = null;
+            this.fbtnAjouter.DisabledImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Disable;
             this.fbtnAjouter.Image = ((System.Drawing.Image)(resources.GetObject("fbtnAjouter.Image")));
             this.fbtnAjouter.Location = new System.Drawing.Point(21, 50);
             this.fbtnAjouter.Name = "fbtnAjouter";
-            this.fbtnAjouter.NeutralImage = null;
-            this.fbtnAjouter.OverImage = null;
+            this.fbtnAjouter.NeutralImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Neutral;
+            this.fbtnAjouter.OverImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Over;
             this.fbtnAjouter.Size = new System.Drawing.Size(52, 52);
             this.fbtnAjouter.TabIndex = 11;
             this.fbtnAjouter.Text = "Ajouter un circuit";
@@ -569,6 +591,7 @@
             this.Controls.Add(this.tabsControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(987, 720);
             this.Name = "MainForm";
             this.Text = "Agence Tourism";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

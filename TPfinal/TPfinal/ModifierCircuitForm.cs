@@ -19,7 +19,7 @@ namespace TPfinal
 
         private ConnectionDAL mConnexionDAL;
         private ValidationProvider mValidationProvider;
-        public ModifierCircuitForm()
+        public ModifierCircuitForm(string nomCircuit = "")
         {
             InitializeComponent();
 
@@ -28,12 +28,12 @@ namespace TPfinal
 
             mConnexionDAL = ConnectionDAL.GetInstance();
 
-            UpdateCbxCircuits();
+            UpdateCbxCircuits(nomCircuit);
         }
 
        
 
-        private void UpdateCbxCircuits()
+        private void UpdateCbxCircuits(string nomCircuit = "")
         {
             try
             {
@@ -50,7 +50,15 @@ namespace TPfinal
 
                 oracleDataReader.Close();
 
-                cbxCircuits.SelectedIndex = 0;
+                if(nomCircuit != "")
+                {
+                    cbxCircuits.SelectedIndex = cbxCircuits.Items.IndexOf(nomCircuit);
+                }
+                else
+                {
+                    cbxCircuits.SelectedIndex = 0;
+                }
+                    
             }
             catch (Exception ex)
             {

@@ -16,16 +16,16 @@ namespace TPfinal
     {
         private ConnectionDAL mConnexionDAL;
         private DB_Images DB_Images;
-        public InformationsCircuitForm()
+        public InformationsCircuitForm(string nomCircuit = "")
         {
             InitializeComponent();
             mConnexionDAL = ConnectionDAL.GetInstance();
             DB_Images = new DB_Images("Emile", "Salut123");
-            InitCbxCircuits();
+            InitCbxCircuits(nomCircuit);
 
         }
 
-        private void InitCbxCircuits()
+        private void InitCbxCircuits(string nomCircuit = "")
         {
             try
             {
@@ -40,7 +40,16 @@ namespace TPfinal
 
                 oracleDataReader.Close();
 
-                cbxCircuits.SelectedIndex = 0;
+                if(nomCircuit != "")
+                {
+                    cbxCircuits.SelectedIndex = cbxCircuits.Items.IndexOf(nomCircuit);
+                }
+                else
+                {
+                    cbxCircuits.SelectedIndex = 0;
+                }
+
+               
             }
             catch (Exception ex)
             {

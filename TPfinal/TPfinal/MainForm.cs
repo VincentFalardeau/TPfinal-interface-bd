@@ -32,6 +32,9 @@ namespace TPfinal
 
             UpdateData();
 
+            FBTN_AddMonument.Visible = false;
+            FBTN_AddMonument.Location = fbtnAjouter.Location;
+
         }
 
         private void UpdateData()
@@ -378,7 +381,7 @@ namespace TPfinal
 
         private void Modifier()
         {
-            ModifierCircuitForm mcf = new ModifierCircuitForm();
+            ModifierCircuitForm mcf = new ModifierCircuitForm(dgvCircuits.CurrentRow.Cells[0].Value.ToString());
             if (mcf.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Prix modifié avec succès!");
@@ -434,8 +437,13 @@ namespace TPfinal
 
         private void VoirInfos()
         {
-            InformationsCircuitForm icf = new InformationsCircuitForm();
+            InformationsCircuitForm icf = new InformationsCircuitForm(dgvCircuits.CurrentRow.Cells[0].Value.ToString());
             icf.ShowDialog();
+        }
+
+        private void dgvCircuits_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvCircuits.CurrentRow.Selected = true;
         }
 
 
@@ -569,6 +577,16 @@ namespace TPfinal
 
         }
 
+        private void dgvMonuments_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvMonuments.CurrentRow.Selected = true;
+        }
+
+        private void dgvMonumentsCircuits_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvMonuments.CurrentRow.Selected = true;
+        }
+
         //--------------------------------------------------------------------------
         //
         //Tests
@@ -587,12 +605,25 @@ namespace TPfinal
         {
             if (tabsControl.SelectedIndex == 0)
             {
-                Console.Write("Page 1");
+
+                FBTN_AddMonument.Visible = false;
+
+                fbtnAjouter.Visible = true;
+                fbtnModifier.Visible = true;
+                fbtnEffacer.Visible = true;
+                fbtnInformations.Visible = true;
 
             }
             else if (tabsControl.SelectedIndex == 1)
             {
-                Console.Write("Page 2");
+
+                FBTN_AddMonument.Visible = true;
+                
+                fbtnAjouter.Visible = false;
+                fbtnModifier.Visible = false;
+                fbtnEffacer.Visible = false;
+                fbtnInformations.Visible = false;
+
             }
         }
 
@@ -606,5 +637,6 @@ namespace TPfinal
         {
             UpdateDgvMonuments();
         }
+
     }
 }
