@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NouveauMonumentForm));
             this.TBX_Nom = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DATE_Monument = new System.Windows.Forms.DateTimePicker();
@@ -44,7 +43,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.PBX_Monument = new PhotoManagerClient.ImageBox();
             this.Control_Stars = new EvaluationDemo.Stars();
-            this.FBTN_AddImage = new PhotoManagerClient.FlashButton();
             ((System.ComponentModel.ISupportInitialize)(this.TBX_Prix)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Monument)).BeginInit();
@@ -55,7 +53,7 @@
             this.TBX_Nom.Location = new System.Drawing.Point(30, 52);
             this.TBX_Nom.MaxLength = 30;
             this.TBX_Nom.Name = "TBX_Nom";
-            this.TBX_Nom.Size = new System.Drawing.Size(236, 26);
+            this.TBX_Nom.Size = new System.Drawing.Size(320, 26);
             this.TBX_Nom.TabIndex = 0;
             // 
             // label1
@@ -193,23 +191,6 @@
             this.Control_Stars.TabIndex = 4;
             this.Control_Stars.Value = 0;
             // 
-            // FBTN_AddImage
-            // 
-            this.FBTN_AddImage.BackgroundImage = global::TPfinal.Properties.Resources.add;
-            this.FBTN_AddImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_AddImage.ClickedImage = null;
-            this.FBTN_AddImage.DisabledImage = null;
-            this.FBTN_AddImage.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_AddImage.Image")));
-            this.FBTN_AddImage.Location = new System.Drawing.Point(298, 37);
-            this.FBTN_AddImage.Name = "FBTN_AddImage";
-            this.FBTN_AddImage.NeutralImage = null;
-            this.FBTN_AddImage.OverImage = null;
-            this.FBTN_AddImage.Size = new System.Drawing.Size(52, 52);
-            this.FBTN_AddImage.TabIndex = 2;
-            this.FBTN_AddImage.Text = "Ajouter une image";
-            this.FBTN_AddImage.UseVisualStyleBackColor = true;
-            this.FBTN_AddImage.Click += new System.EventHandler(this.FBTN_AddImage_Click);
-            // 
             // NouveauMonumentForm
             // 
             this.AcceptButton = this.BTN_Accepter;
@@ -229,7 +210,6 @@
             this.Controls.Add(this.DATE_Monument);
             this.Controls.Add(this.Control_Stars);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.FBTN_AddImage);
             this.Controls.Add(this.TBX_Nom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "NouveauMonumentForm";
@@ -246,7 +226,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox TBX_Nom;
-        private PhotoManagerClient.FlashButton FBTN_AddImage;
         private System.Windows.Forms.Label label1;
         private EvaluationDemo.Stars Control_Stars;
         private System.Windows.Forms.DateTimePicker DATE_Monument;
