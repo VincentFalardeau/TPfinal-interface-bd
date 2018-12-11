@@ -58,6 +58,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cbxVille = new System.Windows.Forms.ComboBox();
             this.tabsControl = new System.Windows.Forms.TabControl();
+            this.fbtnImage = new PhotoManagerClient.FlashButton();
             this.FBTN_AddMonument = new PhotoManagerClient.FlashButton();
             this.fbtnInformations = new PhotoManagerClient.FlashButton();
             this.fbtnEffacer = new PhotoManagerClient.FlashButton();
@@ -69,7 +70,6 @@
             this.Histoire = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Etoiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImageButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.MonumentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
@@ -254,12 +254,12 @@
             this.Histoire,
             this.Prix,
             this.Etoiles,
-            this.ImageButton,
             this.MonumentId});
             this.dgvMonuments.Location = new System.Drawing.Point(12, 121);
             this.dgvMonuments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvMonuments.MultiSelect = false;
             this.dgvMonuments.Name = "dgvMonuments";
+            this.dgvMonuments.ReadOnly = true;
             this.dgvMonuments.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMonuments.RowHeadersVisible = false;
             this.dgvMonuments.RowTemplate.Height = 32;
@@ -433,6 +433,24 @@
             this.tabsControl.TabIndex = 10;
             this.tabsControl.SelectedIndexChanged += new System.EventHandler(this.TABPages_SelectedIndexChanged);
             // 
+            // fbtnImage
+            // 
+            this.fbtnImage.BackgroundImage = global::TPfinal.Properties.Resources.Eye;
+            this.fbtnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.fbtnImage.ClickedImage = global::TPfinal.Properties.Resources.Eye_accept;
+            this.fbtnImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fbtnImage.DisabledImage = null;
+            this.fbtnImage.Image = ((System.Drawing.Image)(resources.GetObject("fbtnImage.Image")));
+            this.fbtnImage.Location = new System.Drawing.Point(21, 437);
+            this.fbtnImage.Name = "fbtnImage";
+            this.fbtnImage.NeutralImage = global::TPfinal.Properties.Resources.Eye;
+            this.fbtnImage.OverImage = global::TPfinal.Properties.Resources.Eye_accept;
+            this.fbtnImage.Size = new System.Drawing.Size(52, 52);
+            this.fbtnImage.TabIndex = 15;
+            this.fbtnImage.Text = "Voir les informations";
+            this.fbtnImage.UseVisualStyleBackColor = true;
+            this.fbtnImage.Click += new System.EventHandler(this.fbtnImage_Click);
+            // 
             // FBTN_AddMonument
             // 
             this.FBTN_AddMonument.BackgroundImage = global::TPfinal.Properties.Resources.Tower_Add_Neutral;
@@ -567,15 +585,6 @@
             this.Etoiles.Name = "Etoiles";
             this.Etoiles.ReadOnly = true;
             // 
-            // ImageButton
-            // 
-            this.ImageButton.HeaderText = "Image";
-            this.ImageButton.Name = "ImageButton";
-            this.ImageButton.ReadOnly = true;
-            this.ImageButton.Text = "Afficher";
-            this.ImageButton.ToolTipText = "Afficher";
-            this.ImageButton.UseColumnTextForButtonValue = true;
-            // 
             // MonumentId
             // 
             this.MonumentId.HeaderText = "MonumentId";
@@ -588,6 +597,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 664);
+            this.Controls.Add(this.fbtnImage);
             this.Controls.Add(this.FBTN_AddMonument);
             this.Controls.Add(this.fbtnInformations);
             this.Controls.Add(this.fbtnEffacer);
@@ -662,12 +672,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomCircuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrdreDansCircuit;
+        private PhotoManagerClient.FlashButton fbtnImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Histoire;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prix;
         private System.Windows.Forms.DataGridViewTextBoxColumn Etoiles;
-        private System.Windows.Forms.DataGridViewButtonColumn ImageButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn MonumentId;
     }
 }
