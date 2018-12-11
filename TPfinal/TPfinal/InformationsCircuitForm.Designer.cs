@@ -33,9 +33,9 @@
             this.lbxMonuments = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.rtbInfos = new System.Windows.Forms.RichTextBox();
-            this.pbxMonument = new System.Windows.Forms.PictureBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.starsMonument = new EvaluationDemo.Stars();
+            this.pbxMonument = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMonument)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,16 +85,6 @@
             this.rtbInfos.TabIndex = 10;
             this.rtbInfos.Text = "";
             // 
-            // pbxMonument
-            // 
-            this.pbxMonument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxMonument.Location = new System.Drawing.Point(259, 26);
-            this.pbxMonument.Name = "pbxMonument";
-            this.pbxMonument.Size = new System.Drawing.Size(214, 207);
-            this.pbxMonument.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxMonument.TabIndex = 11;
-            this.pbxMonument.TabStop = false;
-            // 
             // btnOk
             // 
             this.btnOk.Location = new System.Drawing.Point(18, 379);
@@ -115,14 +105,24 @@
             this.starsMonument.TabIndex = 13;
             this.starsMonument.Value = 0;
             // 
+            // pbxMonument
+            // 
+            this.pbxMonument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxMonument.Location = new System.Drawing.Point(270, 26);
+            this.pbxMonument.Name = "pbxMonument";
+            this.pbxMonument.Size = new System.Drawing.Size(203, 204);
+            this.pbxMonument.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxMonument.TabIndex = 14;
+            this.pbxMonument.TabStop = false;
+            // 
             // InformationsCircuitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 436);
+            this.Controls.Add(this.pbxMonument);
             this.Controls.Add(this.starsMonument);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.pbxMonument);
             this.Controls.Add(this.rtbInfos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbxMonuments);
@@ -144,8 +144,8 @@
         private System.Windows.Forms.ListBox lbxMonuments;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtbInfos;
-        private System.Windows.Forms.PictureBox pbxMonument;
         private System.Windows.Forms.Button btnOk;
         private EvaluationDemo.Stars starsMonument;
+        private System.Windows.Forms.PictureBox pbxMonument;
     }
 }

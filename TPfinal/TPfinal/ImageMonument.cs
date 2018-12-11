@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using DB_Images_Utilities;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,12 @@ namespace TPfinal
 {
     public partial class ImageMonument : Form
     {
-
+        private DB_Images DB_Images;
         bool FullScreen = false;
         public ImageMonument(string id, OracleConnection connection)
         {
             InitializeComponent();
+            DB_Images = new DB_Images("Emile", "Salut123");
             try
             {
                 string sql = "SELECT IMAGE FROM MONUMENTS WHERE IDMONUMENT = " + id;
@@ -25,7 +27,8 @@ namespace TPfinal
                 OracleDataReader oracleReader = cmd.ExecuteReader();
                 while (oracleReader.Read())
                 {
-                    PBX_Image.Load(oracleReader.GetString(0));
+
+                    PBX_Image.BackgroundImage = DB_Images.Find(oracleReader.GetString(0));
                 }
             }
             catch (Exception ex)

@@ -28,19 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PBX_Image = new System.Windows.Forms.PictureBox();
+            this.components = new System.ComponentModel.Container();
+            this.PBX_Image = new PhotoManagerClient.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Image)).BeginInit();
             this.SuspendLayout();
             // 
             // PBX_Image
             // 
+            this.PBX_Image.AllowDrop = true;
             this.PBX_Image.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.PBX_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PBX_Image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PBX_Image.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
+    "th context menu.";
+            this.PBX_Image.ImportImageText = "Import image from file...";
             this.PBX_Image.Location = new System.Drawing.Point(12, 12);
             this.PBX_Image.Name = "PBX_Image";
+            this.PBX_Image.OpenFileDialogTitle = "Please choose image an file";
+            this.PBX_Image.PasteMenuText = "Paste image from clipboard";
             this.PBX_Image.Size = new System.Drawing.Size(454, 420);
-            this.PBX_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBX_Image.TabIndex = 0;
             this.PBX_Image.TabStop = false;
             // 
@@ -59,6 +67,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PBX_Image;
+        private PhotoManagerClient.ImageBox PBX_Image;
     }
 }

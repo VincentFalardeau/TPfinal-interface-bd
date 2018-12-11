@@ -1,4 +1,5 @@
 ﻿
+using DB_Images_Utilities;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -21,27 +22,27 @@ namespace TPfinal
 
         private ConnectionDAL DAL;
         private ValidationProvider ValidationProvider;
-        private string ImageLink = "";
+        private Image Image;
+
+        private DB_Images DB_Images;
 
         public NouveauMonumentForm()
         {
             InitializeComponent();
+
             DAL = ConnectionDAL.GetInstance();
         }
 
         private void FBTN_AddImage_Click(object sender, EventArgs e)
         {
-            MonumentImageForm form = new MonumentImageForm();
-            if(form.ShowDialog() == DialogResult.OK)
-            {
-                ImageLink = form.ImageLink;
-                PBX_Monument.Load(ImageLink);
-              
-            }
+           
+           
         }
 
         private void NouveauMonumentForm_Load(object sender, EventArgs e)
         {
+            DB_Images = new DB_Images("Emile", "Salut123");
+
             ValidationProvider = new ValidationProvider(this);
             ValidationProvider.AddControlToValidate(TBX_Nom, ValiderNom);
             ValidationProvider.AddControlToValidate(TBX_Prix, ValiderPrix);
@@ -62,13 +63,15 @@ namespace TPfinal
                 DATE_Monument.Text != "" && DATE_Monument.Text != null
                 && Control_Stars.Value != 0)
             {
+
+
                 NouveauMonument = new Monument
                 {
                     Nom = TBX_Nom.Text,
                     Prix = decimal.Parse(TBX_Prix.Text),
                     Etoiles = Control_Stars.Value,
                     DateConstruction = DATE_Monument.Value,
-                    Image = ImageLink,
+                    Image = DB_Images.Add(Image),
                     Histoire = RTBX_Histoire.Text
                 };
                SaveData(NouveauMonument);
@@ -161,6 +164,9 @@ namespace TPfinal
 
         }
 
-
+        private void PBX_Monument_BackgroundImageChanged(object sender, EventArgs e)
+        {
+            Image = PBX_Monument.BackgroundImage;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using DB_Images_Utilities;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,14 @@ namespace TPfinal
     public partial class InformationsCircuitForm : Form
     {
         private ConnectionDAL mConnexionDAL;
+        private DB_Images DB_Images;
         public InformationsCircuitForm()
         {
             InitializeComponent();
             mConnexionDAL = ConnectionDAL.GetInstance();
+            DB_Images = new DB_Images("Emile", "Salut123");
             InitCbxCircuits();
+
         }
 
         private void InitCbxCircuits()
@@ -95,8 +99,10 @@ namespace TPfinal
                 OracleDataReader oracleReader = cmd.ExecuteReader();
                 while (oracleReader.Read())
                 {
+                    Image image = DB_Images.Find(oracleReader.GetString(0));
 
-                    pbxMonument.Load(oracleReader.GetString(0));
+                    if (image != null)
+                        pbxMonument.BackgroundImage = image;
                 }
             }
             catch (Exception ex)
