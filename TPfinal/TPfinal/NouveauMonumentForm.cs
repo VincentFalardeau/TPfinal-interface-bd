@@ -23,6 +23,7 @@ namespace TPfinal
         private ConnectionDAL DAL;
         private ValidationProvider ValidationProvider;
         private Image Image;
+        List<string> mListeNoms;
 
         private DB_Images DB_Images;
 
@@ -31,6 +32,8 @@ namespace TPfinal
             InitializeComponent();
 
             DAL = ConnectionDAL.GetInstance();
+
+            LoadListeNoms();
         }
 
         private void FBTN_AddImage_Click(object sender, EventArgs e)
@@ -45,11 +48,35 @@ namespace TPfinal
 
             ValidationProvider = new ValidationProvider(this);
             ValidationProvider.AddControlToValidate(TBX_Nom, ValiderNom);
-            ValidationProvider.AddControlToValidate(TBX_Prix, ValiderPrix);
+            ValidationProvider.AddControlToValidate(tbxPrix, ValiderPrix);
             ValidationProvider.AddControlToValidate(RTBX_Histoire, ValiderHistoire);
             ValidationProvider.AddControlToValidate(DATE_Monument, ValiderDate);
             ValidationProvider.AddControlToValidate(Control_Stars, ValiderStars);
         }
+
+        private void LoadListeNoms()
+        {
+            try
+            {
+                mListeNoms = new List<string>();
+                string sql = "select nom from monuments";
+                OracleCommand oracleCommand = new OracleCommand(sql, DAL.GetConnexion());
+                OracleDataReader oracleDataReader = oracleCommand.ExecuteReader();
+
+                while (oracleDataReader.Read())
+                {
+                    mListeNoms.Add(oracleDataReader.GetString(0));
+                }
+
+                oracleDataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        
 
         private void BTN_Accepter_Click(object sender, EventArgs e)
         {
@@ -68,7 +95,7 @@ namespace TPfinal
                 NouveauMonument = new Monument
                 {
                     Nom = TBX_Nom.Text,
-                    Prix = decimal.Parse(TBX_Prix.Text),
+                    Prix = decimal.Parse(tbxPrix.Text),
                     Etoiles = Control_Stars.Value,
                     DateConstruction = DATE_Monument.Value,
                     Image = DB_Images.Add(Image),
@@ -87,32 +114,53 @@ namespace TPfinal
 
         private bool ValiderNom(ref string message)
         {
-            message = "Veuillez entrer le nom du monument";
-            return TBX_Nom.Text != "" && TBX_Nom.Text != null;
+            message = "Ce nom existe déjà";
+
+            if (TBX_Nom.Text == "")
+            {
+                message = "Il doit y avoir un nom";
+            }
+
+            return TBX_Nom.Text != "" && EstUnique(TBX_Nom.Text);
+        }
+
+        private bool EstUnique(string nom)
+        {
+            bool unique = true;
+            foreach (string nomExistant in mListeNoms)
+            {
+                if (nom == nomExistant)
+                {
+                    unique = false;
+                    break;
+                }
+            }
+            return unique;
         }
 
         private bool ValiderHistoire(ref string message)
         {
-            message = "Veuillez entrer l'histoire";
+            message = "Il doit y avoir une histoire";
             return RTBX_Histoire.Text != "" && RTBX_Histoire.Text != null;
         }
 
         private bool ValiderDate(ref string message)
         {
-            message = "Veuillez entrer le nom du monument";
+            message = "Il doit y avoir une date";
             return DATE_Monument.Text != "" && DATE_Monument.Text != null;
         }
 
         private bool ValiderPrix(ref string message)
         {
-            message = "Veuillez entrer le prix du guide du circuit";
-            return TBX_Prix.Text != "" && TBX_Prix.Text != null;
+            message = "Il doit y avoir un prix";
+            return tbxPrix.Text != "" && tbxPrix.Text != null;
         }
 
         private bool ValiderStars(ref string message)
         {
-            message = "Veuillez entrer le score du monument";
-            return Control_Stars.Value != 0;
+            //message = "Il doit y avoir un nombre d'étoiles";
+            //return Control_Stars.Value != 0;
+            return true;
         }
 
 
@@ -167,6 +215,37 @@ namespace TPfinal
         private void PBX_Monument_BackgroundImageChanged(object sender, EventArgs e)
         {
             Image = PBX_Monument.BackgroundImage;
+        }
+
+        private void tbxPrix_Keyress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar))
+            {
+                //Donne la position du premier char point
+                int indexPoint = tbxPrix.Text.IndexOf('.');
+                //Si le char est un nombre
+                if (char.IsDigit(e.KeyChar))
+                {
+                    //Si indexPoint n'est pas égal à -1, il y a déjà un point
+                    //Si indexPoint <   tbxNvPrix.SelectionStart(ce qui donne la position courante), 
+                    //le point est à gauche du curseur, 
+                    //donc on ne peut pas ajouter plus de 2 caractères après cela
+                    if (indexPoint != -1 && indexPoint < tbxPrix.SelectionStart && tbxPrix.Text.Substring(indexPoint + 1).Length >= 2)
+                    {
+                        e.Handled = true;
+                    }
+                }
+                //Si ce n'est pas un nombre
+                else
+                {
+                    //On ne peut pas l'accepter si ce n'est pas un point, 
+                    //s'il y a déjà un point, 
+                    //Si c'est le premier char, 
+                    //si il y a déjà 2 nombres après le point
+                    e.Handled = e.KeyChar != '.' || indexPoint != -1 || tbxPrix.Text.Length == 0 || tbxPrix.SelectionStart + 2 < tbxPrix.Text.Length;
+                }
+            }
         }
     }
 }
