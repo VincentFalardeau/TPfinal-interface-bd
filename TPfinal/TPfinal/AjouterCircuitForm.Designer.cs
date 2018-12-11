@@ -69,6 +69,7 @@
             this.cbxDepart.Location = new System.Drawing.Point(179, 38);
             this.cbxDepart.Name = "cbxDepart";
             this.cbxDepart.Size = new System.Drawing.Size(237, 28);
+            this.cbxDepart.Sorted = true;
             this.cbxDepart.TabIndex = 5;
             // 
             // cbxArrivee
@@ -78,6 +79,7 @@
             this.cbxArrivee.Location = new System.Drawing.Point(179, 72);
             this.cbxArrivee.Name = "cbxArrivee";
             this.cbxArrivee.Size = new System.Drawing.Size(237, 28);
+            this.cbxArrivee.Sorted = true;
             this.cbxArrivee.TabIndex = 6;
             // 
             // label2
@@ -146,6 +148,7 @@
             this.lbxMonuments.Name = "lbxMonuments";
             this.lbxMonuments.Size = new System.Drawing.Size(237, 104);
             this.lbxMonuments.TabIndex = 19;
+            this.lbxMonuments.SelectedIndexChanged += new System.EventHandler(this.lbxMonuments_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -163,6 +166,7 @@
             this.cbxMonuments.Location = new System.Drawing.Point(179, 138);
             this.cbxMonuments.Name = "cbxMonuments";
             this.cbxMonuments.Size = new System.Drawing.Size(237, 28);
+            this.cbxMonuments.Sorted = true;
             this.cbxMonuments.TabIndex = 21;
             // 
             // fbtnEffacerMonument
@@ -172,6 +176,7 @@
             this.fbtnEffacerMonument.ClickedImage = global::TPfinal.Properties.Resources.trash_accept;
             this.fbtnEffacerMonument.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fbtnEffacerMonument.DisabledImage = global::TPfinal.Properties.Resources.trash_disable;
+            this.fbtnEffacerMonument.Enabled = false;
             this.fbtnEffacerMonument.Image = ((System.Drawing.Image)(resources.GetObject("fbtnEffacerMonument.Image")));
             this.fbtnEffacerMonument.Location = new System.Drawing.Point(137, 214);
             this.fbtnEffacerMonument.Name = "fbtnEffacerMonument";

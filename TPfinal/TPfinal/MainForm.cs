@@ -149,7 +149,6 @@ namespace TPfinal
                 }
                 else if (cbxMonument.Text != "")
                 {
-
                     sql = "select distinct nom, depart, arrivee, prix from vue_circuit_monument where nom_monument = '" + cbxMonument.Text + "'";
 
                     if (cbxVille.Text != "")
@@ -160,7 +159,6 @@ namespace TPfinal
                     {
                         sql = sql + " and prix <= " + nudPrix.Value;
                     }
-
                 }
                 else
                 {
@@ -169,10 +167,6 @@ namespace TPfinal
                         sql = sql + " where prix <= " + nudPrix.Value;
                     }
                 }
-
-
-
-
             }
             catch (Exception ex)
             {

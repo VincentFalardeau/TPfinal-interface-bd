@@ -152,7 +152,7 @@ namespace TPfinal
 
             if (tbxPrix.Text == "")
             {
-                message = "Il doit y avoir un prix!";
+                message = "Il doit y avoir un prix";
             }
 
             return tbxPrix.Text != "" && Double.Parse(tbxPrix.Text) >= 50;
@@ -238,16 +238,30 @@ namespace TPfinal
             cbxMonuments.Items.Remove(cbxMonuments.SelectedItem);
             if(cbxMonuments.Items.Count > 0)
             {
+                fbtnAjouterMonument.Enabled = true;
                 cbxMonuments.SelectedIndex = 0;
             }
-           
+            //si on a ajoute tout les monuments possibles
+            else
+            {
+                fbtnAjouterMonument.Enabled = false;
+            }
+
         }
 
         private void fbtnEffacerMonument_Click(object sender, EventArgs e)
         {
             cbxMonuments.Items.Add(lbxMonuments.Text);
             lbxMonuments.Items.Remove(lbxMonuments.SelectedItem);
-            
+            fbtnAjouterMonument.Enabled = true;
+            if (cbxMonuments.Items.Count > 0)
+            {
+                cbxMonuments.SelectedIndex = 0;
+            }
+            if(lbxMonuments.Items.Count > 0)
+            {
+                lbxMonuments.SelectedIndex = 0;
+            }
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
@@ -269,6 +283,19 @@ namespace TPfinal
                 {
                     mListeMonuments.Add(monument);
                 }
+            }
+           
+        }
+
+        private void lbxMonuments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lbxMonuments.SelectedItem != null)
+            {
+                fbtnEffacerMonument.Enabled = true;
+            }
+            else
+            {
+                fbtnEffacerMonument.Enabled = false;
             }
            
         }
