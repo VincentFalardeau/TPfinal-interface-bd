@@ -546,6 +546,7 @@ namespace TPfinal
 
                 var Id = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[7].Value;
 
+
                 dgvMonumentsCircuits.Rows.Clear();
 
                 try
@@ -580,11 +581,13 @@ namespace TPfinal
         private void dgvMonuments_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvMonuments.CurrentRow.Selected = true;
+
         }
 
         private void dgvMonumentsCircuits_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvMonuments.CurrentRow.Selected = true;
+
         }
 
         //--------------------------------------------------------------------------
@@ -637,6 +640,7 @@ namespace TPfinal
         {
             UpdateDgvMonuments();
         }
+
 
     }
 }

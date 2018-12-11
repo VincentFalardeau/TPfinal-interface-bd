@@ -46,17 +46,8 @@
             this.NomCircuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrdreDansCircuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvMonuments = new System.Windows.Forms.DataGridView();
-            this.SelectMonument = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Histoire = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Etoiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImageButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MonumentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupbox10 = new System.Windows.Forms.GroupBox();
             this.cbxStarsMonument = new System.Windows.Forms.CheckBox();
-            this.starsMonument = new EvaluationDemo.Stars();
             this.TAB_Circuits = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbxPrix = new System.Windows.Forms.CheckBox();
@@ -72,6 +63,14 @@
             this.fbtnEffacer = new PhotoManagerClient.FlashButton();
             this.fbtnModifier = new PhotoManagerClient.FlashButton();
             this.fbtnAjouter = new PhotoManagerClient.FlashButton();
+            this.starsMonument = new EvaluationDemo.Stars();
+            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Histoire = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Etoiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImageButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MonumentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonumentsCircuits)).BeginInit();
@@ -91,8 +90,8 @@
             this.monumentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.STRIP_AjouterMonument});
             this.monumentToolStripMenuItem.Name = "monumentToolStripMenuItem";
-            this.monumentToolStripMenuItem.Size = new System.Drawing.Size(112, 29);
-            this.monumentToolStripMenuItem.Text = "Monument";
+            this.monumentToolStripMenuItem.Size = new System.Drawing.Size(120, 29);
+            this.monumentToolStripMenuItem.Text = "Monuments";
             // 
             // STRIP_AjouterMonument
             // 
@@ -124,8 +123,8 @@
             this.supprimerToolStripMenuItem,
             this.voirInformationsToolStripMenuItem});
             this.circuitToolStripMenuItem.Name = "circuitToolStripMenuItem";
-            this.circuitToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
-            this.circuitToolStripMenuItem.Text = "Circuit";
+            this.circuitToolStripMenuItem.Size = new System.Drawing.Size(81, 29);
+            this.circuitToolStripMenuItem.Text = "Circuits";
             // 
             // ajouterToolStripMenuItem
             // 
@@ -242,13 +241,14 @@
             // 
             this.dgvMonuments.AllowUserToAddRows = false;
             this.dgvMonuments.AllowUserToDeleteRows = false;
+            this.dgvMonuments.AllowUserToResizeColumns = false;
+            this.dgvMonuments.AllowUserToResizeRows = false;
             this.dgvMonuments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMonuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonuments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SelectMonument,
             this.Nom,
             this.Date,
             this.Histoire,
@@ -258,6 +258,7 @@
             this.MonumentId});
             this.dgvMonuments.Location = new System.Drawing.Point(12, 121);
             this.dgvMonuments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvMonuments.MultiSelect = false;
             this.dgvMonuments.Name = "dgvMonuments";
             this.dgvMonuments.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMonuments.RowHeadersVisible = false;
@@ -266,52 +267,6 @@
             this.dgvMonuments.TabIndex = 11;
             this.dgvMonuments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonuments_CellClick);
             this.dgvMonuments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonuments_CellContentClick);
-            // 
-            // SelectMonument
-            // 
-            this.SelectMonument.FalseValue = "false";
-            this.SelectMonument.HeaderText = "Sélectionner";
-            this.SelectMonument.Name = "SelectMonument";
-            this.SelectMonument.TrueValue = "true";
-            // 
-            // Nom
-            // 
-            this.Nom.HeaderText = "Nom";
-            this.Nom.Name = "Nom";
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            // 
-            // Histoire
-            // 
-            this.Histoire.HeaderText = "Histoire";
-            this.Histoire.Name = "Histoire";
-            // 
-            // Prix
-            // 
-            this.Prix.HeaderText = "Prix";
-            this.Prix.Name = "Prix";
-            // 
-            // Etoiles
-            // 
-            this.Etoiles.HeaderText = "Score";
-            this.Etoiles.Name = "Etoiles";
-            // 
-            // ImageButton
-            // 
-            this.ImageButton.HeaderText = "Image";
-            this.ImageButton.Name = "ImageButton";
-            this.ImageButton.Text = "Afficher";
-            this.ImageButton.ToolTipText = "Afficher";
-            this.ImageButton.UseColumnTextForButtonValue = true;
-            // 
-            // MonumentId
-            // 
-            this.MonumentId.HeaderText = "MonumentId";
-            this.MonumentId.Name = "MonumentId";
-            this.MonumentId.Visible = false;
             // 
             // groupbox10
             // 
@@ -335,18 +290,6 @@
             this.cbxStarsMonument.Text = "Activer";
             this.cbxStarsMonument.UseVisualStyleBackColor = true;
             this.cbxStarsMonument.CheckedChanged += new System.EventHandler(this.cbxStarsMonument_CheckedChanged);
-            // 
-            // starsMonument
-            // 
-            this.starsMonument.Location = new System.Drawing.Point(21, 22);
-            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
-            this.starsMonument.Name = "starsMonument";
-            this.starsMonument.Size = new System.Drawing.Size(155, 31);
-            this.starsMonument.StarsCount = 5;
-            this.starsMonument.TabIndex = 2;
-            this.starsMonument.Value = 0;
-            this.starsMonument.ValueChanged += new EvaluationDemo.Stars.ValueChangedEventHandler(this.starsMonument_ValueChanged);
             // 
             // TAB_Circuits
             // 
@@ -437,6 +380,8 @@
             // 
             this.dgvCircuits.AllowUserToAddRows = false;
             this.dgvCircuits.AllowUserToDeleteRows = false;
+            this.dgvCircuits.AllowUserToResizeColumns = false;
+            this.dgvCircuits.AllowUserToResizeRows = false;
             this.dgvCircuits.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -447,6 +392,8 @@
             this.dgvCircuits.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCircuits.MultiSelect = false;
             this.dgvCircuits.Name = "dgvCircuits";
+            this.dgvCircuits.ReadOnly = true;
+            this.dgvCircuits.RowHeadersVisible = false;
             this.dgvCircuits.Size = new System.Drawing.Size(813, 452);
             this.dgvCircuits.TabIndex = 9;
             this.dgvCircuits.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCircuits_CellClick);
@@ -578,6 +525,64 @@
             this.fbtnAjouter.UseVisualStyleBackColor = true;
             this.fbtnAjouter.Click += new System.EventHandler(this.fbtnAjouter_Click);
             // 
+            // starsMonument
+            // 
+            this.starsMonument.Location = new System.Drawing.Point(21, 22);
+            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
+            this.starsMonument.Name = "starsMonument";
+            this.starsMonument.Size = new System.Drawing.Size(155, 31);
+            this.starsMonument.StarsCount = 5;
+            this.starsMonument.TabIndex = 2;
+            this.starsMonument.Value = 0;
+            this.starsMonument.ValueChanged += new EvaluationDemo.Stars.ValueChangedEventHandler(this.starsMonument_ValueChanged);
+            // 
+            // Nom
+            // 
+            this.Nom.HeaderText = "Nom";
+            this.Nom.Name = "Nom";
+            this.Nom.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Histoire
+            // 
+            this.Histoire.HeaderText = "Histoire";
+            this.Histoire.Name = "Histoire";
+            this.Histoire.ReadOnly = true;
+            // 
+            // Prix
+            // 
+            this.Prix.HeaderText = "Prix";
+            this.Prix.Name = "Prix";
+            this.Prix.ReadOnly = true;
+            // 
+            // Etoiles
+            // 
+            this.Etoiles.HeaderText = "Score";
+            this.Etoiles.Name = "Etoiles";
+            this.Etoiles.ReadOnly = true;
+            // 
+            // ImageButton
+            // 
+            this.ImageButton.HeaderText = "Image";
+            this.ImageButton.Name = "ImageButton";
+            this.ImageButton.ReadOnly = true;
+            this.ImageButton.Text = "Afficher";
+            this.ImageButton.ToolTipText = "Afficher";
+            this.ImageButton.UseColumnTextForButtonValue = true;
+            // 
+            // MonumentId
+            // 
+            this.MonumentId.HeaderText = "MonumentId";
+            this.MonumentId.Name = "MonumentId";
+            this.MonumentId.ReadOnly = true;
+            this.MonumentId.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -657,7 +662,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomCircuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrdreDansCircuit;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectMonument;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Histoire;
