@@ -135,7 +135,7 @@ namespace TPfinal
 
         private string TrouverSqlPourUpdateDvgCircuit()
         {
-            string sql = "select * from officiel_vue_circuit_2";
+            string sql = "select distinct nom, depart, arrivee, prix, etoiles from vue_circuit_monument";
             try
             {
                 if (cbxVille.Text != "" && cbxMonument.Text == "")
@@ -150,7 +150,7 @@ namespace TPfinal
                 else if (cbxMonument.Text != "")
                 {
 
-                    sql = "select nom, depart, arrivee, prix from vue_circuit_6 where nom_monument = '" + cbxMonument.Text + "'";
+                    sql = "select distinct nom, depart, arrivee, prix from vue_circuit_monument where nom_monument = '" + cbxMonument.Text + "'";
 
                     if (cbxVille.Text != "")
                     {
