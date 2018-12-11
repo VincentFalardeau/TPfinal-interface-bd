@@ -40,17 +40,17 @@
             // 
             // tbxNvPrix
             // 
-            this.tbxNvPrix.Location = new System.Drawing.Point(118, 98);
+            this.tbxNvPrix.Location = new System.Drawing.Point(179, 72);
             this.tbxNvPrix.MaxLength = 6;
             this.tbxNvPrix.Name = "tbxNvPrix";
-            this.tbxNvPrix.Size = new System.Drawing.Size(135, 26);
+            this.tbxNvPrix.Size = new System.Drawing.Size(237, 26);
             this.tbxNvPrix.TabIndex = 0;
             this.tbxNvPrix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxNvPrix_Keyress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 101);
+            this.label2.Location = new System.Drawing.Point(73, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 3;
@@ -60,7 +60,7 @@
             // 
             this.cbxCircuits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCircuits.FormattingEnabled = true;
-            this.cbxCircuits.Location = new System.Drawing.Point(16, 32);
+            this.cbxCircuits.Location = new System.Drawing.Point(179, 6);
             this.cbxCircuits.Name = "cbxCircuits";
             this.cbxCircuits.Size = new System.Drawing.Size(237, 28);
             this.cbxCircuits.TabIndex = 4;
@@ -69,7 +69,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Location = new System.Drawing.Point(120, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 5;
@@ -77,27 +77,27 @@
             // 
             // tbxPrix
             // 
-            this.tbxPrix.Location = new System.Drawing.Point(118, 66);
+            this.tbxPrix.Location = new System.Drawing.Point(179, 40);
             this.tbxPrix.Name = "tbxPrix";
             this.tbxPrix.ReadOnly = true;
-            this.tbxPrix.Size = new System.Drawing.Size(135, 26);
+            this.tbxPrix.Size = new System.Drawing.Size(237, 26);
             this.tbxPrix.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(78, 69);
+            this.label4.Location = new System.Drawing.Point(92, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 20);
+            this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Prix";
+            this.label4.Text = "Prix actuel";
             // 
             // btnModifier
             // 
             this.btnModifier.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnModifier.Location = new System.Drawing.Point(16, 137);
+            this.btnModifier.Location = new System.Drawing.Point(44, 104);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(111, 34);
+            this.btnModifier.Size = new System.Drawing.Size(183, 54);
             this.btnModifier.TabIndex = 8;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
@@ -106,9 +106,9 @@
             // btnAnnuler
             // 
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnuler.Location = new System.Drawing.Point(142, 137);
+            this.btnAnnuler.Location = new System.Drawing.Point(233, 104);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(111, 34);
+            this.btnAnnuler.Size = new System.Drawing.Size(183, 54);
             this.btnAnnuler.TabIndex = 9;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
-            this.ClientSize = new System.Drawing.Size(283, 183);
+            this.ClientSize = new System.Drawing.Size(462, 167);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.label4);

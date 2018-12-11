@@ -104,7 +104,7 @@
             // 
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnnuler.Location = new System.Drawing.Point(233, 282);
+            this.btnAnnuler.Location = new System.Drawing.Point(232, 282);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(184, 54);
             this.btnAnnuler.TabIndex = 15;
@@ -114,7 +114,7 @@
             // btnAjouter
             // 
             this.btnAjouter.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAjouter.Location = new System.Drawing.Point(44, 282);
+            this.btnAjouter.Location = new System.Drawing.Point(43, 282);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(183, 54);
             this.btnAjouter.TabIndex = 14;
