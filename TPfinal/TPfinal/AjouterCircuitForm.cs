@@ -44,7 +44,7 @@ namespace TPfinal
 
         private void InitValidationProvider()
         {
-            mValidationProvider.AddControlToValidate(tbxPrix, tbxPrix_Valider);
+            mValidationProvider.AddControlToValidate(nudPrix, nudPrix_Valider);
             mValidationProvider.AddControlToValidate(tbxNom, tbxNom_Valider);
             mValidationProvider.AddControlToValidate(lbxMonuments, lbxMonuments_Valider);
 
@@ -146,47 +146,10 @@ namespace TPfinal
         //Prix
         //
         //--------------------------------------------------------------------------
-        private bool tbxPrix_Valider(ref string message)
+        private bool nudPrix_Valider(ref string message)
         {
-            message = "Le prix doit être supérieur ou égal à 50";
-
-            if (tbxPrix.Text == "")
-            {
-                message = "Il doit y avoir un prix";
-            }
-
-            return tbxPrix.Text != "" && Double.Parse(tbxPrix.Text) >= 50;
-        }
-
-        private void tbxPrix_Keyress(object sender, KeyPressEventArgs e)
-        {
-
-            if (!char.IsControl(e.KeyChar))
-            {
-                //Donne la position du premier char point
-                int indexPoint = tbxPrix.Text.IndexOf('.');
-                //Si le char est un nombre
-                if (char.IsDigit(e.KeyChar))
-                {
-                    //Si indexPoint n'est pas égal à -1, il y a déjà un point
-                    //Si indexPoint <   tbxNvPrix.SelectionStart(ce qui donne la position courante), 
-                    //le point est à gauche du curseur, 
-                    //donc on ne peut pas ajouter plus de 2 caractères après cela
-                    if (indexPoint != -1 && indexPoint < tbxPrix.SelectionStart && tbxPrix.Text.Substring(indexPoint + 1).Length >= 2)
-                    {
-                        e.Handled = true;
-                    }
-                }
-                //Si ce n'est pas un nombre
-                else
-                {
-                    //On ne peut pas l'accepter si ce n'est pas un point, 
-                    //s'il y a déjà un point, 
-                    //Si c'est le premier char, 
-                    //si il y a déjà 2 nombres après le point
-                    e.Handled = e.KeyChar != '.' || indexPoint != -1 || tbxPrix.Text.Length == 0 || tbxPrix.SelectionStart + 2 < tbxPrix.Text.Length;
-                }
-            }
+            message = "Il doit y avoir un prix";
+            return nudPrix.Text != "" && nudPrix.Text != null;
         }
 
         //--------------------------------------------------------------------------
@@ -273,12 +236,12 @@ namespace TPfinal
         {
             mListeMonuments = new List<string>();
 
-            if (tbxPrix.Text != "")
+            if (nudPrix.Text != "")
             {
                 mNom = tbxNom.Text;
                 mVilleDepart = cbxDepart.Text;
                 mVilleArrivee = cbxArrivee.Text;
-                mPrix = Double.Parse(tbxPrix.Text);
+                mPrix = Double.Parse(nudPrix.Value.ToString());
                 foreach (string monument in lbxMonuments.Items)
                 {
                     mListeMonuments.Add(monument);

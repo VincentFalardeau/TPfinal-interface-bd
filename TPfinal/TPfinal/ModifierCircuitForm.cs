@@ -24,7 +24,7 @@ namespace TPfinal
             InitializeComponent();
 
             mValidationProvider = new ValidationProvider(this);
-            mValidationProvider.AddControlToValidate(tbxNvPrix, tbxNvPrix_Valider);
+            mValidationProvider.AddControlToValidate(nudNvPrix, nudNvPrix_Valider);
 
             mConnexionDAL = ConnectionDAL.GetInstance();
 
@@ -88,55 +88,22 @@ namespace TPfinal
            
         }
 
-        private bool tbxNvPrix_Valider(ref string message)
+        private bool nudNvPrix_Valider(ref string message)
         {
-            message = "Le prix doit être supérieur ou égal à 50";
+            message = "Il doit y avoir un prix!";
 
-            if (tbxNvPrix.Text == "")
-            {
-                message = "Il doit y avoir un prix!";
-            }
-           
-            return tbxNvPrix.Text != "" && Double.Parse(tbxNvPrix.Text) >= 50;
+            return nudNvPrix.Text != "";
         }
 
-        private void tbxNvPrix_Keyress(object sender, KeyPressEventArgs e)
-        {
-           
-            if (!char.IsControl(e.KeyChar))
-            {
-                //Donne la position du premier char point
-                int indexPoint = tbxNvPrix.Text.IndexOf('.');
-                //Si le char est un nombre
-                if (char.IsDigit(e.KeyChar))     
-                {
-                    //Si indexPoint n'est pas égal à -1, il y a déjà un point
-                    //Si indexPoint <   tbxNvPrix.SelectionStart(ce qui donne la position courante), 
-                    //le point est à gauche du curseur, 
-                    //donc on ne peut pas ajouter plus de 2 caractères après cela
-                    if (indexPoint != -1 &&  indexPoint < tbxNvPrix.SelectionStart && tbxNvPrix.Text.Substring(indexPoint + 1).Length >= 2)
-                    {
-                        e.Handled = true;
-                    }
-                }
-                //Si ce n'est pas un nombre
-                else
-                {
-                    //On ne peut pas l'accepter si ce n'est pas un point, 
-                    //s'il y a déjà un point, 
-                    //Si c'est le premier char, 
-                    //si il y a déjà 2 nombres après le point
-                    e.Handled = e.KeyChar != '.' || indexPoint != -1 || tbxNvPrix.Text.Length == 0 || tbxNvPrix.SelectionStart + 2 < tbxNvPrix.Text.Length;
-                }
-            }
-        }
+       
+        
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
             mNomCircuit = cbxCircuits.Text;
-            if(tbxNvPrix.Text != "")
+            if(nudNvPrix.Text != "")
             {
-                mPrix = Double.Parse(tbxNvPrix.Text);
+                mPrix = Double.Parse(nudNvPrix.Value.ToString());
             }
             
         }

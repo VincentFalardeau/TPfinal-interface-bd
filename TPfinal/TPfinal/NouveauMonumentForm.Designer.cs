@@ -42,9 +42,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.PBX_Monument = new PhotoManagerClient.ImageBox();
             this.Control_Stars = new EvaluationDemo.Stars();
-            this.tbxPrix = new System.Windows.Forms.TextBox();
+            this.nudPrix = new System.Windows.Forms.NumericUpDown();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Monument)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).BeginInit();
             this.SuspendLayout();
             // 
             // TBX_Nom
@@ -178,14 +179,33 @@
             this.Control_Stars.TabIndex = 4;
             this.Control_Stars.Value = 0;
             // 
-            // tbxPrix
+            // nudPrix
             // 
-            this.tbxPrix.Location = new System.Drawing.Point(183, 69);
-            this.tbxPrix.MaxLength = 6;
-            this.tbxPrix.Name = "tbxPrix";
-            this.tbxPrix.Size = new System.Drawing.Size(237, 26);
-            this.tbxPrix.TabIndex = 6;
-            this.tbxPrix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPrix_Keyress);
+            this.nudPrix.DecimalPlaces = 2;
+            this.nudPrix.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudPrix.Location = new System.Drawing.Point(184, 70);
+            this.nudPrix.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudPrix.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudPrix.Name = "nudPrix";
+            this.nudPrix.Size = new System.Drawing.Size(236, 26);
+            this.nudPrix.TabIndex = 16;
+            this.nudPrix.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             // 
             // NouveauMonumentForm
             // 
@@ -194,7 +214,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BTN_Annuler;
             this.ClientSize = new System.Drawing.Size(775, 338);
-            this.Controls.Add(this.tbxPrix);
+            this.Controls.Add(this.nudPrix);
             this.Controls.Add(this.RTBX_Histoire);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label4);
@@ -213,6 +233,7 @@
             this.Load += new System.EventHandler(this.NouveauMonumentForm_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Monument)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,6 +254,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private PhotoManagerClient.ImageBox PBX_Monument;
-        private System.Windows.Forms.TextBox tbxPrix;
+        private System.Windows.Forms.NumericUpDown nudPrix;
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbxNvPrix = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbxCircuits = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,16 +35,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
+            this.nudNvPrix = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNvPrix)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tbxNvPrix
-            // 
-            this.tbxNvPrix.Location = new System.Drawing.Point(179, 72);
-            this.tbxNvPrix.MaxLength = 6;
-            this.tbxNvPrix.Name = "tbxNvPrix";
-            this.tbxNvPrix.Size = new System.Drawing.Size(237, 26);
-            this.tbxNvPrix.TabIndex = 0;
-            this.tbxNvPrix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxNvPrix_Keyress);
             // 
             // label2
             // 
@@ -113,6 +105,34 @@
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
+            // nudNvPrix
+            // 
+            this.nudNvPrix.DecimalPlaces = 2;
+            this.nudNvPrix.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudNvPrix.Location = new System.Drawing.Point(179, 73);
+            this.nudNvPrix.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudNvPrix.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudNvPrix.Name = "nudNvPrix";
+            this.nudNvPrix.Size = new System.Drawing.Size(236, 26);
+            this.nudNvPrix.TabIndex = 17;
+            this.nudNvPrix.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
             // ModifierCircuitForm
             // 
             this.AcceptButton = this.btnModifier;
@@ -120,6 +140,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(462, 167);
+            this.Controls.Add(this.nudNvPrix);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.label4);
@@ -127,18 +148,16 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbxCircuits);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbxNvPrix);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ModifierCircuitForm";
             this.Text = "Modifier un circuit";
+            ((System.ComponentModel.ISupportInitialize)(this.nudNvPrix)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tbxNvPrix;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxCircuits;
         private System.Windows.Forms.Label label3;
@@ -146,5 +165,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.NumericUpDown nudNvPrix;
     }
 }

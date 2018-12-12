@@ -37,13 +37,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
-            this.tbxPrix = new System.Windows.Forms.TextBox();
             this.lblPrix = new System.Windows.Forms.Label();
             this.lbxMonuments = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbxMonuments = new System.Windows.Forms.ComboBox();
+            this.nudPrix = new System.Windows.Forms.NumericUpDown();
             this.fbtnEffacerMonument = new PhotoManagerClient.FlashButton();
             this.fbtnAjouterMonument = new PhotoManagerClient.FlashButton();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxNom
@@ -122,15 +123,6 @@
             this.btnAjouter.UseVisualStyleBackColor = true;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
-            // tbxPrix
-            // 
-            this.tbxPrix.Location = new System.Drawing.Point(179, 106);
-            this.tbxPrix.MaxLength = 6;
-            this.tbxPrix.Name = "tbxPrix";
-            this.tbxPrix.Size = new System.Drawing.Size(237, 26);
-            this.tbxPrix.TabIndex = 16;
-            this.tbxPrix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPrix_Keyress);
-            // 
             // lblPrix
             // 
             this.lblPrix.AutoSize = true;
@@ -168,6 +160,34 @@
             this.cbxMonuments.Size = new System.Drawing.Size(237, 28);
             this.cbxMonuments.Sorted = true;
             this.cbxMonuments.TabIndex = 21;
+            // 
+            // tbxPrix
+            // 
+            this.nudPrix.DecimalPlaces = 2;
+            this.nudPrix.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudPrix.Location = new System.Drawing.Point(179, 106);
+            this.nudPrix.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudPrix.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudPrix.Name = "tbxPrix";
+            this.nudPrix.Size = new System.Drawing.Size(236, 26);
+            this.nudPrix.TabIndex = 22;
+            this.nudPrix.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             // 
             // fbtnEffacerMonument
             // 
@@ -213,11 +233,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(462, 342);
+            this.Controls.Add(this.nudPrix);
             this.Controls.Add(this.cbxMonuments);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbxMonuments);
             this.Controls.Add(this.lblPrix);
-            this.Controls.Add(this.tbxPrix);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.fbtnEffacerMonument);
@@ -231,6 +251,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AjouterCircuitForm";
             this.Text = "Ajouter un circuit";
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,10 +269,10 @@
         private PhotoManagerClient.FlashButton fbtnEffacerMonument;
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Button btnAjouter;
-        private System.Windows.Forms.TextBox tbxPrix;
         private System.Windows.Forms.Label lblPrix;
         private System.Windows.Forms.ListBox lbxMonuments;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbxMonuments;
+        private System.Windows.Forms.NumericUpDown nudPrix;
     }
 }
