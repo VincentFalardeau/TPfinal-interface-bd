@@ -158,9 +158,8 @@ namespace TPfinal
 
         private bool ValiderStars(ref string message)
         {
-            //message = "Il doit y avoir un nombre d'étoiles";
-            //return Control_Stars.Value != 0;
-            return true;
+            message = "Il doit y avoir un nombre d'étoiles";
+            return Control_Stars.Value != 0;;
         }
 
 

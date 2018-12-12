@@ -32,11 +32,20 @@ namespace TPfinal
 
             UpdateData();
 
+            Init_Controls();
+
+           
+        }
+
+        private void Init_Controls()
+        {
             FBTN_AddMonument.Visible = false;
             FBTN_AddMonument.Location = fbtnAjouter.Location;
 
             fbtnImage.Visible = false;
             fbtnImage.Location = fbtnModifier.Location;
+
+            monumentToolStripMenuItem.Visible = false;
         }
 
         private void UpdateData()
@@ -416,7 +425,7 @@ namespace TPfinal
 
         private void Supprimer()
         {
-            SupprimerCircuitForm scf = new SupprimerCircuitForm(dgvCircuits.CurrentRow.Cells[0].Value.ToString());
+            SupprimerMonumentForm scf = new SupprimerMonumentForm(dgvCircuits.CurrentRow.Cells[0].Value.ToString());
             scf.ShowDialog();
             UpdateDgvCircuits();
         }
@@ -633,9 +642,11 @@ namespace TPfinal
             if (tabsControl.SelectedIndex == 0)
             {
 
+                monumentToolStripMenuItem.Visible = false;
                 FBTN_AddMonument.Visible = false;
                 fbtnImage.Visible = false;
 
+                circuitToolStripMenuItem.Visible = true;
                 fbtnAjouter.Visible = true;
                 fbtnModifier.Visible = true;
                 fbtnEffacer.Visible = true;
@@ -644,10 +655,11 @@ namespace TPfinal
             }
             else if (tabsControl.SelectedIndex == 1)
             {
-
+                monumentToolStripMenuItem.Visible = true;
                 FBTN_AddMonument.Visible = true;
                 fbtnImage.Visible = true;
 
+                circuitToolStripMenuItem.Visible = false;
                 fbtnAjouter.Visible = false;
                 fbtnModifier.Visible = false;
                 fbtnEffacer.Visible = false;

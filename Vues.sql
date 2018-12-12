@@ -66,8 +66,16 @@ create view vue_circuit_monument_1 as
 select m.nom as nom, c.nomcircuit as nomcircuit from monuments m
 inner join circuitsmonuments cm on m.idmonument = cm.idmonument
 inner join circuits c on c.idcircuit = cm.idcircuit;
+describe circuits;
 
+delete from circuitsmonuments 
+where idmonument = (select idmonument from monuments where nom = '')
+and idcircuit = (select idcircuit from circuits where nomcircuit = 'patate');
+rollback;
 
+delete circuits;
+describe circuitsmonuments;
+commit;
 
 
 create view vue_etoiles_circuit as
