@@ -33,14 +33,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\devel-interface\PhotoManagerClient\PhotoManagerClient\PhotoManager LIB\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\TPfinal\TPfinal\PM DLL\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
-    <Reference Include="PhotoManagerWebServices">
-      <HintPath>PM DLL\PhotoManagerWebServices.dll</HintPath>
+    <Reference Include="PhotoManagerWebServices, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\TPfinal\TPfinal\PM DLL\PhotoManagerWebServices.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\TPfinal\TPfinal\PM DLL\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

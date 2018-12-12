@@ -34,7 +34,7 @@ namespace DB_Images_Utilities
         private User Log_DB_Admin()
         {
 
-            // return DBPhotosWebServices.Login("DB_Admin", "420-KA5");
+            //return DBPhotosWebServices.Login("DB_Admin", "420-KA5");
             return DBPhotosWebServices.Login(UserName, Password);
 
         }
