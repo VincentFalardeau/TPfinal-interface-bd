@@ -22,10 +22,10 @@ namespace TPfinal
 
         private void PageAideOuAPropos_Load(object sender, EventArgs e)
         {
-            //if (!Properties.Settings.Default.LocationPageAide.IsEmpty)
-            //{
-            //    this.Location = Properties.Settings.Default.LocationPageAide;
-            //}
+            if (!Properties.Settings.Default.LocationAideAPropos.IsEmpty)
+            {
+                this.Location = Properties.Settings.Default.LocationAideAPropos;
+            }
         }
 
         private void PageAide_KeyPress(object sender, KeyPressEventArgs e)
@@ -40,8 +40,8 @@ namespace TPfinal
 
         private void SaveLocation(object sender, FormClosingEventArgs e)
         {
-            //Properties.Settings.Default.LocationPageAide = this.Location;
-            //Properties.Settings.Default.Save();
+            Properties.Settings.Default.LocationAideAPropos = this.Location;
+            Properties.Settings.Default.Save();
         }
     }
 }

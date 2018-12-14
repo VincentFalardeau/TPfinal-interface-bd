@@ -133,6 +133,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "InformationsCircuitForm";
             this.Text = "Informations";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InformationsCircuitForm_FormClosing);
+            this.Load += new System.EventHandler(this.InformationsCircuitForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxMonument)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

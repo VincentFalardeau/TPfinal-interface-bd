@@ -53,13 +53,15 @@
             this.PBX_Image.TabIndex = 0;
             this.PBX_Image.TabStop = false;
             // 
-            // ImageMonument
+            // AfficherImageMonument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 444);
             this.Controls.Add(this.PBX_Image);
-            this.Name = "ImageMonument";
+            this.Name = "AfficherImageMonument";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AfficherImageMonument_FormClosing);
+            this.Load += new System.EventHandler(this.AfficherImageMonument_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ImageMonument_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Image)).EndInit();
             this.ResumeLayout(false);

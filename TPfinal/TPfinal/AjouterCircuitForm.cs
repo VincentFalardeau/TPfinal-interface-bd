@@ -42,7 +42,21 @@ namespace TPfinal
         
         }
 
-       
+        private void AjouterCircuitForm_Load(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.LocationAjoutCircuit.IsEmpty)
+            {
+                this.Location = Properties.Settings.Default.LocationAjoutCircuit;
+            }
+        }
+
+        private void AjouterCircuitForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.LocationAjoutCircuit = this.Location;
+            Properties.Settings.Default.Save();
+        }
+
+
 
         private void InitValidationProvider()
         {
@@ -265,6 +279,6 @@ namespace TPfinal
            
         }
 
-
+       
     }
 }

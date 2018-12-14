@@ -39,6 +39,20 @@ namespace TPfinal
            
         }
 
+        private void AfficherImageMonument_Load(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.LocationImageMonument.IsEmpty)
+            {
+                this.Location = Properties.Settings.Default.LocationImageMonument;
+            }
+        }
+
+        private void AfficherImageMonument_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.LocationImageMonument = this.Location;
+            Properties.Settings.Default.Save();
+        }
+
         private void ImageMonument_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -63,5 +77,9 @@ namespace TPfinal
                 this.WindowState = FormWindowState.Normal;
             }
         }
+
+       
+
+        
     }
 }

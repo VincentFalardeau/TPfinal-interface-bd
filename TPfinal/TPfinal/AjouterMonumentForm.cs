@@ -52,6 +52,17 @@ namespace TPfinal
             ValidationProvider.AddControlToValidate(RTBX_Histoire, ValiderHistoire);
             ValidationProvider.AddControlToValidate(DATE_Monument, ValiderDate);
             ValidationProvider.AddControlToValidate(Control_Stars, ValiderStars);
+
+            if (!Properties.Settings.Default.LocationAjoutMonument.IsEmpty)
+            {
+                this.Location = Properties.Settings.Default.LocationAjoutMonument;
+            }
+        }
+
+        private void AjouterMonumentForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.LocationAjoutMonument = this.Location;
+            Properties.Settings.Default.Save();
         }
 
         private void LoadListeNoms()
@@ -216,6 +227,6 @@ namespace TPfinal
             Image = PBX_Monument.BackgroundImage;
         }
 
-       
+        
     }
 }

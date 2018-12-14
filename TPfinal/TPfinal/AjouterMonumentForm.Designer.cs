@@ -207,7 +207,7 @@
             0,
             0});
             // 
-            // NouveauMonumentForm
+            // AjouterMonumentForm
             // 
             this.AcceptButton = this.BTN_Accepter;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -228,8 +228,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBX_Nom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "NouveauMonumentForm";
+            this.Name = "AjouterMonumentForm";
             this.Text = "Ajouter un monument";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AjouterMonumentForm_FormClosing);
             this.Load += new System.EventHandler(this.NouveauMonumentForm_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Monument)).EndInit();

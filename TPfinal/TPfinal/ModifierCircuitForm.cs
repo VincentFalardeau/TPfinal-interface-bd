@@ -31,7 +31,19 @@ namespace TPfinal
             UpdateCbxCircuits(nomCircuit);
         }
 
-       
+        private void ModifierCircuitForm_Load(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.LocationModCircuit.IsEmpty)
+            {
+                this.Location = Properties.Settings.Default.LocationModCircuit;
+            }
+        }
+
+        private void ModifierCircuitForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.LocationModCircuit = this.Location;
+            Properties.Settings.Default.Save();
+        }
 
         private void UpdateCbxCircuits(string nomCircuit = "")
         {
@@ -107,5 +119,7 @@ namespace TPfinal
             }
             
         }
+
+        
     }
 }

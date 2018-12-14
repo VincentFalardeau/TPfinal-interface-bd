@@ -259,6 +259,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AjouterCircuitForm";
             this.Text = "Ajouter un circuit";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AjouterCircuitForm_FormClosing);
+            this.Load += new System.EventHandler(this.AjouterCircuitForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

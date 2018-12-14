@@ -151,6 +151,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ModifierCircuitForm";
             this.Text = "Modifier un circuit";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifierCircuitForm_FormClosing);
+            this.Load += new System.EventHandler(this.ModifierCircuitForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudNvPrix)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

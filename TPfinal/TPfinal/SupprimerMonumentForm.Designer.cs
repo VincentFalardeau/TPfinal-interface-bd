@@ -106,6 +106,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "SupprimerMonumentForm";
             this.Text = "Supprimer des monuments";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SupprimerMonumentForm_FormClosing);
+            this.Load += new System.EventHandler(this.SupprimerMonumentForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

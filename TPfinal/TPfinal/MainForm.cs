@@ -59,11 +59,22 @@ namespace TPfinal
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            if(!Properties.Settings.Default.DimensionsMain.IsEmpty)
+            {
+                this.Size = Properties.Settings.Default.DimensionsMain;
+            }
+            if (!Properties.Settings.Default.LocationMain.IsEmpty)
+            {
+                this.Location = Properties.Settings.Default.LocationMain;
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Properties.Settings.Default.DimensionsMain = this.Size;
+            Properties.Settings.Default.LocationMain = this.Location;
+            Properties.Settings.Default.Save();
+
             Deconnecter();
         }
 

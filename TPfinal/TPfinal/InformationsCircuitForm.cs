@@ -25,6 +25,20 @@ namespace TPfinal
 
         }
 
+        private void InformationsCircuitForm_Load(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.LocationInfosCircuit.IsEmpty)
+            {
+                this.Location = Properties.Settings.Default.LocationInfosCircuit;
+            }
+        }
+
+        private void InformationsCircuitForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.LocationInfosCircuit = this.Location;
+            Properties.Settings.Default.Save();
+        }
+
         private void InitCbxCircuits(string nomCircuit = "")
         {
             try
@@ -142,5 +156,7 @@ namespace TPfinal
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        
     }
 }

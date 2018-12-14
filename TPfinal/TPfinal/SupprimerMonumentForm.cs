@@ -28,6 +28,22 @@ namespace TPfinal
             }
         }
 
+        private void SupprimerMonumentForm_Load(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.LocationSuppCircuit.IsEmpty)
+            {
+                this.Location = Properties.Settings.Default.LocationSuppCircuit;
+            }
+        }
+
+        private void SupprimerMonumentForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.LocationSuppCircuit = this.Location;
+            Properties.Settings.Default.Save();
+        }
+
+       
+
         private void InitCbxCircuits(string nomCircuit = "")
         {
             try
@@ -135,5 +151,7 @@ namespace TPfinal
                 fbtnEffacer.Enabled = false;
             }
         }
+
+        
     }
 }
