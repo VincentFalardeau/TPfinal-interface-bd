@@ -53,6 +53,7 @@
             this.MonumentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupbox10 = new System.Windows.Forms.GroupBox();
             this.cbxStarsMonument = new System.Windows.Forms.CheckBox();
+            this.starsMonument = new EvaluationDemo.Stars();
             this.TAB_Circuits = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbxPrix = new System.Windows.Forms.CheckBox();
@@ -69,7 +70,6 @@
             this.fbtnEffacer = new PhotoManagerClient.FlashButton();
             this.fbtnModifier = new PhotoManagerClient.FlashButton();
             this.fbtnAjouter = new PhotoManagerClient.FlashButton();
-            this.starsMonument = new EvaluationDemo.Stars();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonumentsCircuits)).BeginInit();
@@ -328,6 +328,18 @@
             this.cbxStarsMonument.UseVisualStyleBackColor = true;
             this.cbxStarsMonument.CheckedChanged += new System.EventHandler(this.cbxStarsMonument_CheckedChanged);
             // 
+            // starsMonument
+            // 
+            this.starsMonument.Location = new System.Drawing.Point(21, 22);
+            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
+            this.starsMonument.Name = "starsMonument";
+            this.starsMonument.Size = new System.Drawing.Size(155, 31);
+            this.starsMonument.StarsCount = 5;
+            this.starsMonument.TabIndex = 2;
+            this.starsMonument.Value = 0;
+            this.starsMonument.ValueChanged += new EvaluationDemo.Stars.ValueChangedEventHandler(this.starsMonument_ValueChanged);
+            // 
             // TAB_Circuits
             // 
             this.TAB_Circuits.Controls.Add(this.groupBox4);
@@ -530,16 +542,16 @@
             // 
             // fbtnEffacer
             // 
-            this.fbtnEffacer.BackgroundImage = global::TPfinal.Properties.Resources.trash;
+            this.fbtnEffacer.BackgroundImage = global::TPfinal.Properties.Resources.circuit_delete_neutre;
             this.fbtnEffacer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.fbtnEffacer.ClickedImage = global::TPfinal.Properties.Resources.trash_accept;
+            this.fbtnEffacer.ClickedImage = global::TPfinal.Properties.Resources.circuit_delete_accept;
             this.fbtnEffacer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fbtnEffacer.DisabledImage = global::TPfinal.Properties.Resources.trash_disable;
+            this.fbtnEffacer.DisabledImage = global::TPfinal.Properties.Resources.circuit_delete_disable;
             this.fbtnEffacer.Image = ((System.Drawing.Image)(resources.GetObject("fbtnEffacer.Image")));
             this.fbtnEffacer.Location = new System.Drawing.Point(21, 200);
             this.fbtnEffacer.Name = "fbtnEffacer";
-            this.fbtnEffacer.NeutralImage = global::TPfinal.Properties.Resources.trash;
-            this.fbtnEffacer.OverImage = global::TPfinal.Properties.Resources.trash_accept;
+            this.fbtnEffacer.NeutralImage = global::TPfinal.Properties.Resources.circuit_delete_neutre;
+            this.fbtnEffacer.OverImage = global::TPfinal.Properties.Resources.circuit_delete_accept;
             this.fbtnEffacer.Size = new System.Drawing.Size(52, 52);
             this.fbtnEffacer.TabIndex = 13;
             this.fbtnEffacer.Text = "Effacer des monuments";
@@ -548,16 +560,16 @@
             // 
             // fbtnModifier
             // 
-            this.fbtnModifier.BackgroundImage = global::TPfinal.Properties.Resources.edit;
+            this.fbtnModifier.BackgroundImage = global::TPfinal.Properties.Resources.circuit_edit_neutre;
             this.fbtnModifier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.fbtnModifier.ClickedImage = global::TPfinal.Properties.Resources.edit_accept;
+            this.fbtnModifier.ClickedImage = global::TPfinal.Properties.Resources.circuit_edit_accept;
             this.fbtnModifier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fbtnModifier.DisabledImage = global::TPfinal.Properties.Resources.edit_disable;
+            this.fbtnModifier.DisabledImage = global::TPfinal.Properties.Resources.circuit_edit_accept;
             this.fbtnModifier.Image = ((System.Drawing.Image)(resources.GetObject("fbtnModifier.Image")));
             this.fbtnModifier.Location = new System.Drawing.Point(21, 125);
             this.fbtnModifier.Name = "fbtnModifier";
-            this.fbtnModifier.NeutralImage = global::TPfinal.Properties.Resources.edit;
-            this.fbtnModifier.OverImage = global::TPfinal.Properties.Resources.edit_accept;
+            this.fbtnModifier.NeutralImage = global::TPfinal.Properties.Resources.circuit_edit_neutre;
+            this.fbtnModifier.OverImage = global::TPfinal.Properties.Resources.circuit_edit_accept;
             this.fbtnModifier.Size = new System.Drawing.Size(52, 52);
             this.fbtnModifier.TabIndex = 12;
             this.fbtnModifier.Text = "Modifier un circuit";
@@ -566,33 +578,21 @@
             // 
             // fbtnAjouter
             // 
-            this.fbtnAjouter.BackgroundImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Neutral;
+            this.fbtnAjouter.BackgroundImage = global::TPfinal.Properties.Resources.circuit_add_neutre;
             this.fbtnAjouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.fbtnAjouter.ClickedImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Click;
+            this.fbtnAjouter.ClickedImage = global::TPfinal.Properties.Resources.circuit_add_accept;
             this.fbtnAjouter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fbtnAjouter.DisabledImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Disable;
+            this.fbtnAjouter.DisabledImage = global::TPfinal.Properties.Resources.circuit_add_disable;
             this.fbtnAjouter.Image = ((System.Drawing.Image)(resources.GetObject("fbtnAjouter.Image")));
             this.fbtnAjouter.Location = new System.Drawing.Point(21, 50);
             this.fbtnAjouter.Name = "fbtnAjouter";
-            this.fbtnAjouter.NeutralImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Neutral;
-            this.fbtnAjouter.OverImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Over;
+            this.fbtnAjouter.NeutralImage = global::TPfinal.Properties.Resources.circuit_add_neutre;
+            this.fbtnAjouter.OverImage = global::TPfinal.Properties.Resources.circuit_add_accept;
             this.fbtnAjouter.Size = new System.Drawing.Size(52, 52);
             this.fbtnAjouter.TabIndex = 11;
             this.fbtnAjouter.Text = "Ajouter un circuit";
             this.fbtnAjouter.UseVisualStyleBackColor = true;
             this.fbtnAjouter.Click += new System.EventHandler(this.fbtnAjouter_Click);
-            // 
-            // starsMonument
-            // 
-            this.starsMonument.Location = new System.Drawing.Point(21, 22);
-            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
-            this.starsMonument.Name = "starsMonument";
-            this.starsMonument.Size = new System.Drawing.Size(155, 31);
-            this.starsMonument.StarsCount = 5;
-            this.starsMonument.TabIndex = 2;
-            this.starsMonument.Value = 0;
-            this.starsMonument.ValueChanged += new EvaluationDemo.Stars.ValueChangedEventHandler(this.starsMonument_ValueChanged);
             // 
             // MainForm
             // 
