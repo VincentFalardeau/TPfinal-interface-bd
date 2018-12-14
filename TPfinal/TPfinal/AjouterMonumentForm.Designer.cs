@@ -40,17 +40,18 @@
             this.BTN_Annuler = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nudPrix = new System.Windows.Forms.NumericUpDown();
             this.PBX_Monument = new PhotoManagerClient.ImageBox();
             this.Control_Stars = new EvaluationDemo.Stars();
-            this.nudPrix = new System.Windows.Forms.NumericUpDown();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Monument)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Monument)).BeginInit();
             this.SuspendLayout();
             // 
             // TBX_Nom
             // 
-            this.TBX_Nom.Location = new System.Drawing.Point(183, 5);
+            this.TBX_Nom.Location = new System.Drawing.Point(178, 22);
+            this.TBX_Nom.Margin = new System.Windows.Forms.Padding(10);
             this.TBX_Nom.MaxLength = 30;
             this.TBX_Nom.Name = "TBX_Nom";
             this.TBX_Nom.Size = new System.Drawing.Size(237, 26);
@@ -59,7 +60,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(135, 8);
+            this.label1.Location = new System.Drawing.Point(123, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 20);
             this.label1.TabIndex = 3;
@@ -69,7 +70,8 @@
             // 
             this.DATE_Monument.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DATE_Monument.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DATE_Monument.Location = new System.Drawing.Point(183, 37);
+            this.DATE_Monument.Location = new System.Drawing.Point(178, 68);
+            this.DATE_Monument.Margin = new System.Windows.Forms.Padding(10);
             this.DATE_Monument.Name = "DATE_Monument";
             this.DATE_Monument.Size = new System.Drawing.Size(237, 26);
             this.DATE_Monument.TabIndex = 5;
@@ -78,17 +80,18 @@
             // 
             this.RTBX_Histoire.AcceptsTab = true;
             this.RTBX_Histoire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RTBX_Histoire.Location = new System.Drawing.Point(183, 101);
+            this.RTBX_Histoire.Location = new System.Drawing.Point(178, 160);
+            this.RTBX_Histoire.Margin = new System.Windows.Forms.Padding(10);
             this.RTBX_Histoire.MaxLength = 100;
             this.RTBX_Histoire.Name = "RTBX_Histoire";
-            this.RTBX_Histoire.Size = new System.Drawing.Size(237, 94);
+            this.RTBX_Histoire.Size = new System.Drawing.Size(237, 52);
             this.RTBX_Histoire.TabIndex = 6;
             this.RTBX_Histoire.Text = "";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 42);
+            this.label2.Location = new System.Drawing.Point(38, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 20);
             this.label2.TabIndex = 7;
@@ -97,7 +100,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 206);
+            this.label3.Location = new System.Drawing.Point(38, 233);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 20);
             this.label3.TabIndex = 8;
@@ -106,7 +109,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(114, 103);
+            this.label4.Location = new System.Drawing.Point(102, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 9;
@@ -115,7 +118,8 @@
             // BTN_Accepter
             // 
             this.BTN_Accepter.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_Accepter.Location = new System.Drawing.Point(46, 277);
+            this.BTN_Accepter.Location = new System.Drawing.Point(34, 286);
+            this.BTN_Accepter.Margin = new System.Windows.Forms.Padding(10, 10, 3, 10);
             this.BTN_Accepter.Name = "BTN_Accepter";
             this.BTN_Accepter.Size = new System.Drawing.Size(184, 54);
             this.BTN_Accepter.TabIndex = 12;
@@ -126,7 +130,8 @@
             // BTN_Annuler
             // 
             this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTN_Annuler.Location = new System.Drawing.Point(236, 277);
+            this.BTN_Annuler.Location = new System.Drawing.Point(237, 286);
+            this.BTN_Annuler.Margin = new System.Windows.Forms.Padding(3, 10, 10, 10);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(184, 54);
             this.BTN_Annuler.TabIndex = 13;
@@ -137,7 +142,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(143, 72);
+            this.label5.Location = new System.Drawing.Point(131, 116);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 20);
             this.label5.TabIndex = 8;
@@ -147,10 +152,39 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.PBX_Monument);
-            this.panel2.Location = new System.Drawing.Point(463, 5);
+            this.panel2.Location = new System.Drawing.Point(443, 22);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(270, 270);
+            this.panel2.Size = new System.Drawing.Size(230, 230);
             this.panel2.TabIndex = 15;
+            // 
+            // nudPrix
+            // 
+            this.nudPrix.DecimalPlaces = 2;
+            this.nudPrix.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudPrix.Location = new System.Drawing.Point(178, 114);
+            this.nudPrix.Margin = new System.Windows.Forms.Padding(10);
+            this.nudPrix.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudPrix.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudPrix.Name = "nudPrix";
+            this.nudPrix.Size = new System.Drawing.Size(237, 26);
+            this.nudPrix.TabIndex = 16;
+            this.nudPrix.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             // 
             // PBX_Monument
             // 
@@ -164,48 +198,20 @@
             this.PBX_Monument.Name = "PBX_Monument";
             this.PBX_Monument.OpenFileDialogTitle = "Please choose image an file";
             this.PBX_Monument.PasteMenuText = "Paste image from clipboard";
-            this.PBX_Monument.Size = new System.Drawing.Size(270, 270);
+            this.PBX_Monument.Size = new System.Drawing.Size(230, 230);
             this.PBX_Monument.TabIndex = 0;
             this.PBX_Monument.TabStop = false;
             this.PBX_Monument.BackgroundImageChanged += new System.EventHandler(this.PBX_Monument_BackgroundImageChanged);
             // 
             // Control_Stars
             // 
-            this.Control_Stars.Location = new System.Drawing.Point(180, 201);
+            this.Control_Stars.Location = new System.Drawing.Point(171, 215);
             this.Control_Stars.MinimumSize = new System.Drawing.Size(190, 38);
             this.Control_Stars.Name = "Control_Stars";
-            this.Control_Stars.Size = new System.Drawing.Size(375, 75);
+            this.Control_Stars.Size = new System.Drawing.Size(250, 50);
             this.Control_Stars.StarsCount = 5;
             this.Control_Stars.TabIndex = 4;
             this.Control_Stars.Value = 0;
-            // 
-            // nudPrix
-            // 
-            this.nudPrix.DecimalPlaces = 2;
-            this.nudPrix.Increment = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nudPrix.Location = new System.Drawing.Point(184, 70);
-            this.nudPrix.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.nudPrix.Minimum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nudPrix.Name = "nudPrix";
-            this.nudPrix.Size = new System.Drawing.Size(236, 26);
-            this.nudPrix.TabIndex = 16;
-            this.nudPrix.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
             // 
             // AjouterMonumentForm
             // 
@@ -213,7 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BTN_Annuler;
-            this.ClientSize = new System.Drawing.Size(775, 338);
+            this.ClientSize = new System.Drawing.Size(716, 358);
             this.Controls.Add(this.nudPrix);
             this.Controls.Add(this.RTBX_Histoire);
             this.Controls.Add(this.panel2);
@@ -233,8 +239,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AjouterMonumentForm_FormClosing);
             this.Load += new System.EventHandler(this.NouveauMonumentForm_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Monument)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Monument)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

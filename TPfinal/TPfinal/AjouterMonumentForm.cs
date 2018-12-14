@@ -56,6 +56,7 @@ namespace TPfinal
             ValidationProvider.AddControlToValidate(RTBX_Histoire, ValiderHistoire);
             ValidationProvider.AddControlToValidate(DATE_Monument, ValiderDate);
             ValidationProvider.AddControlToValidate(Control_Stars, ValiderStars);
+            ValidationProvider.AddControlToValidate(PBX_Monument, Valider_PBX_Monument);
 
             if (!Properties.Settings.Default.LocationAjoutMonument.IsEmpty)
             {
@@ -175,6 +176,13 @@ namespace TPfinal
         {
             message = "Le nombre d'étoiles ne peut pas être 0";
             return Control_Stars.Value != 0;
+        }
+
+        private bool Valider_PBX_Monument(ref string message)
+        {
+            message = "Il doit y avoir une photo";
+            return PBX_Monument.BackgroundImage != null;
+
         }
 
 
