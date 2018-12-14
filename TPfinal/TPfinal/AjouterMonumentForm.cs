@@ -104,7 +104,8 @@ namespace TPfinal
                 DATE_Monument.Text != "" && DATE_Monument.Text != null
                 &&
                 DATE_Monument.Text != "" && DATE_Monument.Text != null
-                && Control_Stars.Value != 0)
+                && Control_Stars.Value != 0
+                && PBX_Monument.BackgroundImage != null)
             {
 
 
@@ -180,7 +181,7 @@ namespace TPfinal
 
         private bool Valider_PBX_Monument(ref string message)
         {
-            message = "Il doit y avoir une photo";
+            message = "Il doit y avoir une image";
             return PBX_Monument.BackgroundImage != null;
 
         }

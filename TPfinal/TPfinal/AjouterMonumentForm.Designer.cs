@@ -39,11 +39,9 @@
             this.BTN_Accepter = new System.Windows.Forms.Button();
             this.BTN_Annuler = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.nudPrix = new System.Windows.Forms.NumericUpDown();
-            this.PBX_Monument = new PhotoManagerClient.ImageBox();
             this.Control_Stars = new EvaluationDemo.Stars();
-            this.panel2.SuspendLayout();
+            this.PBX_Monument = new PhotoManagerClient.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Monument)).BeginInit();
             this.SuspendLayout();
@@ -148,15 +146,6 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Prix";
             // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.PBX_Monument);
-            this.panel2.Location = new System.Drawing.Point(443, 22);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(230, 230);
-            this.panel2.TabIndex = 15;
-            // 
             // nudPrix
             // 
             this.nudPrix.DecimalPlaces = 2;
@@ -186,23 +175,6 @@
             0,
             0});
             // 
-            // PBX_Monument
-            // 
-            this.PBX_Monument.AllowDrop = true;
-            this.PBX_Monument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PBX_Monument.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PBX_Monument.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
-    "th context menu.";
-            this.PBX_Monument.ImportImageText = "Import image from file...";
-            this.PBX_Monument.Location = new System.Drawing.Point(0, 0);
-            this.PBX_Monument.Name = "PBX_Monument";
-            this.PBX_Monument.OpenFileDialogTitle = "Please choose image an file";
-            this.PBX_Monument.PasteMenuText = "Paste image from clipboard";
-            this.PBX_Monument.Size = new System.Drawing.Size(230, 230);
-            this.PBX_Monument.TabIndex = 0;
-            this.PBX_Monument.TabStop = false;
-            this.PBX_Monument.BackgroundImageChanged += new System.EventHandler(this.PBX_Monument_BackgroundImageChanged);
-            // 
             // Control_Stars
             // 
             this.Control_Stars.Location = new System.Drawing.Point(171, 215);
@@ -213,6 +185,23 @@
             this.Control_Stars.TabIndex = 4;
             this.Control_Stars.Value = 0;
             // 
+            // PBX_Monument
+            // 
+            this.PBX_Monument.AllowDrop = true;
+            this.PBX_Monument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PBX_Monument.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PBX_Monument.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
+    "th context menu.";
+            this.PBX_Monument.ImportImageText = "Import image from file...";
+            this.PBX_Monument.Location = new System.Drawing.Point(447, 22);
+            this.PBX_Monument.Name = "PBX_Monument";
+            this.PBX_Monument.OpenFileDialogTitle = "Please choose image an file";
+            this.PBX_Monument.PasteMenuText = "Paste image from clipboard";
+            this.PBX_Monument.Size = new System.Drawing.Size(230, 230);
+            this.PBX_Monument.TabIndex = 0;
+            this.PBX_Monument.TabStop = false;
+            this.PBX_Monument.BackgroundImageChanged += new System.EventHandler(this.PBX_Monument_BackgroundImageChanged);
+            // 
             // AjouterMonumentForm
             // 
             this.AcceptButton = this.BTN_Accepter;
@@ -220,9 +209,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BTN_Annuler;
             this.ClientSize = new System.Drawing.Size(716, 358);
+            this.Controls.Add(this.PBX_Monument);
             this.Controls.Add(this.nudPrix);
             this.Controls.Add(this.RTBX_Histoire);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BTN_Annuler);
             this.Controls.Add(this.BTN_Accepter);
@@ -238,7 +227,6 @@
             this.Text = "Ajouter un monument";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AjouterMonumentForm_FormClosing);
             this.Load += new System.EventHandler(this.NouveauMonumentForm_Load);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Monument)).EndInit();
             this.ResumeLayout(false);
@@ -259,8 +247,7 @@
         private System.Windows.Forms.Button BTN_Accepter;
         private System.Windows.Forms.Button BTN_Annuler;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel2;
-        private PhotoManagerClient.ImageBox PBX_Monument;
         private System.Windows.Forms.NumericUpDown nudPrix;
+        private PhotoManagerClient.ImageBox PBX_Monument;
     }
 }
