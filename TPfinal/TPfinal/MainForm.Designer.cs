@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.monumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.STRIP_AjouterMonument = new System.Windows.Forms.ToolStripMenuItem();
+            this.afficherImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.circuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +55,6 @@
             this.MonumentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupbox10 = new System.Windows.Forms.GroupBox();
             this.cbxStarsMonument = new System.Windows.Forms.CheckBox();
-            this.starsMonument = new EvaluationDemo.Stars();
             this.TAB_Circuits = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbxPrix = new System.Windows.Forms.CheckBox();
@@ -71,6 +71,7 @@
             this.fbtnEffacer = new PhotoManagerClient.FlashButton();
             this.fbtnModifier = new PhotoManagerClient.FlashButton();
             this.fbtnAjouter = new PhotoManagerClient.FlashButton();
+            this.starsMonument = new EvaluationDemo.Stars();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonumentsCircuits)).BeginInit();
@@ -88,7 +89,8 @@
             // monumentToolStripMenuItem
             // 
             this.monumentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.STRIP_AjouterMonument});
+            this.STRIP_AjouterMonument,
+            this.afficherImageToolStripMenuItem});
             this.monumentToolStripMenuItem.Name = "monumentToolStripMenuItem";
             this.monumentToolStripMenuItem.Size = new System.Drawing.Size(120, 29);
             this.monumentToolStripMenuItem.Text = "Monuments";
@@ -96,9 +98,20 @@
             // STRIP_AjouterMonument
             // 
             this.STRIP_AjouterMonument.Name = "STRIP_AjouterMonument";
-            this.STRIP_AjouterMonument.Size = new System.Drawing.Size(154, 30);
+            this.STRIP_AjouterMonument.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.A)));
+            this.STRIP_AjouterMonument.Size = new System.Drawing.Size(310, 30);
             this.STRIP_AjouterMonument.Text = "Ajouter";
             this.STRIP_AjouterMonument.Click += new System.EventHandler(this.STRIP_AjouterMonument_Click);
+            // 
+            // afficherImageToolStripMenuItem
+            // 
+            this.afficherImageToolStripMenuItem.Name = "afficherImageToolStripMenuItem";
+            this.afficherImageToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.I)));
+            this.afficherImageToolStripMenuItem.Size = new System.Drawing.Size(310, 30);
+            this.afficherImageToolStripMenuItem.Text = "Afficher image";
+            this.afficherImageToolStripMenuItem.Click += new System.EventHandler(this.afficherImageToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -114,7 +127,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(965, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // circuitToolStripMenuItem
             // 
@@ -130,40 +142,46 @@
             // ajouterToolStripMenuItem
             // 
             this.ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
-            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.ajouterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
+            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(284, 30);
             this.ajouterToolStripMenuItem.Text = "Ajouter";
             this.ajouterToolStripMenuItem.Click += new System.EventHandler(this.ajouterToolStripMenuItem_Click);
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.modifierToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(284, 30);
             this.modifierToolStripMenuItem.Text = "Modifier";
             this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
             // supprimerToolStripMenuItem
             // 
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.supprimerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(284, 30);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
             // voirInformationsToolStripMenuItem
             // 
             this.voirInformationsToolStripMenuItem.Name = "voirInformationsToolStripMenuItem";
-            this.voirInformationsToolStripMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.voirInformationsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
+            this.voirInformationsToolStripMenuItem.Size = new System.Drawing.Size(284, 30);
             this.voirInformationsToolStripMenuItem.Text = "Voir informations";
             this.voirInformationsToolStripMenuItem.Click += new System.EventHandler(this.voirInformationsToolStripMenuItem_Click);
             // 
             // aideToolStripMenuItem
             // 
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
+            this.aideToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.aideToolStripMenuItem.Size = new System.Drawing.Size(60, 29);
             this.aideToolStripMenuItem.Text = "Aide";
             // 
             // àProposToolStripMenuItem
             // 
             this.àProposToolStripMenuItem.Name = "àProposToolStripMenuItem";
+            this.àProposToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
             this.àProposToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
             this.àProposToolStripMenuItem.Text = "À propos";
             // 
@@ -211,6 +229,8 @@
             // 
             this.dgvMonumentsCircuits.AllowUserToAddRows = false;
             this.dgvMonumentsCircuits.AllowUserToDeleteRows = false;
+            this.dgvMonumentsCircuits.AllowUserToResizeColumns = false;
+            this.dgvMonumentsCircuits.AllowUserToResizeRows = false;
             this.dgvMonumentsCircuits.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -221,9 +241,10 @@
             this.OrdreDansCircuit});
             this.dgvMonumentsCircuits.Location = new System.Drawing.Point(12, 369);
             this.dgvMonumentsCircuits.Name = "dgvMonumentsCircuits";
+            this.dgvMonumentsCircuits.ReadOnly = true;
             this.dgvMonumentsCircuits.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMonumentsCircuits.RowHeadersVisible = false;
-            this.dgvMonumentsCircuits.RowTemplate.Height = 28;
+            this.dgvMonumentsCircuits.RowTemplate.Height = 26;
             this.dgvMonumentsCircuits.Size = new System.Drawing.Size(814, 179);
             this.dgvMonumentsCircuits.TabIndex = 12;
             this.dgvMonumentsCircuits.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonumentsCircuits_CellClick);
@@ -232,11 +253,13 @@
             // 
             this.NomCircuit.HeaderText = "Nom du circuit";
             this.NomCircuit.Name = "NomCircuit";
+            this.NomCircuit.ReadOnly = true;
             // 
             // OrdreDansCircuit
             // 
             this.OrdreDansCircuit.HeaderText = "Ordre dans ce circuit";
             this.OrdreDansCircuit.Name = "OrdreDansCircuit";
+            this.OrdreDansCircuit.ReadOnly = true;
             // 
             // dgvMonuments
             // 
@@ -263,11 +286,10 @@
             this.dgvMonuments.ReadOnly = true;
             this.dgvMonuments.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMonuments.RowHeadersVisible = false;
-            this.dgvMonuments.RowTemplate.Height = 32;
+            this.dgvMonuments.RowTemplate.Height = 26;
             this.dgvMonuments.Size = new System.Drawing.Size(814, 220);
             this.dgvMonuments.TabIndex = 11;
             this.dgvMonuments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonuments_CellClick);
-            this.dgvMonuments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonuments_CellContentClick);
             // 
             // Nom
             // 
@@ -328,18 +350,6 @@
             this.cbxStarsMonument.Text = "Activer";
             this.cbxStarsMonument.UseVisualStyleBackColor = true;
             this.cbxStarsMonument.CheckedChanged += new System.EventHandler(this.cbxStarsMonument_CheckedChanged);
-            // 
-            // starsMonument
-            // 
-            this.starsMonument.Location = new System.Drawing.Point(21, 22);
-            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
-            this.starsMonument.Name = "starsMonument";
-            this.starsMonument.Size = new System.Drawing.Size(155, 31);
-            this.starsMonument.StarsCount = 5;
-            this.starsMonument.TabIndex = 2;
-            this.starsMonument.Value = 0;
-            this.starsMonument.ValueChanged += new EvaluationDemo.Stars.ValueChangedEventHandler(this.starsMonument_ValueChanged);
             // 
             // TAB_Circuits
             // 
@@ -444,6 +454,7 @@
             this.dgvCircuits.Name = "dgvCircuits";
             this.dgvCircuits.ReadOnly = true;
             this.dgvCircuits.RowHeadersVisible = false;
+            this.dgvCircuits.RowTemplate.Height = 26;
             this.dgvCircuits.Size = new System.Drawing.Size(813, 452);
             this.dgvCircuits.TabIndex = 9;
             this.dgvCircuits.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCircuits_CellClick);
@@ -491,7 +502,7 @@
             this.fbtnImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fbtnImage.DisabledImage = null;
             this.fbtnImage.Image = ((System.Drawing.Image)(resources.GetObject("fbtnImage.Image")));
-            this.fbtnImage.Location = new System.Drawing.Point(21, 437);
+            this.fbtnImage.Location = new System.Drawing.Point(21, 428);
             this.fbtnImage.Name = "fbtnImage";
             this.fbtnImage.NeutralImage = global::TPfinal.Properties.Resources.Eye;
             this.fbtnImage.OverImage = global::TPfinal.Properties.Resources.Eye_accept;
@@ -511,11 +522,11 @@
             this.FBTN_AddMonument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FBTN_AddMonument.ForeColor = System.Drawing.Color.Transparent;
             this.FBTN_AddMonument.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_AddMonument.Image")));
-            this.FBTN_AddMonument.Location = new System.Drawing.Point(16, 354);
+            this.FBTN_AddMonument.Location = new System.Drawing.Point(21, 357);
             this.FBTN_AddMonument.Name = "FBTN_AddMonument";
             this.FBTN_AddMonument.NeutralImage = global::TPfinal.Properties.Resources.Tower_Add_Neutral;
             this.FBTN_AddMonument.OverImage = global::TPfinal.Properties.Resources.Tower_Add_Accept;
-            this.FBTN_AddMonument.Size = new System.Drawing.Size(62, 62);
+            this.FBTN_AddMonument.Size = new System.Drawing.Size(52, 52);
             this.FBTN_AddMonument.TabIndex = 12;
             this.FBTN_AddMonument.Text = "Ajouter un monument";
             this.FBTN_AddMonument.UseVisualStyleBackColor = true;
@@ -592,6 +603,18 @@
             this.fbtnAjouter.Text = "Ajouter un circuit";
             this.fbtnAjouter.UseVisualStyleBackColor = true;
             this.fbtnAjouter.Click += new System.EventHandler(this.fbtnAjouter_Click);
+            // 
+            // starsMonument
+            // 
+            this.starsMonument.Location = new System.Drawing.Point(21, 22);
+            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
+            this.starsMonument.Name = "starsMonument";
+            this.starsMonument.Size = new System.Drawing.Size(155, 31);
+            this.starsMonument.StarsCount = 5;
+            this.starsMonument.TabIndex = 2;
+            this.starsMonument.Value = 0;
+            this.starsMonument.ValueChanged += new EvaluationDemo.Stars.ValueChangedEventHandler(this.starsMonument_ValueChanged);
             // 
             // MainForm
             // 
@@ -680,6 +703,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Prix;
         private System.Windows.Forms.DataGridViewTextBoxColumn Etoiles;
         private System.Windows.Forms.DataGridViewTextBoxColumn MonumentId;
+        private System.Windows.Forms.ToolStripMenuItem afficherImageToolStripMenuItem;
     }
 }
 

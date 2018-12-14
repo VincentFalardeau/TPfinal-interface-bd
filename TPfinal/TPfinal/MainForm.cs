@@ -46,6 +46,7 @@ namespace TPfinal
             fbtnImage.Location = fbtnModifier.Location;
 
             monumentToolStripMenuItem.Visible = false;
+           // monumentToolStripMenuItem.ShortcutKeys = ;
         }
 
         private void UpdateData()
@@ -265,7 +266,11 @@ namespace TPfinal
 
         private void ajouterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ajouter();
+            if (tabsControl.SelectedIndex == 0)
+            {
+                Ajouter();
+            }
+                
         }
 
         private void Ajouter()
@@ -379,7 +384,11 @@ namespace TPfinal
 
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Modifier();
+            if (tabsControl.SelectedIndex == 0)
+            {
+                Modifier();
+            }
+                
 
 
         }
@@ -415,7 +424,10 @@ namespace TPfinal
 
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Supprimer();
+            if (tabsControl.SelectedIndex == 0)
+            {
+                Supprimer();
+            }
         }
 
         private void fbtnEffacer_Click(object sender, EventArgs e)
@@ -437,7 +449,11 @@ namespace TPfinal
 
         private void voirInformationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VoirInfos();
+            if (tabsControl.SelectedIndex == 0)
+            {
+                VoirInfos();
+            }
+               
         }
 
         private void VoirInfos()
@@ -469,6 +485,17 @@ namespace TPfinal
             {
                return System.Drawing.Image.FromStream(stream);
             }
+        }
+
+        private void starsMonument_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbxStarsMonument.Checked)
+                UpdateDgvMonuments();
+        }
+
+        private void cbxStarsMonument_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateDgvMonuments();
         }
 
         private void UpdateDgvMonuments()
@@ -507,7 +534,10 @@ namespace TPfinal
 
         private void STRIP_AjouterMonument_Click(object sender, EventArgs e)
         {
-            AjouterUnMonument();
+            if (tabsControl.SelectedIndex == 1)
+            {
+                AjouterUnMonument();
+            }
         }
 
         private void FBTN_AddMonument_Click(object sender, EventArgs e)
@@ -526,55 +556,23 @@ namespace TPfinal
             }
         }
 
-        private void dgvMonuments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+
+        private void fbtnImage_Click(object sender, EventArgs e)
         {
-        //    if (dgvMonuments.CurrentCell.ColumnIndex == 0)
-        //    {
-        //        foreach (DataGridViewRow row in dgvMonuments.Rows)
-        //        {
-        //            DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-        //            if (chk.Value == chk.TrueValue)
-        //            {
-        //                chk.Value = chk.FalseValue;
-        //            }
-        //        }
+            AfficherMonument();
+        }
 
-        //        DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)dgvMonuments.CurrentCell;
-
-        //        bool isChecked = (bool)checkbox.EditedFormattedValue;
-
-
-        //        var Id = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[6].Value;
-
-
-        //        dgvMonumentsCircuits.Rows.Clear();
-
-        //        try
-        //        {
-        //            string sql = "SELECT NOMCIRCUIT, ORDRESURCIRCUIT FROM ODREDANSCIRCUIT  WHERE IDMONUMENT = " + Id.ToString();
-        //            OracleCommand cmd = new OracleCommand(sql, mConnexionDAL.GetConnexion());
-        //            OracleDataReader oracleReader = cmd.ExecuteReader();
-        //            while (oracleReader.Read())
-        //            {
-
-        //                dgvMonumentsCircuits.Rows.Add(oracleReader.GetString(0), oracleReader.GetInt32(1).ToString());
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.Message.ToString());
-        //        }
-
-        //    }
-        //    else if (dgvMonuments.CurrentCell.ColumnIndex == 6)
-        //    {
-               
-
-        //    }
+        private void afficherImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabsControl.SelectedIndex == 0)
+            {
+                AfficherMonument();
+            }
 
         }
 
-        private void fbtnImage_Click(object sender, EventArgs e)
+        private void AfficherMonument()
         {
             var Id = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[5].Value.ToString();
             var Nom = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[0].Value.ToString();
@@ -588,8 +586,11 @@ namespace TPfinal
             dgvMonuments.CurrentRow.Selected = true;
 
             UpdateDgvCircuitsMonuments();
-         
-            
+        }
+
+        private void dgvMonumentsCircuits_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvMonuments.CurrentRow.Selected = true;
 
         }
 
@@ -617,25 +618,17 @@ namespace TPfinal
             }
         }
 
-        private void dgvMonumentsCircuits_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvMonuments.CurrentRow.Selected = true;
+       
 
-        }
+      
 
         //--------------------------------------------------------------------------
         //
-        //Tests
+        //TabPage
         //
         //--------------------------------------------------------------------------
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
 
-        }
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
 
-        }
 
         private void TABPages_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -665,20 +658,9 @@ namespace TPfinal
                 fbtnEffacer.Visible = false;
                 fbtnInformations.Visible = false;
 
+                UpdateDgvCircuitsMonuments();
+
             }
         }
-
-        private void starsMonument_ValueChanged(object sender, EventArgs e)
-        {
-            if(cbxStarsMonument.Checked)
-             UpdateDgvMonuments();
-        }
-
-        private void cbxStarsMonument_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateDgvMonuments();
-        }
-
-        
     }
 }
