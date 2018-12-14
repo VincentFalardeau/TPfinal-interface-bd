@@ -33,15 +33,16 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.clbxMonuments = new System.Windows.Forms.CheckedListBox();
             this.fbtnEffacer = new PhotoManagerClient.FlashButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbxCircuits
             // 
             this.cbxCircuits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCircuits.FormattingEnabled = true;
-            this.cbxCircuits.Location = new System.Drawing.Point(39, 12);
+            this.cbxCircuits.Location = new System.Drawing.Point(94, 12);
             this.cbxCircuits.Name = "cbxCircuits";
-            this.cbxCircuits.Size = new System.Drawing.Size(373, 28);
+            this.cbxCircuits.Size = new System.Drawing.Size(318, 28);
             this.cbxCircuits.TabIndex = 15;
             this.cbxCircuits.SelectedIndexChanged += new System.EventHandler(this.cbxCircuits_SelectedIndexChanged);
             // 
@@ -83,11 +84,21 @@
             this.fbtnEffacer.UseVisualStyleBackColor = true;
             this.fbtnEffacer.Click += new System.EventHandler(this.fbtnEffacer_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Circuit";
+            // 
             // SupprimerMonumentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 293);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.fbtnEffacer);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.clbxMonuments);
@@ -96,6 +107,7 @@
             this.Name = "SupprimerMonumentForm";
             this.Text = "Supprimer des monuments";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -104,5 +116,6 @@
         private PhotoManagerClient.FlashButton fbtnEffacer;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.CheckedListBox clbxMonuments;
+        private System.Windows.Forms.Label label1;
     }
 }
