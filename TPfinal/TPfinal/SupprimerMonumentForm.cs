@@ -119,13 +119,17 @@ namespace TPfinal
 
         private void fbtnEffacer_Click(object sender, EventArgs e)
         {
-
-            foreach (var item in clbxMonuments.CheckedItems.OfType<string>().ToList())
+            var confirmer = MessageBox.Show("Êtes-vous certain de vouloir effacer ces monuments de ce circuit?", "Confirmation", MessageBoxButtons.YesNo);
+            if (confirmer == DialogResult.Yes)
             {
-                Effacer(item.ToString());
-                clbxMonuments.Items.Remove(item);
+                foreach (var item in clbxMonuments.CheckedItems.OfType<string>().ToList())
+                {
+                    Effacer(item.ToString());
+                    clbxMonuments.Items.Remove(item);
+                }
+                MessageBox.Show("Circuits effacés avec succès!");
             }
-            MessageBox.Show("Circuits effacés avec succès!");
+                
             UpdateClbxMonuments();
 
         }

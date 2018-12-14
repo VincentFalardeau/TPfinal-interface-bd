@@ -40,7 +40,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PBX_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PBX_Image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PBX_Image.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
     "th context menu.";
             this.PBX_Image.Enabled = false;

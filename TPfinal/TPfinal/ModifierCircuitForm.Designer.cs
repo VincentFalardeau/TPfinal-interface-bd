@@ -42,7 +42,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 75);
+            this.label2.Location = new System.Drawing.Point(66, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 3;
@@ -52,7 +52,8 @@
             // 
             this.cbxCircuits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCircuits.FormattingEnabled = true;
-            this.cbxCircuits.Location = new System.Drawing.Point(179, 6);
+            this.cbxCircuits.Location = new System.Drawing.Point(179, 19);
+            this.cbxCircuits.Margin = new System.Windows.Forms.Padding(10);
             this.cbxCircuits.Name = "cbxCircuits";
             this.cbxCircuits.Size = new System.Drawing.Size(237, 28);
             this.cbxCircuits.TabIndex = 4;
@@ -61,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(120, 9);
+            this.label3.Location = new System.Drawing.Point(113, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 5;
@@ -69,7 +70,8 @@
             // 
             // tbxPrix
             // 
-            this.tbxPrix.Location = new System.Drawing.Point(179, 40);
+            this.tbxPrix.Location = new System.Drawing.Point(180, 67);
+            this.tbxPrix.Margin = new System.Windows.Forms.Padding(10);
             this.tbxPrix.Name = "tbxPrix";
             this.tbxPrix.ReadOnly = true;
             this.tbxPrix.Size = new System.Drawing.Size(237, 26);
@@ -78,7 +80,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(92, 43);
+            this.label4.Location = new System.Drawing.Point(86, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 7;
@@ -87,9 +89,10 @@
             // btnModifier
             // 
             this.btnModifier.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnModifier.Location = new System.Drawing.Point(44, 104);
+            this.btnModifier.Location = new System.Drawing.Point(47, 159);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(10);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(183, 54);
+            this.btnModifier.Size = new System.Drawing.Size(175, 55);
             this.btnModifier.TabIndex = 8;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
@@ -98,9 +101,10 @@
             // btnAnnuler
             // 
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnuler.Location = new System.Drawing.Point(233, 104);
+            this.btnAnnuler.Location = new System.Drawing.Point(242, 159);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(10);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(183, 54);
+            this.btnAnnuler.Size = new System.Drawing.Size(175, 55);
             this.btnAnnuler.TabIndex = 9;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -113,7 +117,8 @@
             0,
             0,
             0});
-            this.nudNvPrix.Location = new System.Drawing.Point(179, 73);
+            this.nudNvPrix.Location = new System.Drawing.Point(181, 113);
+            this.nudNvPrix.Margin = new System.Windows.Forms.Padding(10);
             this.nudNvPrix.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -139,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
-            this.ClientSize = new System.Drawing.Size(462, 167);
+            this.ClientSize = new System.Drawing.Size(462, 231);
             this.Controls.Add(this.nudNvPrix);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnModifier);
