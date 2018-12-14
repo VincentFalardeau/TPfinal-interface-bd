@@ -478,6 +478,11 @@ namespace TPfinal
                
         }
 
+        private void dgvCircuits_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            VoirInfos();
+        }
+
         private void VoirInfos()
         {
             InformationsCircuitForm icf = new InformationsCircuitForm(dgvCircuits.CurrentRow.Cells[0].Value.ToString());
@@ -625,6 +630,11 @@ namespace TPfinal
 
 
         private void fbtnImage_Click(object sender, EventArgs e)
+        {
+            AfficherMonument();
+        }
+
+        private void dgvMonuments_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             AfficherMonument();
         }
@@ -786,6 +796,6 @@ namespace TPfinal
             graphics.FillRectangle(b, gradient_rectangle);
         }
 
-       
+        
     }
 }

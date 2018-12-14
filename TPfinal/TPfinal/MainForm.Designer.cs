@@ -35,6 +35,7 @@
             this.monumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.STRIP_AjouterMonument = new System.Windows.Forms.ToolStripMenuItem();
             this.afficherImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voirMeilleurCircuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.circuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +67,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cbxVille = new System.Windows.Forms.ComboBox();
             this.tabsControl = new System.Windows.Forms.TabControl();
-            this.voirMeilleurCircuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fbtnMeilleurCircuit = new PhotoManagerClient.FlashButton();
             this.fbtnImage = new PhotoManagerClient.FlashButton();
             this.FBTN_AddMonument = new PhotoManagerClient.FlashButton();
@@ -118,6 +118,16 @@
             this.afficherImageToolStripMenuItem.Size = new System.Drawing.Size(355, 30);
             this.afficherImageToolStripMenuItem.Text = "Afficher image";
             this.afficherImageToolStripMenuItem.Click += new System.EventHandler(this.afficherImageToolStripMenuItem_Click);
+            // 
+            // voirMeilleurCircuitToolStripMenuItem
+            // 
+            this.voirMeilleurCircuitToolStripMenuItem.Image = global::TPfinal.Properties.Resources.circuit_add_neutre;
+            this.voirMeilleurCircuitToolStripMenuItem.Name = "voirMeilleurCircuitToolStripMenuItem";
+            this.voirMeilleurCircuitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.M)));
+            this.voirMeilleurCircuitToolStripMenuItem.Size = new System.Drawing.Size(355, 30);
+            this.voirMeilleurCircuitToolStripMenuItem.Text = "Voir meilleur circuit";
+            this.voirMeilleurCircuitToolStripMenuItem.Click += new System.EventHandler(this.voirMeilleurCircuitToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -305,6 +315,7 @@
             this.dgvMonuments.Size = new System.Drawing.Size(814, 248);
             this.dgvMonuments.TabIndex = 11;
             this.dgvMonuments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonuments_CellClick);
+            this.dgvMonuments.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonuments_CellDoubleClick);
             // 
             // Nom
             // 
@@ -484,6 +495,7 @@
             this.dgvCircuits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCircuits.Size = new System.Drawing.Size(813, 452);
             this.dgvCircuits.TabIndex = 9;
+            this.dgvCircuits.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCircuits_CellDoubleClick);
             // 
             // groupBox6
             // 
@@ -519,16 +531,6 @@
             this.tabsControl.Size = new System.Drawing.Size(854, 603);
             this.tabsControl.TabIndex = 10;
             this.tabsControl.SelectedIndexChanged += new System.EventHandler(this.TABPages_SelectedIndexChanged);
-            // 
-            // voirMeilleurCircuitToolStripMenuItem
-            // 
-            this.voirMeilleurCircuitToolStripMenuItem.Image = global::TPfinal.Properties.Resources.circuit_add_neutre;
-            this.voirMeilleurCircuitToolStripMenuItem.Name = "voirMeilleurCircuitToolStripMenuItem";
-            this.voirMeilleurCircuitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.M)));
-            this.voirMeilleurCircuitToolStripMenuItem.Size = new System.Drawing.Size(355, 30);
-            this.voirMeilleurCircuitToolStripMenuItem.Text = "Voir meilleur circuit";
-            this.voirMeilleurCircuitToolStripMenuItem.Click += new System.EventHandler(this.voirMeilleurCircuitToolStripMenuItem_Click);
             // 
             // fbtnMeilleurCircuit
             // 
