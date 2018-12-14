@@ -202,6 +202,7 @@
             // 
             // fbtnEffacerMonument
             // 
+            this.fbtnEffacerMonument.BackColor = System.Drawing.Color.Transparent;
             this.fbtnEffacerMonument.BackgroundImage = global::TPfinal.Properties.Resources.trash;
             this.fbtnEffacerMonument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.fbtnEffacerMonument.ClickedImage = global::TPfinal.Properties.Resources.trash_accept;
@@ -216,11 +217,12 @@
             this.fbtnEffacerMonument.Size = new System.Drawing.Size(36, 36);
             this.fbtnEffacerMonument.TabIndex = 13;
             this.fbtnEffacerMonument.Text = "Supprimer le monument sélectionné dans la liste";
-            this.fbtnEffacerMonument.UseVisualStyleBackColor = true;
+            this.fbtnEffacerMonument.UseVisualStyleBackColor = false;
             this.fbtnEffacerMonument.Click += new System.EventHandler(this.fbtnEffacerMonument_Click);
             // 
             // fbtnAjouterMonument
             // 
+            this.fbtnAjouterMonument.BackColor = System.Drawing.Color.Transparent;
             this.fbtnAjouterMonument.BackgroundImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Neutral;
             this.fbtnAjouterMonument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.fbtnAjouterMonument.ClickedImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Click;
@@ -234,7 +236,7 @@
             this.fbtnAjouterMonument.Size = new System.Drawing.Size(36, 36);
             this.fbtnAjouterMonument.TabIndex = 12;
             this.fbtnAjouterMonument.Text = "Ajouter le monument sélectionné";
-            this.fbtnAjouterMonument.UseVisualStyleBackColor = true;
+            this.fbtnAjouterMonument.UseVisualStyleBackColor = false;
             this.fbtnAjouterMonument.Click += new System.EventHandler(this.fbtnAjouterMonument_Click);
             // 
             // AjouterCircuitForm

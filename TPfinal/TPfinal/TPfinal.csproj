@@ -344,5 +344,14 @@
   <ItemGroup>
     <None Include="Resources\plane_basic.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meilleur_circuit_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meilleur_circuit_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meilleur_circuit_neutre.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
