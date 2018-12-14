@@ -18,7 +18,7 @@ CREATE TABLE circuits (
 
 ALTER TABLE circuits ADD CONSTRAINT circuits_pk PRIMARY KEY ( idcircuit );
 ALTER TABLE circuits ADD CONSTRAINT circuits__un UNIQUE ( nomcircuit );
-ALTER TABLE circuits ADD CONSTRAINT circuits_prix_ck CHECK ( prix >= 50);
+ALTER TABLE circuits ADD CONSTRAINT circuits_prix_ck CHECK ( prix > 49);
 
 CREATE TABLE circuitsmonuments (
     idmonument        NUMBER(3) NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE reservations (
 
 ALTER TABLE reservations ADD CONSTRAINT reservations_pk PRIMARY KEY ( idreservation );
 ALTER TABLE reservations ADD CONSTRAINT idreservation_un UNIQUE ( idreservation );
-describe monuments;
+
 CREATE TABLE villes (
     codeville     CHAR(3) NOT NULL,
     nomville      VARCHAR2(30),

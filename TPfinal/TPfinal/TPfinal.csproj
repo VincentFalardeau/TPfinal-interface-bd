@@ -57,12 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AideForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AideForm.Designer.cs">
-      <DependentUpon>AideForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="AjouterCircuitForm.cs">
       <SubType>Form</SubType>
     </Compile>
