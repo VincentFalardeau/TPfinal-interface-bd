@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AideForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AideForm.Designer.cs">
+      <DependentUpon>AideForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AjouterCircuitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,12 @@
     <Compile Include="ModifierCircuitForm.Designer.cs">
       <DependentUpon>ModifierCircuitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PageAideOuAPropos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageAideOuAPropos.designer.cs">
+      <DependentUpon>PageAideOuAPropos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupprimerMonumentForm.cs">
@@ -143,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AjouterMonumentForm.resx">
       <DependentUpon>AjouterMonumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageAideOuAPropos.resx">
+      <DependentUpon>PageAideOuAPropos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

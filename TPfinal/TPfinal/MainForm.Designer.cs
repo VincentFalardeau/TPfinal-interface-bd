@@ -177,6 +177,7 @@
             this.aideToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.aideToolStripMenuItem.Size = new System.Drawing.Size(60, 29);
             this.aideToolStripMenuItem.Text = "Aide";
+            this.aideToolStripMenuItem.Click += new System.EventHandler(this.aideToolStripMenuItem_Click);
             // 
             // àProposToolStripMenuItem
             // 
@@ -184,6 +185,7 @@
             this.àProposToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
             this.àProposToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
             this.àProposToolStripMenuItem.Text = "À propos";
+            this.àProposToolStripMenuItem.Click += new System.EventHandler(this.àProposToolStripMenuItem_Click);
             // 
             // TAB_Monuments
             // 

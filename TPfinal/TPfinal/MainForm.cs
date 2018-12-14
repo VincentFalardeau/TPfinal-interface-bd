@@ -662,5 +662,47 @@ namespace TPfinal
 
             }
         }
+
+
+
+        //--------------------------------------------------------------------------
+        //
+        //Aide / À propos
+        //
+        //--------------------------------------------------------------------------
+
+        private void aideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PageAideOuAPropos pa = new PageAideOuAPropos(
+               "Aide:" + '\t' + '\t' + '\t' + " Ctrl + A" + '\n' +
+               '\n' +
+               "Ajouter un circuit:" + '\t' + '\t' + " Alt + A" + '\n' +
+               "Modifier un circuit:" + '\t' + '\t' + " Alt + M" + '\n' +
+               "Supprimer un circuit:"  + '\t' + " Alt + S" + '\n' +
+               "Voir infos circuit:" + '\t' + '\t' + " Alt + I" + '\n' +
+               '\n' +
+               "Ajouter un monument:" + '\t'  + " Alt + Shift + A" + '\n' +
+               "Afficher photo monument:" + '\t' + " Alt+ Shift + I" + '\n' +
+               '\n' +
+               "À propos:" + '\t' + '\t' + '\t' + " Ctrl + I" + '\n', "Aide");
+
+            pa.Show();
+        }
+
+        private void àProposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PageAideOuAPropos pa = new PageAideOuAPropos(
+              "Travail final" + '\n' + '\n' +
+              "Réalisé par " + '\n' + '\n' +
+              "Vincent Falardeau" + '\n' +
+              "Émile Ménard" + '\n' + '\n' +
+              "Pour le cours de développement d'interfaces" + '\n' +
+              "et de conception de bases de données" + '\n' +
+              "17 décembre 2018", "À propos");
+
+            pa.Show();
+        }
+
+        
     }
 }
