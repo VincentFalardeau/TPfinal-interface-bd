@@ -580,7 +580,7 @@ namespace TPfinal
 
         private void afficherImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tabsControl.SelectedIndex == 0)
+            if (tabsControl.SelectedIndex == 1)
             {
                 AfficherMonument();
             }
