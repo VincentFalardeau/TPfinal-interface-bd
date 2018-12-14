@@ -71,12 +71,6 @@
       <DependentUpon>AfficherImageMonument.cs</DependentUpon>
     </Compile>
     <Compile Include="Monument.cs" />
-    <Compile Include="MonumentImageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MonumentImageForm.Designer.cs">
-      <DependentUpon>MonumentImageForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="AjouterMonumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,9 +140,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierCircuitForm.resx">
       <DependentUpon>ModifierCircuitForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonumentImageForm.resx">
-      <DependentUpon>MonumentImageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AjouterMonumentForm.resx">
       <DependentUpon>AjouterMonumentForm.cs</DependentUpon>
