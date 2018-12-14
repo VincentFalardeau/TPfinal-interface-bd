@@ -41,7 +41,7 @@
             this.cbxCircuits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCircuits.FormattingEnabled = true;
             this.cbxCircuits.Location = new System.Drawing.Point(93, 19);
-            this.cbxCircuits.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.cbxCircuits.Margin = new System.Windows.Forms.Padding(10);
             this.cbxCircuits.Name = "cbxCircuits";
             this.cbxCircuits.Size = new System.Drawing.Size(318, 28);
             this.cbxCircuits.TabIndex = 15;
@@ -49,7 +49,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(228, 239);
+            this.btnOk.Location = new System.Drawing.Point(228, 259);
             this.btnOk.Margin = new System.Windows.Forms.Padding(10);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(183, 54);
@@ -62,8 +62,8 @@
             // 
             this.clbxMonuments.CheckOnClick = true;
             this.clbxMonuments.FormattingEnabled = true;
-            this.clbxMonuments.Location = new System.Drawing.Point(38, 47);
-            this.clbxMonuments.Margin = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.clbxMonuments.Location = new System.Drawing.Point(38, 67);
+            this.clbxMonuments.Margin = new System.Windows.Forms.Padding(10);
             this.clbxMonuments.Name = "clbxMonuments";
             this.clbxMonuments.Size = new System.Drawing.Size(373, 172);
             this.clbxMonuments.TabIndex = 16;
@@ -77,7 +77,7 @@
             this.fbtnEffacer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fbtnEffacer.DisabledImage = global::TPfinal.Properties.Resources.trash_disable;
             this.fbtnEffacer.Image = ((System.Drawing.Image)(resources.GetObject("fbtnEffacer.Image")));
-            this.fbtnEffacer.Location = new System.Drawing.Point(112, 244);
+            this.fbtnEffacer.Location = new System.Drawing.Point(112, 264);
             this.fbtnEffacer.Margin = new System.Windows.Forms.Padding(10);
             this.fbtnEffacer.Name = "fbtnEffacer";
             this.fbtnEffacer.NeutralImage = global::TPfinal.Properties.Resources.trash;
@@ -101,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 311);
+            this.ClientSize = new System.Drawing.Size(450, 333);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fbtnEffacer);
             this.Controls.Add(this.btnOk);
