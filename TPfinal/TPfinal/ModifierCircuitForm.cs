@@ -71,6 +71,7 @@ namespace TPfinal
                 if(nomCircuit != "")
                 {
                     cbxCircuits.SelectedIndex = cbxCircuits.Items.IndexOf(nomCircuit);
+
                 }
                 else
                 {
@@ -94,7 +95,9 @@ namespace TPfinal
 
                 oracleDataReader.Read();
 
-                tbxPrix.Text = oracleDataReader.GetDouble(0).ToString();
+                double prix = oracleDataReader.GetDouble(0);
+                tbxPrix.Text = prix.ToString();
+                nudNvPrix.Value = decimal.Parse(prix.ToString());
 
                 oracleDataReader.Close();
 

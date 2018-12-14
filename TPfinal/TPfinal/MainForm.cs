@@ -47,11 +47,15 @@ namespace TPfinal
 
         private void Init_Controls()
         {
+
             FBTN_AddMonument.Visible = false;
             FBTN_AddMonument.Location = fbtnAjouter.Location;
 
             fbtnImage.Visible = false;
             fbtnImage.Location = fbtnModifier.Location;
+
+            fbtnMeilleurCircuit.Visible = false;
+            fbtnMeilleurCircuit.Location = fbtnEffacer.Location;
 
             monumentToolStripMenuItem.Visible = false;
         }
@@ -489,6 +493,53 @@ namespace TPfinal
         //
         //--------------------------------------------------------------------------
 
+        private void fbtnMeilleurCircuit_Click(object sender, EventArgs e)
+        {
+            VoirMeilleurCircuit();
+        }
+
+        private void voirMeilleurCircuitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabsControl.SelectedIndex == 1)
+            {
+                VoirMeilleurCircuit();
+            }
+        }
+
+        private void VoirMeilleurCircuit()
+        {
+            InformationsCircuitForm icf = new InformationsCircuitForm(ObtenirNomMeilleurCircuit(), true);
+            icf.ShowDialog();
+        }
+
+        private string ObtenirNomMeilleurCircuit()
+        {
+            string nom = "";
+            try
+            {
+                string sql = "SELECT NOMCIRCUIT FROM (" +
+                "SELECT C.NOMCIRCUIT, CM.IDCIRCUIT, COUNT(*) AS ETOILES, C.PRIX FROM" +
+                "(CIRCUITSMONUMENTS CM INNER JOIN MONUMENTS M ON CM.IDMONUMENT = M.IDMONUMENT)" +
+                "INNER JOIN CIRCUITS C ON C.IDCIRCUIT = CM.IDCIRCUIT WHERE M.ETOILES >= 3 AND CM.IDCIRCUIT IN(SELECT IDCIRCUIT FROM CIRCUITSMONUMENTS WHERE IDMONUMENT = '" + ObtenirIdMonument(dgvMonuments.CurrentRow.Cells[0].Value.ToString()).ToString() + "')" +
+                "GROUP BY C.NOMCIRCUIT, CM.IDCIRCUIT, C.PRIX ORDER BY PRIX ASC, ETOILES DESC" +
+                ") WHERE ROWNUM = 1";
+
+                OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
+                OracleDataReader oracleDataReader = oracleCommand.ExecuteReader();
+
+                oracleDataReader.Read();
+                nom = oracleDataReader.GetString(0);
+
+                oracleDataReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            return nom;
+        }
+
         Image getImageFromUrl(string url )
         {
 
@@ -653,6 +704,7 @@ namespace TPfinal
                 monumentToolStripMenuItem.Visible = false;
                 FBTN_AddMonument.Visible = false;
                 fbtnImage.Visible = false;
+                fbtnMeilleurCircuit.Visible = false;
 
                 circuitToolStripMenuItem.Visible = true;
                 fbtnAjouter.Visible = true;
@@ -666,6 +718,7 @@ namespace TPfinal
                 monumentToolStripMenuItem.Visible = true;
                 FBTN_AddMonument.Visible = true;
                 fbtnImage.Visible = true;
+                fbtnMeilleurCircuit.Visible = true;
 
                 circuitToolStripMenuItem.Visible = false;
                 fbtnAjouter.Visible = false;
@@ -698,6 +751,7 @@ namespace TPfinal
                '\n' +
                "Ajouter un monument:" + '\t'  + " Alt + Shift + A" + '\n' +
                "Afficher photo monument:" + '\t' + " Alt+ Shift + I" + '\n' +
+               "Voir meilleur circuit:" + '\t' + '\t' + " Alt+ Shift + M" + '\n' +
                '\n' +
                "À propos:" + '\t' + '\t' + '\t' + " Ctrl + I" + '\n', "Aide");
 
@@ -731,5 +785,7 @@ namespace TPfinal
             System.Drawing.Brush b = new System.Drawing.Drawing2D.LinearGradientBrush(gradient_rectangle, Color.White, Color.LightBlue, 0.5f);
             graphics.FillRectangle(b, gradient_rectangle);
         }
+
+       
     }
 }

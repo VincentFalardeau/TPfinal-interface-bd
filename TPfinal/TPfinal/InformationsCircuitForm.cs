@@ -21,12 +21,17 @@ namespace TPfinal
     {
         private ConnectionDAL mConnexionDAL;
         private DB_Images DB_Images;
-        public InformationsCircuitForm(string nomCircuit = "")
+        public InformationsCircuitForm(string nomCircuit = "", bool fixedMode = false)
         {
             InitializeComponent();
             mConnexionDAL = ConnectionDAL.GetInstance();
             DB_Images = new DB_Images("Emile", "Salut123");
             InitCbxCircuits(nomCircuit);
+            if(fixedMode)
+            {
+                cbxCircuits.Enabled = false;
+                this.Text = "Meilleur circuit";
+            }
 
         }
 
