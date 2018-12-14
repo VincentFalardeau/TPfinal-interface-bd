@@ -49,15 +49,16 @@
             // 
             // tbxNom
             // 
-            this.tbxNom.Location = new System.Drawing.Point(179, 6);
+            this.tbxNom.Location = new System.Drawing.Point(180, 19);
+            this.tbxNom.Margin = new System.Windows.Forms.Padding(10);
             this.tbxNom.Name = "tbxNom";
-            this.tbxNom.Size = new System.Drawing.Size(237, 26);
+            this.tbxNom.Size = new System.Drawing.Size(236, 26);
             this.tbxNom.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(131, 9);
+            this.label1.Location = new System.Drawing.Point(124, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 20);
             this.label1.TabIndex = 1;
@@ -67,7 +68,8 @@
             // 
             this.cbxDepart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDepart.FormattingEnabled = true;
-            this.cbxDepart.Location = new System.Drawing.Point(179, 38);
+            this.cbxDepart.Location = new System.Drawing.Point(179, 65);
+            this.cbxDepart.Margin = new System.Windows.Forms.Padding(10);
             this.cbxDepart.Name = "cbxDepart";
             this.cbxDepart.Size = new System.Drawing.Size(237, 28);
             this.cbxDepart.Sorted = true;
@@ -77,7 +79,8 @@
             // 
             this.cbxArrivee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxArrivee.FormattingEnabled = true;
-            this.cbxArrivee.Location = new System.Drawing.Point(179, 72);
+            this.cbxArrivee.Location = new System.Drawing.Point(179, 113);
+            this.cbxArrivee.Margin = new System.Windows.Forms.Padding(10);
             this.cbxArrivee.Name = "cbxArrivee";
             this.cbxArrivee.Size = new System.Drawing.Size(237, 28);
             this.cbxArrivee.Sorted = true;
@@ -86,7 +89,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 41);
+            this.label2.Location = new System.Drawing.Point(56, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 7;
@@ -95,7 +98,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 75);
+            this.label3.Location = new System.Drawing.Point(65, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 20);
             this.label3.TabIndex = 8;
@@ -105,9 +108,10 @@
             // 
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnnuler.Location = new System.Drawing.Point(232, 282);
+            this.btnAnnuler.Location = new System.Drawing.Point(241, 359);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(10, 10, 3, 10);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(184, 54);
+            this.btnAnnuler.Size = new System.Drawing.Size(175, 55);
             this.btnAnnuler.TabIndex = 15;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -115,9 +119,10 @@
             // btnAjouter
             // 
             this.btnAjouter.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAjouter.Location = new System.Drawing.Point(43, 282);
+            this.btnAjouter.Location = new System.Drawing.Point(42, 359);
+            this.btnAjouter.Margin = new System.Windows.Forms.Padding(10, 10, 3, 10);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(183, 54);
+            this.btnAjouter.Size = new System.Drawing.Size(175, 55);
             this.btnAjouter.TabIndex = 14;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -126,7 +131,7 @@
             // lblPrix
             // 
             this.lblPrix.AutoSize = true;
-            this.lblPrix.Location = new System.Drawing.Point(139, 112);
+            this.lblPrix.Location = new System.Drawing.Point(132, 163);
             this.lblPrix.Name = "lblPrix";
             this.lblPrix.Size = new System.Drawing.Size(34, 20);
             this.lblPrix.TabIndex = 17;
@@ -136,7 +141,8 @@
             // 
             this.lbxMonuments.FormattingEnabled = true;
             this.lbxMonuments.ItemHeight = 20;
-            this.lbxMonuments.Location = new System.Drawing.Point(179, 172);
+            this.lbxMonuments.Location = new System.Drawing.Point(179, 235);
+            this.lbxMonuments.Margin = new System.Windows.Forms.Padding(10, 0, 10, 10);
             this.lbxMonuments.Name = "lbxMonuments";
             this.lbxMonuments.Size = new System.Drawing.Size(237, 104);
             this.lbxMonuments.TabIndex = 19;
@@ -145,7 +151,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(80, 146);
+            this.label5.Location = new System.Drawing.Point(73, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 20);
             this.label5.TabIndex = 20;
@@ -155,7 +161,8 @@
             // 
             this.cbxMonuments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMonuments.FormattingEnabled = true;
-            this.cbxMonuments.Location = new System.Drawing.Point(179, 138);
+            this.cbxMonuments.Location = new System.Drawing.Point(179, 207);
+            this.cbxMonuments.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.cbxMonuments.Name = "cbxMonuments";
             this.cbxMonuments.Size = new System.Drawing.Size(237, 28);
             this.cbxMonuments.Sorted = true;
@@ -169,7 +176,8 @@
             0,
             0,
             0});
-            this.nudPrix.Location = new System.Drawing.Point(179, 106);
+            this.nudPrix.Location = new System.Drawing.Point(180, 161);
+            this.nudPrix.Margin = new System.Windows.Forms.Padding(10);
             this.nudPrix.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -198,7 +206,7 @@
             this.fbtnEffacerMonument.DisabledImage = global::TPfinal.Properties.Resources.trash_disable;
             this.fbtnEffacerMonument.Enabled = false;
             this.fbtnEffacerMonument.Image = ((System.Drawing.Image)(resources.GetObject("fbtnEffacerMonument.Image")));
-            this.fbtnEffacerMonument.Location = new System.Drawing.Point(137, 214);
+            this.fbtnEffacerMonument.Location = new System.Drawing.Point(130, 293);
             this.fbtnEffacerMonument.Name = "fbtnEffacerMonument";
             this.fbtnEffacerMonument.NeutralImage = global::TPfinal.Properties.Resources.trash;
             this.fbtnEffacerMonument.OverImage = global::TPfinal.Properties.Resources.trash_accept;
@@ -216,7 +224,7 @@
             this.fbtnAjouterMonument.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fbtnAjouterMonument.DisabledImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Disable;
             this.fbtnAjouterMonument.Image = ((System.Drawing.Image)(resources.GetObject("fbtnAjouterMonument.Image")));
-            this.fbtnAjouterMonument.Location = new System.Drawing.Point(137, 172);
+            this.fbtnAjouterMonument.Location = new System.Drawing.Point(130, 251);
             this.fbtnAjouterMonument.Name = "fbtnAjouterMonument";
             this.fbtnAjouterMonument.NeutralImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Neutral;
             this.fbtnAjouterMonument.OverImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Over;
@@ -232,7 +240,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
-            this.ClientSize = new System.Drawing.Size(462, 342);
+            this.ClientSize = new System.Drawing.Size(464, 433);
             this.Controls.Add(this.nudPrix);
             this.Controls.Add(this.cbxMonuments);
             this.Controls.Add(this.label5);
