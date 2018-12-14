@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace TPfinal
 {
-    public partial class ImageMonument : Form
+    public partial class AfficherImageMonument : Form
     {
         private DB_Images DB_Images;
         bool FullScreen = false;
-        public ImageMonument(string id, OracleConnection connection)
+        public AfficherImageMonument(string id, OracleConnection connection)
         {
             InitializeComponent();
             DB_Images = new DB_Images("Emile", "Salut123");

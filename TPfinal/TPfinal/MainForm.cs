@@ -548,7 +548,7 @@ namespace TPfinal
 
         private void AjouterUnMonument()
         {
-            NouveauMonumentForm ajoutMonument = new NouveauMonumentForm();
+            AjouterMonumentForm ajoutMonument = new AjouterMonumentForm();
             if (ajoutMonument.ShowDialog() == DialogResult.OK)
             {
                 Monument UnNouveauMonument = ajoutMonument.NouveauMonument;
@@ -576,7 +576,7 @@ namespace TPfinal
         {
             var Id = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[5].Value.ToString();
             var Nom = dgvMonuments.Rows[dgvMonuments.CurrentCell.RowIndex].Cells[0].Value.ToString();
-            ImageMonument form = new ImageMonument(Id, mConnexionDAL.GetConnexion());
+            AfficherImageMonument form = new AfficherImageMonument(Id, mConnexionDAL.GetConnexion());
             form.Text = Nom;
             form.ShowDialog();
         }

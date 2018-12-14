@@ -161,7 +161,7 @@
             this.cbxMonuments.Sorted = true;
             this.cbxMonuments.TabIndex = 21;
             // 
-            // tbxPrix
+            // nudPrix
             // 
             this.nudPrix.DecimalPlaces = 2;
             this.nudPrix.Increment = new decimal(new int[] {
@@ -180,7 +180,7 @@
             0,
             0,
             0});
-            this.nudPrix.Name = "tbxPrix";
+            this.nudPrix.Name = "nudPrix";
             this.nudPrix.Size = new System.Drawing.Size(236, 26);
             this.nudPrix.TabIndex = 22;
             this.nudPrix.Value = new decimal(new int[] {
@@ -204,7 +204,7 @@
             this.fbtnEffacerMonument.OverImage = global::TPfinal.Properties.Resources.trash_accept;
             this.fbtnEffacerMonument.Size = new System.Drawing.Size(36, 36);
             this.fbtnEffacerMonument.TabIndex = 13;
-            this.fbtnEffacerMonument.Text = "flashButton2";
+            this.fbtnEffacerMonument.Text = "Supprimer le monument sélectionné dans la liste";
             this.fbtnEffacerMonument.UseVisualStyleBackColor = true;
             this.fbtnEffacerMonument.Click += new System.EventHandler(this.fbtnEffacerMonument_Click);
             // 
@@ -222,7 +222,7 @@
             this.fbtnAjouterMonument.OverImage = global::TPfinal.Properties.Resources.ICON_Ajouter_Over;
             this.fbtnAjouterMonument.Size = new System.Drawing.Size(36, 36);
             this.fbtnAjouterMonument.TabIndex = 12;
-            this.fbtnAjouterMonument.Text = "flashButton1";
+            this.fbtnAjouterMonument.Text = "Ajouter le monument sélectionné";
             this.fbtnAjouterMonument.UseVisualStyleBackColor = true;
             this.fbtnAjouterMonument.Click += new System.EventHandler(this.fbtnAjouterMonument_Click);
             // 

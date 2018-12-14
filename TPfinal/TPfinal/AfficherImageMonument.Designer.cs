@@ -1,6 +1,6 @@
 ﻿namespace TPfinal
 {
-    partial class ImageMonument
+    partial class AfficherImageMonument
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,7 @@
             this.PBX_Image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PBX_Image.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
     "th context menu.";
+            this.PBX_Image.Enabled = false;
             this.PBX_Image.ImportImageText = "Import image from file...";
             this.PBX_Image.Location = new System.Drawing.Point(12, 12);
             this.PBX_Image.Name = "PBX_Image";

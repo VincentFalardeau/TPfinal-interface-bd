@@ -51,7 +51,7 @@
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(183, 54);
             this.btnOk.TabIndex = 17;
-            this.btnOk.Text = "Ok";
+            this.btnOk.Text = "Quitter";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
@@ -92,6 +92,7 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.clbxMonuments);
             this.Controls.Add(this.cbxCircuits);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "SupprimerMonumentForm";
             this.Text = "Supprimer des monuments";
             this.ResumeLayout(false);

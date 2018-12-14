@@ -64,11 +64,11 @@
       <DependentUpon>AjouterCircuitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DB_Images.cs" />
-    <Compile Include="ImageMonument.cs">
+    <Compile Include="AfficherImageMonument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImageMonument.Designer.cs">
-      <DependentUpon>ImageMonument.cs</DependentUpon>
+    <Compile Include="AfficherImageMonument.Designer.cs">
+      <DependentUpon>AfficherImageMonument.cs</DependentUpon>
     </Compile>
     <Compile Include="Monument.cs" />
     <Compile Include="MonumentImageForm.cs">
@@ -77,17 +77,11 @@
     <Compile Include="MonumentImageForm.Designer.cs">
       <DependentUpon>MonumentImageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NouveauMonumentForm.cs">
+    <Compile Include="AjouterMonumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NouveauMonumentForm.Designer.cs">
-      <DependentUpon>NouveauMonumentForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Circuits.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Circuits.Designer.cs">
-      <DependentUpon>Circuits.cs</DependentUpon>
+    <Compile Include="AjouterMonumentForm.Designer.cs">
+      <DependentUpon>AjouterMonumentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionDAL.cs" />
     <Compile Include="Controls\FlashButton.cs">
@@ -132,12 +126,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SupprimerCircuitForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SupprimerCircuitForm.Designer.cs">
-      <DependentUpon>SupprimerCircuitForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SupprimerMonumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,11 +135,8 @@
     <EmbeddedResource Include="AjouterCircuitForm.resx">
       <DependentUpon>AjouterCircuitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Circuits.resx">
-      <DependentUpon>Circuits.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ImageMonument.resx">
-      <DependentUpon>ImageMonument.cs</DependentUpon>
+    <EmbeddedResource Include="AfficherImageMonument.resx">
+      <DependentUpon>AfficherImageMonument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformationsCircuitForm.resx">
       <DependentUpon>InformationsCircuitForm.cs</DependentUpon>
@@ -165,8 +150,8 @@
     <EmbeddedResource Include="MonumentImageForm.resx">
       <DependentUpon>MonumentImageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NouveauMonumentForm.resx">
-      <DependentUpon>NouveauMonumentForm.cs</DependentUpon>
+    <EmbeddedResource Include="AjouterMonumentForm.resx">
+      <DependentUpon>AjouterMonumentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,9 +163,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SupprimerCircuitForm.resx">
-      <DependentUpon>SupprimerCircuitForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SupprimerMonumentForm.resx">
       <DependentUpon>SupprimerMonumentForm.cs</DependentUpon>
     </EmbeddedResource>

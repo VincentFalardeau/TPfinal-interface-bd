@@ -14,7 +14,7 @@ using Validation;
 
 namespace TPfinal
 {
-    public partial class NouveauMonumentForm : Form
+    public partial class AjouterMonumentForm : Form
     {
 
         public Monument NouveauMonument;
@@ -27,7 +27,7 @@ namespace TPfinal
 
         private DB_Images DB_Images;
 
-        public NouveauMonumentForm()
+        public AjouterMonumentForm()
         {
             InitializeComponent();
 

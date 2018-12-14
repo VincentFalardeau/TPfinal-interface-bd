@@ -508,7 +508,7 @@
             this.fbtnImage.OverImage = global::TPfinal.Properties.Resources.Eye_accept;
             this.fbtnImage.Size = new System.Drawing.Size(52, 52);
             this.fbtnImage.TabIndex = 15;
-            this.fbtnImage.Text = "Voir les informations";
+            this.fbtnImage.Text = "Afficher l\'image du monument sélectionné";
             this.fbtnImage.UseVisualStyleBackColor = true;
             this.fbtnImage.Click += new System.EventHandler(this.fbtnImage_Click);
             // 
@@ -546,7 +546,7 @@
             this.fbtnInformations.OverImage = global::TPfinal.Properties.Resources.Eye_accept;
             this.fbtnInformations.Size = new System.Drawing.Size(52, 52);
             this.fbtnInformations.TabIndex = 14;
-            this.fbtnInformations.Text = "Voir les informations";
+            this.fbtnInformations.Text = "Voir les informations du circuit sélectionné";
             this.fbtnInformations.UseVisualStyleBackColor = true;
             this.fbtnInformations.Click += new System.EventHandler(this.fbtnInformations_Click);
             // 

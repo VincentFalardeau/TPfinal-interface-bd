@@ -1,6 +1,6 @@
 ﻿namespace TPfinal
 {
-    partial class NouveauMonumentForm
+    partial class AjouterMonumentForm
     {
         /// <summary>
         /// Required designer variable.
