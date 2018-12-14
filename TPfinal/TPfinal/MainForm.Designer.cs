@@ -53,6 +53,7 @@
             this.MonumentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupbox10 = new System.Windows.Forms.GroupBox();
             this.cbxStarsMonument = new System.Windows.Forms.CheckBox();
+            this.starsMonument = new EvaluationDemo.Stars();
             this.TAB_Circuits = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbxPrix = new System.Windows.Forms.CheckBox();
@@ -69,7 +70,6 @@
             this.fbtnEffacer = new PhotoManagerClient.FlashButton();
             this.fbtnModifier = new PhotoManagerClient.FlashButton();
             this.fbtnAjouter = new PhotoManagerClient.FlashButton();
-            this.starsMonument = new EvaluationDemo.Stars();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonumentsCircuits)).BeginInit();
@@ -209,7 +209,7 @@
             this.dgvMonumentsCircuits.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMonumentsCircuits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMonumentsCircuits.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvMonumentsCircuits.BackgroundColor = System.Drawing.Color.White;
             this.dgvMonumentsCircuits.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMonumentsCircuits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonumentsCircuits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -247,7 +247,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMonuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMonuments.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvMonuments.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMonuments.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMonuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonuments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nom,
@@ -327,6 +328,18 @@
             this.cbxStarsMonument.Text = "Activer";
             this.cbxStarsMonument.UseVisualStyleBackColor = true;
             this.cbxStarsMonument.CheckedChanged += new System.EventHandler(this.cbxStarsMonument_CheckedChanged);
+            // 
+            // starsMonument
+            // 
+            this.starsMonument.Location = new System.Drawing.Point(21, 22);
+            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
+            this.starsMonument.Name = "starsMonument";
+            this.starsMonument.Size = new System.Drawing.Size(230, 46);
+            this.starsMonument.StarsCount = 5;
+            this.starsMonument.TabIndex = 2;
+            this.starsMonument.Value = 0;
+            this.starsMonument.ValueChanged += new EvaluationDemo.Stars.ValueChangedEventHandler(this.starsMonument_ValueChanged);
             // 
             // TAB_Circuits
             // 
@@ -423,7 +436,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCircuits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCircuits.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvCircuits.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCircuits.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCircuits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCircuits.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCircuits.Location = new System.Drawing.Point(12, 92);
@@ -581,18 +595,6 @@
             this.fbtnAjouter.Text = "Ajouter un circuit";
             this.fbtnAjouter.UseVisualStyleBackColor = true;
             this.fbtnAjouter.Click += new System.EventHandler(this.fbtnAjouter_Click);
-            // 
-            // starsMonument
-            // 
-            this.starsMonument.Location = new System.Drawing.Point(21, 22);
-            this.starsMonument.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.starsMonument.MinimumSize = new System.Drawing.Size(150, 31);
-            this.starsMonument.Name = "starsMonument";
-            this.starsMonument.Size = new System.Drawing.Size(155, 31);
-            this.starsMonument.StarsCount = 5;
-            this.starsMonument.TabIndex = 2;
-            this.starsMonument.Value = 0;
-            this.starsMonument.ValueChanged += new EvaluationDemo.Stars.ValueChangedEventHandler(this.starsMonument_ValueChanged);
             // 
             // MainForm
             // 

@@ -161,6 +161,12 @@ namespace TPfinal
             }
         }
 
+        //--------------------------------------------------------------------------
+        //
+        //Innovation
+        //
+        //--------------------------------------------------------------------------
+
         private void SupprimerMonumentForm_Paint(object sender, PaintEventArgs e)
         {
             System.Drawing.Graphics graphics = e.Graphics;

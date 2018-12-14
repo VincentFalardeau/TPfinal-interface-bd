@@ -227,6 +227,7 @@
             this.Text = "Ajouter un monument";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AjouterMonumentForm_FormClosing);
             this.Load += new System.EventHandler(this.NouveauMonumentForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.AjouterMonumentForm_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Monument)).EndInit();
             this.ResumeLayout(false);

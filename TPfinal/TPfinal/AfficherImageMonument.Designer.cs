@@ -40,6 +40,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PBX_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PBX_Image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PBX_Image.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
     "th context menu.";
             this.PBX_Image.Enabled = false;
@@ -61,6 +62,7 @@
             this.Name = "AfficherImageMonument";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AfficherImageMonument_FormClosing);
             this.Load += new System.EventHandler(this.AfficherImageMonument_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.AfficherImageMonument_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ImageMonument_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Image)).EndInit();
             this.ResumeLayout(false);
