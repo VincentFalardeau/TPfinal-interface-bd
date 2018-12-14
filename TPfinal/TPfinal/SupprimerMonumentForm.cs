@@ -161,6 +161,12 @@ namespace TPfinal
             }
         }
 
-        
+        private void SupprimerMonumentForm_Paint(object sender, PaintEventArgs e)
+        {
+            System.Drawing.Graphics graphics = e.Graphics;
+            System.Drawing.Rectangle gradient_rectangle = new System.Drawing.Rectangle(0, 0, this.Width, this.Height);
+            System.Drawing.Brush b = new System.Drawing.Drawing2D.LinearGradientBrush(gradient_rectangle, Color.White, Color.LightBlue, 0.5f);
+            graphics.FillRectangle(b, gradient_rectangle);
+        }
     }
 }

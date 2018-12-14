@@ -112,6 +112,7 @@
             this.Text = "Supprimer des monuments";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SupprimerMonumentForm_FormClosing);
             this.Load += new System.EventHandler(this.SupprimerMonumentForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SupprimerMonumentForm_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 

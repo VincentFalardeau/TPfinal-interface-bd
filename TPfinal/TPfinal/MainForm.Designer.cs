@@ -45,6 +45,12 @@
             this.NomCircuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrdreDansCircuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvMonuments = new System.Windows.Forms.DataGridView();
+            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Histoire = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Etoiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MonumentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupbox10 = new System.Windows.Forms.GroupBox();
             this.cbxStarsMonument = new System.Windows.Forms.CheckBox();
             this.TAB_Circuits = new System.Windows.Forms.TabPage();
@@ -64,12 +70,6 @@
             this.fbtnModifier = new PhotoManagerClient.FlashButton();
             this.fbtnAjouter = new PhotoManagerClient.FlashButton();
             this.starsMonument = new EvaluationDemo.Stars();
-            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Histoire = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Etoiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MonumentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.TAB_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonumentsCircuits)).BeginInit();
@@ -113,6 +113,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.circuitToolStripMenuItem,
@@ -266,6 +267,43 @@
             this.dgvMonuments.Size = new System.Drawing.Size(814, 248);
             this.dgvMonuments.TabIndex = 11;
             this.dgvMonuments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonuments_CellClick);
+            // 
+            // Nom
+            // 
+            this.Nom.HeaderText = "Nom";
+            this.Nom.Name = "Nom";
+            this.Nom.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Histoire
+            // 
+            this.Histoire.HeaderText = "Histoire";
+            this.Histoire.Name = "Histoire";
+            this.Histoire.ReadOnly = true;
+            // 
+            // Prix
+            // 
+            this.Prix.HeaderText = "Prix";
+            this.Prix.Name = "Prix";
+            this.Prix.ReadOnly = true;
+            // 
+            // Etoiles
+            // 
+            this.Etoiles.HeaderText = "Étoiles";
+            this.Etoiles.Name = "Etoiles";
+            this.Etoiles.ReadOnly = true;
+            // 
+            // MonumentId
+            // 
+            this.MonumentId.HeaderText = "MonumentId";
+            this.MonumentId.Name = "MonumentId";
+            this.MonumentId.ReadOnly = true;
+            this.MonumentId.Visible = false;
             // 
             // groupbox10
             // 
@@ -556,47 +594,11 @@
             this.starsMonument.Value = 0;
             this.starsMonument.ValueChanged += new EvaluationDemo.Stars.ValueChangedEventHandler(this.starsMonument_ValueChanged);
             // 
-            // Nom
-            // 
-            this.Nom.HeaderText = "Nom";
-            this.Nom.Name = "Nom";
-            this.Nom.ReadOnly = true;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Histoire
-            // 
-            this.Histoire.HeaderText = "Histoire";
-            this.Histoire.Name = "Histoire";
-            this.Histoire.ReadOnly = true;
-            // 
-            // Prix
-            // 
-            this.Prix.HeaderText = "Prix";
-            this.Prix.Name = "Prix";
-            this.Prix.ReadOnly = true;
-            // 
-            // Etoiles
-            // 
-            this.Etoiles.HeaderText = "Étoiles";
-            this.Etoiles.Name = "Etoiles";
-            this.Etoiles.ReadOnly = true;
-            // 
-            // MonumentId
-            // 
-            this.MonumentId.HeaderText = "MonumentId";
-            this.MonumentId.Name = "MonumentId";
-            this.MonumentId.ReadOnly = true;
-            this.MonumentId.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(965, 664);
             this.Controls.Add(this.fbtnImage);
             this.Controls.Add(this.FBTN_AddMonument);
@@ -606,12 +608,14 @@
             this.Controls.Add(this.fbtnAjouter);
             this.Controls.Add(this.tabsControl);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(987, 720);
             this.Name = "MainForm";
             this.Text = "Agence Tourism";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.TAB_Monuments.ResumeLayout(false);

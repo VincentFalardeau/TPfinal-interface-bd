@@ -107,6 +107,8 @@
             // btnAnnuler
             // 
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAnnuler.FlatAppearance.BorderSize = 0;
+            this.btnAnnuler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightBlue;
             this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnuler.Location = new System.Drawing.Point(241, 359);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(10, 10, 3, 10);
@@ -119,6 +121,7 @@
             // btnAjouter
             // 
             this.btnAjouter.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAjouter.FlatAppearance.BorderSize = 0;
             this.btnAjouter.Location = new System.Drawing.Point(42, 359);
             this.btnAjouter.Margin = new System.Windows.Forms.Padding(10, 10, 3, 10);
             this.btnAjouter.Name = "btnAjouter";
@@ -261,6 +264,7 @@
             this.Text = "Ajouter un circuit";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AjouterCircuitForm_FormClosing);
             this.Load += new System.EventHandler(this.AjouterCircuitForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.AjouterCircuitForm_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
