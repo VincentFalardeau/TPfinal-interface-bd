@@ -511,7 +511,7 @@ namespace TPfinal
             InformationsCircuitForm icf = new InformationsCircuitForm(ObtenirNomMeilleurCircuit(), true);
             icf.ShowDialog();
         }
-
+        
         private string ObtenirNomMeilleurCircuit()
         {
             string nom = "";
