@@ -158,6 +158,7 @@
             this.Text = "Modifier un circuit";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifierCircuitForm_FormClosing);
             this.Load += new System.EventHandler(this.ModifierCircuitForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ModifierCircuitForm_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.nudNvPrix)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -479,10 +479,7 @@ namespace TPfinal
             icf.ShowDialog();
         }
 
-        private void dgvCircuits_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvCircuits.CurrentRow.Selected = true;
-        }
+
 
 
         //--------------------------------------------------------------------------
@@ -600,7 +597,7 @@ namespace TPfinal
 
         private void dgvMonuments_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvMonuments.CurrentRow.Selected = true;
+           
 
             UpdateDgvCircuitsMonuments();
         }
