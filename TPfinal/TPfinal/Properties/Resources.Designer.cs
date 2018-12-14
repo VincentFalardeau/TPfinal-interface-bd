@@ -421,11 +421,41 @@ namespace TPfinal.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_accept {
+            get {
+                object obj = ResourceManager.GetObject("info_accept", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_disable {
+            get {
+                object obj = ResourceManager.GetObject("info_disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_neutre {
+            get {
+                object obj = ResourceManager.GetObject("info_neutre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon plane {
+        internal static System.Drawing.Icon plane_basic {
             get {
-                object obj = ResourceManager.GetObject("plane", resourceCulture);
+                object obj = ResourceManager.GetObject("plane_basic", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

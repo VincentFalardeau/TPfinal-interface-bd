@@ -98,6 +98,7 @@
             // 
             // STRIP_AjouterMonument
             // 
+            this.STRIP_AjouterMonument.Image = global::TPfinal.Properties.Resources.Tower_Add_Neutral;
             this.STRIP_AjouterMonument.Name = "STRIP_AjouterMonument";
             this.STRIP_AjouterMonument.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.A)));
@@ -107,6 +108,7 @@
             // 
             // afficherImageToolStripMenuItem
             // 
+            this.afficherImageToolStripMenuItem.Image = global::TPfinal.Properties.Resources.Eye;
             this.afficherImageToolStripMenuItem.Name = "afficherImageToolStripMenuItem";
             this.afficherImageToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.I)));
@@ -143,6 +145,7 @@
             // 
             // ajouterToolStripMenuItem
             // 
+            this.ajouterToolStripMenuItem.Image = global::TPfinal.Properties.Resources.circuit_add_neutre;
             this.ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
             this.ajouterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
             this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(284, 30);
@@ -151,6 +154,7 @@
             // 
             // modifierToolStripMenuItem
             // 
+            this.modifierToolStripMenuItem.Image = global::TPfinal.Properties.Resources.circuit_edit_neutre;
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
             this.modifierToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
             this.modifierToolStripMenuItem.Size = new System.Drawing.Size(284, 30);
@@ -159,6 +163,7 @@
             // 
             // supprimerToolStripMenuItem
             // 
+            this.supprimerToolStripMenuItem.Image = global::TPfinal.Properties.Resources.circuit_delete_neutre;
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
             this.supprimerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
             this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(284, 30);
@@ -167,6 +172,7 @@
             // 
             // voirInformationsToolStripMenuItem
             // 
+            this.voirInformationsToolStripMenuItem.Image = global::TPfinal.Properties.Resources.info_neutre;
             this.voirInformationsToolStripMenuItem.Name = "voirInformationsToolStripMenuItem";
             this.voirInformationsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
             this.voirInformationsToolStripMenuItem.Size = new System.Drawing.Size(284, 30);
@@ -563,16 +569,16 @@
             // 
             // fbtnInformations
             // 
-            this.fbtnInformations.BackgroundImage = global::TPfinal.Properties.Resources.Eye;
+            this.fbtnInformations.BackgroundImage = global::TPfinal.Properties.Resources.info_neutre;
             this.fbtnInformations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.fbtnInformations.ClickedImage = global::TPfinal.Properties.Resources.Eye_accept;
+            this.fbtnInformations.ClickedImage = global::TPfinal.Properties.Resources.info_accept;
             this.fbtnInformations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fbtnInformations.DisabledImage = null;
             this.fbtnInformations.Image = ((System.Drawing.Image)(resources.GetObject("fbtnInformations.Image")));
             this.fbtnInformations.Location = new System.Drawing.Point(21, 275);
             this.fbtnInformations.Name = "fbtnInformations";
-            this.fbtnInformations.NeutralImage = global::TPfinal.Properties.Resources.Eye;
-            this.fbtnInformations.OverImage = global::TPfinal.Properties.Resources.Eye_accept;
+            this.fbtnInformations.NeutralImage = global::TPfinal.Properties.Resources.info_neutre;
+            this.fbtnInformations.OverImage = global::TPfinal.Properties.Resources.info_accept;
             this.fbtnInformations.Size = new System.Drawing.Size(52, 52);
             this.fbtnInformations.TabIndex = 14;
             this.fbtnInformations.Text = "Voir les informations du circuit sélectionné";

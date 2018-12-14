@@ -32,6 +32,7 @@ namespace TPfinal
         {
             InitializeComponent();
 
+            this.Icon = Properties.Resources.plane_basic;
             Connecter();
 
             mDataSetCircuits = new DataSet();

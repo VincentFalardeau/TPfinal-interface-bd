@@ -329,5 +329,20 @@
   <ItemGroup>
     <None Include="Resources\circuit_edit_accept.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_neutre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maps - gps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane_basic.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
