@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.monumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.STRIP_AjouterMonument = new System.Windows.Forms.ToolStripMenuItem();
@@ -211,16 +214,30 @@
             this.dgvMonumentsCircuits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonumentsCircuits.BackgroundColor = System.Drawing.Color.White;
             this.dgvMonumentsCircuits.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMonumentsCircuits.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMonumentsCircuits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonumentsCircuits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NomCircuit,
             this.OrdreDansCircuit});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMonumentsCircuits.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMonumentsCircuits.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvMonumentsCircuits.Enabled = false;
             this.dgvMonumentsCircuits.Location = new System.Drawing.Point(12, 349);
+            this.dgvMonumentsCircuits.MultiSelect = false;
             this.dgvMonumentsCircuits.Name = "dgvMonumentsCircuits";
             this.dgvMonumentsCircuits.ReadOnly = true;
             this.dgvMonumentsCircuits.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMonumentsCircuits.RowHeadersVisible = false;
+            this.dgvMonumentsCircuits.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMonumentsCircuits.RowTemplate.Height = 26;
+            this.dgvMonumentsCircuits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMonumentsCircuits.Size = new System.Drawing.Size(814, 199);
             this.dgvMonumentsCircuits.TabIndex = 12;
             this.dgvMonumentsCircuits.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonumentsCircuits_CellClick);
@@ -249,6 +266,7 @@
             this.dgvMonuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonuments.BackgroundColor = System.Drawing.Color.White;
             this.dgvMonuments.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMonuments.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMonuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonuments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nom,
@@ -257,6 +275,15 @@
             this.Prix,
             this.Etoiles,
             this.MonumentId});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMonuments.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMonuments.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvMonuments.Location = new System.Drawing.Point(12, 93);
             this.dgvMonuments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvMonuments.MultiSelect = false;
@@ -265,6 +292,7 @@
             this.dgvMonuments.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMonuments.RowHeadersVisible = false;
             this.dgvMonuments.RowTemplate.Height = 26;
+            this.dgvMonuments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMonuments.Size = new System.Drawing.Size(814, 248);
             this.dgvMonuments.TabIndex = 11;
             this.dgvMonuments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonuments_CellClick);
@@ -438,7 +466,16 @@
             this.dgvCircuits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCircuits.BackgroundColor = System.Drawing.Color.White;
             this.dgvCircuits.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCircuits.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCircuits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCircuits.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCircuits.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCircuits.Location = new System.Drawing.Point(12, 92);
             this.dgvCircuits.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -447,9 +484,9 @@
             this.dgvCircuits.ReadOnly = true;
             this.dgvCircuits.RowHeadersVisible = false;
             this.dgvCircuits.RowTemplate.Height = 26;
+            this.dgvCircuits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCircuits.Size = new System.Drawing.Size(813, 452);
             this.dgvCircuits.TabIndex = 9;
-            this.dgvCircuits.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCircuits_CellClick);
             // 
             // groupBox6
             // 
