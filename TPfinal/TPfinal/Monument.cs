@@ -1,4 +1,9 @@
-﻿using System;
+﻿//Classe représentant un monument
+//
+//Par Émile Ménard
+//17 decembre 2018
+//--------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

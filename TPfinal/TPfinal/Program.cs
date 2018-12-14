@@ -1,4 +1,11 @@
-﻿using System;
+﻿//Classe Program comportant le Main, projet final pour les cours:
+//développement d'interfaces
+//conception de bases de données
+//
+//Par Vincent Falardeau et Émile Ménard
+//17 decembre 2018
+//--------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

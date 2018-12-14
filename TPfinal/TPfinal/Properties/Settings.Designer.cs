@@ -130,5 +130,17 @@ namespace TPfinal.Properties {
                 this["DimensionsMain"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size DimensionsImageMonument {
+            get {
+                return ((global::System.Drawing.Size)(this["DimensionsImageMonument"]));
+            }
+            set {
+                this["DimensionsImageMonument"] = value;
+            }
+        }
     }
 }

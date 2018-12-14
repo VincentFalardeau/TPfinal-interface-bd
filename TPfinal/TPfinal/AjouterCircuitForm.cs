@@ -1,4 +1,10 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿//Dialogue qui permet d'ajouter un circuit à la BD
+//
+//Par Vincent Falardeau et Émile Ménard
+//17 decembre 2018
+//--------------------------------------------------------------
+
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,8 +44,6 @@ namespace TPfinal
             LoadListeNoms();
             InitCbxDepartArrivee();
             InitListToutMonuments();
-
-        
         }
 
         private void AjouterCircuitForm_Load(object sender, EventArgs e)
@@ -63,7 +67,6 @@ namespace TPfinal
             mValidationProvider.AddControlToValidate(nudPrix, nudPrix_Valider);
             mValidationProvider.AddControlToValidate(tbxNom, tbxNom_Valider);
             mValidationProvider.AddControlToValidate(lbxMonuments, lbxMonuments_Valider);
-
         }
 
        
@@ -177,7 +180,6 @@ namespace TPfinal
         {
             try
             {
-               
                 string sql = "select nom from monuments";
                 OracleCommand oracleCommand = new OracleCommand(sql, mConnexionDAL.GetConnexion());
                 OracleDataReader oracleDataReader = oracleCommand.ExecuteReader();

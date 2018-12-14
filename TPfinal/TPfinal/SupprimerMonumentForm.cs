@@ -1,4 +1,9 @@
-﻿using System;
+﻿//Dialogue qui permet la supression de monuments dans un circuits
+//
+//Par Vincent Falardeau et Émile Ménard
+//17 decembre 2018
+//--------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

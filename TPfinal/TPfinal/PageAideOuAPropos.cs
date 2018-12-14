@@ -1,4 +1,10 @@
-﻿using System;
+﻿//Dialogue qui affiche du texte dans un textbox readonly
+//Utilisé pour la page d'aide ou à propos
+//
+//Par Vincent Falardeau
+//17 decembre 2018
+//--------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

@@ -1,4 +1,10 @@
-﻿using DB_Images_Utilities;
+﻿//Dialogue qui affiche l'image d'un monument
+//
+//Par Vincent Falardeau et Émile Ménard
+//17 decembre 2018
+//--------------------------------------------------------------
+
+using DB_Images_Utilities;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -41,6 +47,10 @@ namespace TPfinal
 
         private void AfficherImageMonument_Load(object sender, EventArgs e)
         {
+            if (!Properties.Settings.Default.DimensionsImageMonument.IsEmpty)
+            {
+                this.Size = Properties.Settings.Default.DimensionsImageMonument;
+            }
             if (!Properties.Settings.Default.LocationImageMonument.IsEmpty)
             {
                 this.Location = Properties.Settings.Default.LocationImageMonument;
@@ -49,6 +59,7 @@ namespace TPfinal
 
         private void AfficherImageMonument_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Properties.Settings.Default.DimensionsImageMonument = this.Size;
             Properties.Settings.Default.LocationImageMonument = this.Location;
             Properties.Settings.Default.Save();
         }

@@ -1,4 +1,9 @@
-﻿using DB_Images_Utilities;
+﻿//Dialogue qui les informations d'un circuit
+//
+//Par Vincent Falardeau et Émile Ménard
+//17 decembre 2018
+//--------------------------------------------------------------
+using DB_Images_Utilities;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;

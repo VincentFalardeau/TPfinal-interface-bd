@@ -1,4 +1,10 @@
-﻿using System;
+﻿//Dialogue qui permet de modifier le prix d'un circuit
+//
+//Par Vincent Falardeau et Émile Ménard
+//17 decembre 2018
+//--------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

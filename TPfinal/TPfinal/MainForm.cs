@@ -1,4 +1,11 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿//Main form, projet final pour les cours:
+//développement d'interfaces
+//conception de bases de données
+//
+//Par Vincent Falardeau et Émile Ménard
+//17 decembre 2018
+//--------------------------------------------------------------
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
