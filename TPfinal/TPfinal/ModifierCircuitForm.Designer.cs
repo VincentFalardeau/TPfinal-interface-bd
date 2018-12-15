@@ -42,9 +42,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 117);
+            this.label2.Location = new System.Drawing.Point(20, 94);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 20);
+            this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nouveau prix";
             // 
@@ -52,47 +53,50 @@
             // 
             this.cbxCircuits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCircuits.FormattingEnabled = true;
-            this.cbxCircuits.Location = new System.Drawing.Point(179, 19);
-            this.cbxCircuits.Margin = new System.Windows.Forms.Padding(10);
+            this.cbxCircuits.Location = new System.Drawing.Point(23, 28);
+            this.cbxCircuits.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.cbxCircuits.Name = "cbxCircuits";
-            this.cbxCircuits.Size = new System.Drawing.Size(237, 28);
+            this.cbxCircuits.Size = new System.Drawing.Size(248, 21);
             this.cbxCircuits.TabIndex = 4;
             this.cbxCircuits.SelectedIndexChanged += new System.EventHandler(this.cbxCircuits_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(113, 22);
+            this.label3.Location = new System.Drawing.Point(22, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 20);
+            this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Circuit";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tbxPrix
             // 
-            this.tbxPrix.Location = new System.Drawing.Point(180, 67);
-            this.tbxPrix.Margin = new System.Windows.Forms.Padding(10);
+            this.tbxPrix.Location = new System.Drawing.Point(23, 68);
+            this.tbxPrix.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.tbxPrix.Name = "tbxPrix";
             this.tbxPrix.ReadOnly = true;
-            this.tbxPrix.Size = new System.Drawing.Size(237, 26);
+            this.tbxPrix.Size = new System.Drawing.Size(248, 20);
             this.tbxPrix.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(86, 70);
+            this.label4.Location = new System.Drawing.Point(20, 55);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 20);
+            this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Prix actuel";
             // 
             // btnModifier
             // 
             this.btnModifier.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnModifier.Location = new System.Drawing.Point(47, 159);
-            this.btnModifier.Margin = new System.Windows.Forms.Padding(10);
+            this.btnModifier.Location = new System.Drawing.Point(24, 140);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(175, 55);
+            this.btnModifier.Size = new System.Drawing.Size(117, 36);
             this.btnModifier.TabIndex = 8;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
@@ -101,10 +105,10 @@
             // btnAnnuler
             // 
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnuler.Location = new System.Drawing.Point(242, 159);
-            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(10);
+            this.btnAnnuler.Location = new System.Drawing.Point(153, 140);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(175, 55);
+            this.btnAnnuler.Size = new System.Drawing.Size(117, 36);
             this.btnAnnuler.TabIndex = 9;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -117,8 +121,8 @@
             0,
             0,
             0});
-            this.nudNvPrix.Location = new System.Drawing.Point(181, 113);
-            this.nudNvPrix.Margin = new System.Windows.Forms.Padding(10);
+            this.nudNvPrix.Location = new System.Drawing.Point(24, 108);
+            this.nudNvPrix.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.nudNvPrix.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -130,7 +134,7 @@
             0,
             0});
             this.nudNvPrix.Name = "nudNvPrix";
-            this.nudNvPrix.Size = new System.Drawing.Size(236, 26);
+            this.nudNvPrix.Size = new System.Drawing.Size(246, 20);
             this.nudNvPrix.TabIndex = 17;
             this.nudNvPrix.Value = new decimal(new int[] {
             50,
@@ -141,10 +145,10 @@
             // ModifierCircuitForm
             // 
             this.AcceptButton = this.btnModifier;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
-            this.ClientSize = new System.Drawing.Size(462, 231);
+            this.ClientSize = new System.Drawing.Size(294, 195);
             this.Controls.Add(this.nudNvPrix);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnModifier);
@@ -154,6 +158,7 @@
             this.Controls.Add(this.cbxCircuits);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ModifierCircuitForm";
             this.Text = "Modifier un circuit";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifierCircuitForm_FormClosing);

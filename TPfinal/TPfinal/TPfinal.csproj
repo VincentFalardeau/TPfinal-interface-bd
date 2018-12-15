@@ -38,13 +38,13 @@
     <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="PhotoManagerWebServices, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Documents\TPfinal-interface-bd\TPfinal\TPfinal\PM DLL\PhotoManagerWebServices.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\TPfinal-interface-bd\TPfinal\TPfinal\PM DLL\PhotoManagerWebServices.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Documents\TPfinal-interface-bd\TPfinal\TPfinal\PM DLL\System.Net.Http.Formatting.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\TPfinal-interface-bd\TPfinal\TPfinal\PM DLL\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -352,6 +352,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\meilleur_circuit_neutre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meilleur_circuit_nouveau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meilleur_circuit_accept_nouveau.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

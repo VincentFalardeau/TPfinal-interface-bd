@@ -286,4 +286,10 @@
   <data name="meilleur_circuit_neutre" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\meilleur_circuit_neutre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="meilleur_circuit_accept_nouveau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\meilleur_circuit_accept_nouveau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="meilleur_circuit_nouveau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\meilleur_circuit_nouveau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

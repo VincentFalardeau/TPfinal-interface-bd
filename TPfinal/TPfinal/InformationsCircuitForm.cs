@@ -180,5 +180,10 @@ namespace TPfinal
             System.Drawing.Brush b = new System.Drawing.Drawing2D.LinearGradientBrush(gradient_rectangle, Color.White, Color.LightSkyBlue, 0.5f);
             graphics.FillRectangle(b, gradient_rectangle);
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

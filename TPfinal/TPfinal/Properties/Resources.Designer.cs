@@ -463,6 +463,16 @@ namespace TPfinal.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap meilleur_circuit_accept_nouveau {
+            get {
+                object obj = ResourceManager.GetObject("meilleur_circuit_accept_nouveau", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap meilleur_circuit_disable {
             get {
                 object obj = ResourceManager.GetObject("meilleur_circuit_disable", resourceCulture);
@@ -476,6 +486,16 @@ namespace TPfinal.Properties {
         internal static System.Drawing.Bitmap meilleur_circuit_neutre {
             get {
                 object obj = ResourceManager.GetObject("meilleur_circuit_neutre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap meilleur_circuit_nouveau {
+            get {
+                object obj = ResourceManager.GetObject("meilleur_circuit_nouveau", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
